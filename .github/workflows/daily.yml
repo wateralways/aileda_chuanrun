@@ -48,14 +48,17 @@ jobs:
         cd strategy
         python daily_scan.py
         python report_generator.py
+        cd ..
         
-    - name: Copy reports to docs
+    - name: Prepare site for Pages
       run: |
-        mkdir -p docs/reports
-        cp reports/index.html docs/reports/
-        cp -r docs/* _site/ 2>/dev/null || true
         mkdir -p _site/reports
+        mkdir -p _site/docs
         cp reports/index.html _site/reports/
+        cp reports/*.html _site/reports/ 2>/dev/null || true
+        cp docs/strategy.html _site/docs/
+        # 根目录放一份最新报告作为首页
+        cp reports/index.html _site/index.html
         
     - name: Setup Pages
       uses: actions/configure-pages@v5
