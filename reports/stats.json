@@ -1,0 +1,15 @@
+{
+  "update_time": "2026-06-03 16:19:39",
+  "stocks": {
+    "爱乐达": {
+      "total_trades": 1,
+      "completed_trades": 0,
+      "win_trades": 0,
+      "win_rate": null,
+      "total_return": 0,
+      "avg_return": null,
+      "max_profit": null,
+      "max_loss": null
+    }
+  }
+}

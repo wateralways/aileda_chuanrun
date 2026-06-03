@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-06-03 16:02:46",
+  "scan_time": "2026-06-03 16:19:38",
   "date": "2026-06-03",
   "signals": [
     {
@@ -47,7 +47,8 @@
         "price_position": 0.048,
         "up_days": 1,
         "down_days": 0
-      }
+      },
+      "buy_price": 29.74
     },
     {
       "name": "高澜股份",
