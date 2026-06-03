@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>策略详细说明 - 川润股份 & 爱乐达</title>
+    <title>策略详细说明 - 川润股份 & 爱乐达 & 高澜股份</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -215,7 +215,70 @@
             </div>
         </div>
         
-        <h2>五、实盘操作SOP</h2>
+        
+        <h2>七、高澜股份策略详解</h2>
+        
+        <h3>7.1 首选策略：跳空高开</h3>
+        <div class="card">
+            <p>回测表现：<span class="highlight">9次交易，胜率77.8%，总收益+102.68%，盈亏比10.64，最大回撤仅6.10%</span></p>
+            
+            <div class="rule-box">
+                <strong>买入条件（三重过滤）：</strong><br>
+                ① <code>跳空高开 0.8% ~ 5.0%</code><br>
+                ② <code>当日收阳线（收盘 > 开盘）</code><br>
+                ③ <code>放量（成交量 > 5日均量 × 1.2倍）</code>
+            </div>
+            
+            <div class="rule-box">
+                <strong>卖出规则：</strong><br>
+                买入后<strong>严格持有8天</strong>，第8天收盘卖出。<br>
+                可设置动态止盈止损：<code>6%止损 + 15%止盈</code>，胜率63.6%，收益+77.49%
+            </div>
+            
+            <p><strong>逐笔交易明细：</strong></p>
+            <table>
+                <tr><th>买入日期</th><th>买入价</th><th>卖出日期</th><th>卖出价</th><th>盈亏</th></tr>
+                <tr><td>2025-07-31</td><td>20.13</td><td>2025-08-12</td><td>22.83</td><td class="highlight">+13.41%</td></tr>
+                <tr><td>2025-09-10</td><td>29.38</td><td>2025-09-22</td><td>33.16</td><td class="highlight">+12.87%</td></tr>
+                <tr><td>2025-11-20</td><td>26.68</td><td>2025-12-02</td><td>26.18</td><td>-1.87%</td></tr>
+                <tr><td>2025-12-08</td><td>27.04</td><td>2025-12-18</td><td>28.80</td><td>+6.51%</td></tr>
+                <tr><td>2025-12-24</td><td>31.40</td><td>2026-01-07</td><td>31.92</td><td>+1.66%</td></tr>
+                <tr><td>2026-02-12</td><td>30.75</td><td>2026-03-04</td><td>37.36</td><td class="highlight">+21.50%</td></tr>
+                <tr><td>2026-03-10</td><td>41.79</td><td>2026-03-20</td><td>39.24</td><td>-6.10%</td></tr>
+                <tr><td>2026-04-08</td><td>37.40</td><td>2026-04-20</td><td>44.97</td><td class="highlight">+20.24%</td></tr>
+                <tr><td>2026-05-06</td><td>40.48</td><td>2026-05-18</td><td>43.98</td><td>+8.65%</td></tr>
+            </table>
+            
+            <p class="warning">核心发现：7盈2亏，胜率77.8%。最大盈利+21.50%，最大亏损仅-6.10%。这是三只股票中<span class="highlight">风险收益比最佳</span>的策略。</p>
+        </div>
+        
+        <h3>7.2 持股天数敏感性</h3>
+        <div class="card">
+            <table>
+                <tr><th>持股天数</th><th>交易次数</th><th>胜率</th><th>总收益</th></tr>
+                <tr><td>3天</td><td>14</td><td>57.1%</td><td>+9.23%</td></tr>
+                <tr><td>5天</td><td>12</td><td>58.3%</td><td>+21.35%</td></tr>
+                <tr><td class="highlight">8天</td><td class="highlight">9</td><td class="highlight">77.8%</td><td class="highlight">+102.68%</td></tr>
+                <tr><td>10天</td><td>8</td><td>75.0%</td><td>+63.20%</td></tr>
+                <tr><td>12天</td><td>7</td><td>71.4%</td><td>+45.42%</td></tr>
+            </table>
+            <p class="warning">8天是最佳甜蜜点，超过后收益递减。</p>
+        </div>
+        
+        <h3>7.3 高澜股份 vs 川润股份</h3>
+        <div class="card">
+            <table>
+                <tr><th>维度</th><th>川润股份</th><th>高澜股份</th></tr>
+                <tr><td>最佳策略</td><td>放量突破</td><td>跳空高开</td></tr>
+                <tr><td>胜率</td><td>100%</td><td>77.8%</td></tr>
+                <tr><td>总收益</td><td>+60.30%</td><td>+102.68%</td></tr>
+                <tr><td>最大回撤</td><td>0%</td><td>6.10%</td></tr>
+                <tr><td>盈亏比</td><td>∞</td><td>10.64</td></tr>
+                <tr><td>交易次数</td><td>4次</td><td>9次</td></tr>
+            </table>
+            <p>高澜股份虽然胜率略低，但<span class="highlight">交易次数更多、收益更高、回撤可控</span>，实盘可操作性更强。</p>
+        </div>
+<h2>五、实盘操作SOP</h2>
         <div class="card">
             <h3>川润股份 SOP</h3>
             <div class="rule-box">

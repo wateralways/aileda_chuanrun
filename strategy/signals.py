@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-策略信号定义 - 川润股份 & 爱乐达 专用策略
+策略信号定义 - 川润股份 & 爱乐达 & 高澜股份 专用策略
 """
 import pandas as pd
 import numpy as np
@@ -150,6 +150,16 @@ def aileda_combo(df, i):
             aileda_volume_climax(df, i) or 
             aileda_ma_convergence_break(df, i))
 
+# ================== 高澜股份策略 ==================
+
+def gaolan_gap_up(df, i, min_gap=0.8, max_gap=5.0):
+    """高澜股份: 跳空高开策略"""
+    if i < 5: return False
+    gap = (df.iloc[i]['open'] - df.iloc[i-1]['close']) / df.iloc[i-1]['close'] * 100
+    return (min_gap < gap < max_gap and 
+            df.iloc[i]['close'] > df.iloc[i]['open'] and
+            df.iloc[i]['vol_ratio'] > 1.2)
+
 # ================== 信号扫描入口 ==================
 
 def scan_signals(df, stock_name):
@@ -202,6 +212,15 @@ def scan_signals(df, stock_name):
                 'type': 'secondary',
                 'confidence': '中',
                 'description': 'MA5/MA10/MA20粘合后向上突破'
+            })
+    
+    elif stock_name == '高澜股份':
+        if gaolan_gap_up(df, i):
+            signals.append({
+                'strategy': '跳空高开',
+                'type': 'primary',
+                'confidence': '高',
+                'description': '跳空高开0.8%~5.0%，收阳线，放量(vol_ratio>1.2)'
             })
     
     return signals, df.iloc[i]

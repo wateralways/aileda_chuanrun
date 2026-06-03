@@ -31,7 +31,8 @@ def get_daily_data(ts_code, start_date='20260101', end_date=None):
 def main():
     stocks = {
         '川润股份': '002272.SZ',
-        '爱乐达': '300696.SZ'
+        '爱乐达': '300696.SZ',
+        '高澜股份': '300499.SZ'
     }
     
     results = {
