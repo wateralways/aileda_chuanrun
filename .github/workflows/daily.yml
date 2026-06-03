@@ -50,6 +50,11 @@ jobs:
         python report_generator.py
         cd ..
         
+    - name: Copy strategy reports to root
+      run: |
+        # daily_scan.py 在 strategy/ 目录下生成报告，需要复制到根目录
+        cp -r strategy/reports/* reports/ 2>/dev/null || true
+        
     - name: Prepare site for Pages
       run: |
         mkdir -p _site/reports
