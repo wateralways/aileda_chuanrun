@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+*.log
+
+# 分析数据文件（较大，不推送）
+analysis/*.csv
+analysis/__pycache__/
+strategy/__pycache__/
+strategy/reports/
+
+# 本地环境
+.env

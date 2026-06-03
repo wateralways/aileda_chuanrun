@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>策略详细说明 - 川润股份 & 爱乐达</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background: #0f0f23;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        h1 { color: #00d4aa; font-size: 2.2em; margin-bottom: 10px; text-align: center; }
+        h2 { color: #4a90d9; font-size: 1.5em; margin: 40px 0 20px; border-bottom: 2px solid rgba(74,144,217,0.3); padding-bottom: 10px; }
+        h3 { color: #ffaa00; font-size: 1.2em; margin: 30px 0 15px; }
+        .subtitle { text-align: center; color: #888; margin-bottom: 40px; }
+        
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 24px 0;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95em; }
+        th { text-align: left; padding: 12px; background: rgba(0,212,170,0.1); color: #00d4aa; font-weight: 600; }
+        td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        tr:hover { background: rgba(255,255,255,0.03); }
+        
+        .highlight { color: #00d4aa; font-weight: 600; }
+        .warning { color: #ffaa00; }
+        .danger { color: #ff5050; }
+        .badge {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        .badge.green { background: rgba(0,212,170,0.15); color: #00d4aa; }
+        .badge.orange { background: rgba(255,170,0,0.15); color: #ffaa00; }
+        .badge.red { background: rgba(255,80,80,0.15); color: #ff5050; }
+        
+        .rule-box {
+            background: rgba(0,212,170,0.05);
+            border-left: 4px solid #00d4aa;
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        .rule-box.danger { background: rgba(255,80,80,0.05); border-left-color: #ff5050; }
+        
+        code {
+            background: rgba(255,255,255,0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: "Fira Code", monospace;
+            font-size: 0.9em;
+        }
+        
+        .nav { text-align: center; margin-bottom: 40px; }
+        .nav a { color: #4a90d9; text-decoration: none; margin: 0 15px; }
+        .nav a:hover { text-decoration: underline; }
+        
+        .footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="../reports/index.html">📊 返回日报</a>
+            <a href="https://github.com/wateralways/aileda_chuanrun">📁 GitHub仓库</a>
+        </div>
+        
+        <h1>📖 策略详细说明</h1>
+        <p class="subtitle">川润股份(002272) & 爱乐达(300696) 短线8天策略 | 回测区间：2026-01-05 ~ 2026-06-03</p>
+        
+        <h2>一、策略总览</h2>
+        <div class="card">
+            <table>
+                <tr><th>维度</th><th>川润股份</th><th>爱乐达</th></tr>
+                <tr><td>策略类型</td><td><span class="badge green">趋势突破（追涨）</span></td><td><span class="badge orange">回调反弹（低吸）</span></td></tr>
+                <tr><td>核心策略</td><td class="highlight">放量突破</td><td class="highlight">连阴首阳</td></tr>
+                <tr><td>最佳持股</td><td class="highlight">8天（越久越好）</td><td class="highlight">严格8天</td></tr>
+                <tr><td>胜率</td><td>80~100%</td><td>50~62.5%</td></tr>
+                <tr><td>总收益</td><td class="highlight">+57~60%</td><td class="highlight">+24~25%</td></tr>
+                <tr><td>止损设置</td><td class="danger">❌ 不设置止损</td><td>✅ 可设4%止损</td></tr>
+            </table>
+        </div>
+        
+        <h2>二、川润股份策略详解</h2>
+        
+        <h3>2.1 首选策略：放量突破</h3>
+        <div class="card">
+            <p>回测表现：<span class="highlight">4次交易，胜率100%，总收益+60.30%</span></p>
+            
+            <div class="rule-box">
+                <strong>买入条件（四重过滤，缺一不可）：</strong><br>
+                ① <code>成交量 > 5日均量 × 1.5倍</code><br>
+                ② <code>当日振幅 > 2.5%</code><br>
+                ③ <code>收盘价突破前1日最高价</code><br>
+                ④ <code>收盘价 > 开盘价（收阳线）</code>
+            </div>
+            
+            <div class="rule-box danger">
+                <strong>卖出规则：</strong><br>
+                买入后<strong>严格持有8天</strong>，第8天收盘卖出。<br>
+                <span class="danger">严禁设置止损！</span> 回测证明3%止损会让胜率从100%暴跌至33%，总收益从+60%降至+3%。
+            </div>
+            
+            <p><strong>逐笔交易明细：</strong></p>
+            <table>
+                <tr><th>买入日期</th><th>买入价</th><th>卖出日期</th><th>卖出价</th><th>盈亏</th></tr>
+                <tr><td>2026-02-06</td><td>15.39</td><td>2026-02-26</td><td>19.21</td><td class="highlight">+24.82%</td></tr>
+                <tr><td>2026-02-27</td><td>19.47</td><td>2026-03-11</td><td>20.69</td><td>+6.27%</td></tr>
+                <tr><td>2026-03-30</td><td>18.06</td><td>2026-04-10</td><td>19.12</td><td>+5.87%</td></tr>
+                <tr><td>2026-05-07</td><td>19.86</td><td>2026-05-19</td><td>22.67</td><td class="highlight">+14.15%</td></tr>
+            </table>
+        </div>
+        
+        <h3>2.2 备选策略：组合A</h3>
+        <div class="card">
+            <p>回测表现：<span class="highlight">5次交易，胜率80%，总收益+57.69%</span></p>
+            <p>在放量突破的基础上，增加两种底部反转形态作为补充信号：</p>
+            <ul>
+                <li><strong>晨星形态：</strong>下跌末端出现晨星K线组合（阴线+小实体+阳线）</li>
+                <li><strong>阳线吞没：</strong>阳线实体完全覆盖前日阴线实体</li>
+            </ul>
+            <p>适合希望交易频率更高的场景，但会多1次小额亏损（-1.63%）。</p>
+        </div>
+        
+        <h3>2.3 持股天数敏感性</h3>
+        <div class="card">
+            <table>
+                <tr><th>持股天数</th><th>交易次数</th><th>胜率</th><th>总收益</th></tr>
+                <tr><td>3天</td><td>4</td><td>50%</td><td>+7.25%</td></tr>
+                <tr><td>5天</td><td>4</td><td>75%</td><td>+14.96%</td></tr>
+                <tr><td class="highlight">8天</td><td class="highlight">4</td><td class="highlight">100%</td><td class="highlight">+60.30%</td></tr>
+                <tr><td>12天</td><td>3</td><td>100%</td><td>+80.12%</td></tr>
+            </table>
+            <p class="warning">核心发现：持股7天后胜率跃升至100%，川润的趋势延续性极强。但超过8天交易次数减少，8天是最佳平衡点。</p>
+        </div>
+        
+        <h2>三、爱乐达策略详解</h2>
+        
+        <h3>3.1 首选策略：连阴首阳</h3>
+        <div class="card">
+            <p>回测表现：<span class="highlight">8次交易，胜率62.5%，总收益+24.81%</span></p>
+            
+            <div class="rule-box">
+                <strong>买入条件：</strong><br>
+                ① <code>前2~3个交易日，至少2天收阴线</code><br>
+                ② <code>当日收阳线，且收盘 > 前日收盘</code><br>
+                ③ <code>RSI14 < 60（非高位区域）</code>
+            </div>
+            
+            <div class="rule-box">
+                <strong>卖出规则：</strong><br>
+                买入后<strong>严格持有8天</strong>卖出。<br>
+                风险偏好低者可设 <code>4%止损 + 12%止盈</code>。
+            </div>
+            
+            <p><strong>逐笔交易明细：</strong></p>
+            <table>
+                <tr><th>买入日期</th><th>买入价</th><th>卖出日期</th><th>卖出价</th><th>盈亏</th></tr>
+                <tr><td>2026-01-19</td><td>31.10</td><td>2026-01-29</td><td>33.80</td><td>+8.68%</td></tr>
+                <tr><td>2026-02-03</td><td>32.00</td><td>2026-02-13</td><td>32.80</td><td>+2.50%</td></tr>
+                <tr><td>2026-02-27</td><td>32.83</td><td>2026-03-11</td><td>30.24</td><td class="danger">-7.89%</td></tr>
+                <tr><td>2026-03-13</td><td>29.18</td><td>2026-03-25</td><td>27.64</td><td class="danger">-5.28%</td></tr>
+                <tr><td>2026-03-27</td><td>27.80</td><td>2026-04-09</td><td>30.07</td><td>+8.17%</td></tr>
+                <tr><td>2026-04-14</td><td>31.99</td><td>2026-04-24</td><td>37.64</td><td class="highlight">+17.66%</td></tr>
+                <tr><td>2026-04-27</td><td>38.61</td><td>2026-05-12</td><td>43.11</td><td class="highlight">+11.66%</td></tr>
+                <tr><td>2026-05-28</td><td>32.91</td><td>2026-06-03</td><td>29.74</td><td class="danger">-9.63%</td></tr>
+            </table>
+        </div>
+        
+        <h3>3.2 辅助策略：放量见底</h3>
+        <div class="card">
+            <p>回测表现：<span class="highlight">1次交易，胜率100%，收益+28.37%</span></p>
+            <p>信号极其稀少但精准——成交量创10日新高、价格不再跌、前期跌幅>5%。</p>
+            <p>不要单独等这个信号，但当它出现时，<strong>可加大仓位</strong>。</p>
+        </div>
+        
+        <h3>3.3 持股天数敏感性</h3>
+        <div class="card">
+            <table>
+                <tr><th>持股天数</th><th>交易次数</th><th>胜率</th><th>总收益</th></tr>
+                <tr><td>1天</td><td>19</td><td>36.8%</td><td class="danger">-4.10%</td></tr>
+                <tr><td>3天</td><td>14</td><td>57.1%</td><td>+9.23%</td></tr>
+                <tr><td>5天</td><td>12</td><td>41.7%</td><td>+2.87%</td></tr>
+                <tr><td class="highlight">8天</td><td class="highlight">8</td><td class="highlight">62.5%</td><td class="highlight">+24.81%</td></tr>
+                <tr><td>12天</td><td>6</td><td>33.3%</td><td>+8.82%</td></tr>
+                <tr><td>15天</td><td>6</td><td>16.7%</td><td class="danger">-12.84%</td></tr>
+            </table>
+            <p class="warning">核心发现：持股1天巨亏-4.10%，说明爱乐达反弹次日极少立刻大涨。6天是死亡陷阱（-15.52%），8天是最佳甜蜜点。超过10天胜率暴跌。</p>
+        </div>
+        
+        <h2>四、关键禁忌</h2>
+        <div class="card">
+            <div class="rule-box danger">
+                <strong>❌ 川润股份绝对不能做的事：</strong><br>
+                1. 设置3-5%的止损 → 会让胜率从100%暴跌到33%，收益从+60%降到+3%<br>
+                2. 持股少于5天就卖 → 前3-5天可能浮亏或微利，第7天后才开始发力<br>
+                3. 突破当天没买，次日追高 → 策略要求收盘前确认信号后买入
+            </div>
+            <div class="rule-box danger">
+                <strong>❌ 爱乐达绝对不能做的事：</strong><br>
+                1. 追涨突破 → 放量突破策略在爱乐达上亏损-2%，5月11日追高亏18.77%<br>
+                2. 持股1-2天就卖 → 次日极少立刻大涨，必须拿满8天<br>
+                3. 在RSI>70时买入 → 高位反弹陷阱
+            </div>
+        </div>
+        
+        <h2>五、实盘操作SOP</h2>
+        <div class="card">
+            <h3>川润股份 SOP</h3>
+            <div class="rule-box">
+                1. 每天14:30开始观察<br>
+                2. 检查当日是否满足放量突破四条件<br>
+                3. 14:45确认信号后，收盘前买入<br>
+                4. 买入后设日历提醒，8个交易日后卖出<br>
+                5. 期间不盯盘，不止损，让利润奔跑
+            </div>
+            
+            <h3>爱乐达 SOP</h3>
+            <div class="rule-box">
+                1. 每天14:30开始观察<br>
+                2. 检查是否连阴后出现首根阳线<br>
+                3. 确认RSI14 < 60<br>
+                4. 14:45确认信号后，收盘前买入<br>
+                5. 买入后设日历提醒，8个交易日后卖出<br>
+                6. 如浮亏超4%，次日开盘考虑止损
+            </div>
+        </div>
+        
+        <h2>六、技术实现</h2>
+        <div class="card">
+            <p><strong>自动扫描：</strong>GitHub Actions 每天北京时间14:45自动运行</p>
+            <p><strong>数据来源：</strong>Tushare Pro API</p>
+            <p><strong>报告发布：</strong>自动部署到 GitHub Pages</p>
+            <p><strong>策略代码：</strong><code>strategy/signals.py</code></p>
+            <p><strong>扫描脚本：</strong><code>strategy/daily_scan.py</code></p>
+            <p><strong>报告生成：</strong><code>strategy/report_generator.py</code></p>
+        </div>
+        
+        <div class="footer">
+            <p>策略基于2026年1-6月历史数据回测 | 样本量有限，未来表现可能不同</p>
+            <p style="margin-top:10px; color:#ff5050;">⚠️ 本策略仅供学习研究，不构成投资建议。股市有风险，投资需谨慎。</p>
+        </div>
+    </div>
+</body>
+</html>

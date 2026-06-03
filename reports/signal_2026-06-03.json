@@ -1,0 +1,53 @@
+{
+  "scan_time": "2026-06-03 22:05:57",
+  "date": "2026-06-03",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "latest_date": "20260603",
+      "latest_close": 19.83,
+      "latest_pct_chg": -0.4518,
+      "signals": [],
+      "has_signal": false,
+      "indicators": {
+        "vol_ratio": 0.99,
+        "rsi14": 51.79,
+        "rsi6": 22.98,
+        "macd": 0.327,
+        "amplitude": 8.08,
+        "bb_pct": 0.335,
+        "price_position": 0.196,
+        "up_days": 0,
+        "down_days": 1
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "latest_date": "20260603",
+      "latest_close": 29.74,
+      "latest_pct_chg": 1.7796,
+      "signals": [
+        {
+          "strategy": "连阴首阳",
+          "type": "primary",
+          "confidence": "高",
+          "description": "连续阴线后出现首根阳线，RSI<60"
+        }
+      ],
+      "has_signal": true,
+      "indicators": {
+        "vol_ratio": 0.9,
+        "rsi14": 10.87,
+        "rsi6": 27.6,
+        "macd": -1.608,
+        "amplitude": 5.51,
+        "bb_pct": 0.159,
+        "price_position": 0.048,
+        "up_days": 1,
+        "down_days": 0
+      }
+    }
+  ]
+}

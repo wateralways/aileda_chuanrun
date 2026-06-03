@@ -1,0 +1,2426 @@
+[
+  {
+    "name": "跳空高开({'min_gap':0.8,'max_gap':3.0})[SL6TP15]",
+    "strategy": "跳空高开",
+    "params": {
+      "min_gap": 0.8,
+      "max_gap": 3.0
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 2,
+    "win_rate": 100.0,
+    "avg_pnl": 15.0,
+    "avg_win": 15.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 32.24999999999998,
+    "max_dd": 0.0,
+    "avg_hold": 4.5
+  },
+  {
+    "name": "跳空高开({'min_gap':0.8,'max_gap':3.0})",
+    "strategy": "跳空高开",
+    "params": {
+      "min_gap": 0.8,
+      "max_gap": 3.0
+    },
+    "stop": {},
+    "count": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 28.374558303886914,
+    "avg_win": 28.374558303886914,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 28.37455830388691,
+    "max_dd": 0.0,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "跳空高开({'min_gap':1.5,'max_gap':5.0})",
+    "strategy": "跳空高开",
+    "params": {
+      "min_gap": 1.5,
+      "max_gap": 5.0
+    },
+    "stop": {},
+    "count": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 28.374558303886914,
+    "avg_win": 28.374558303886914,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 28.37455830388691,
+    "max_dd": 0.0,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "组合量价MACD",
+    "strategy": "组合量价MACD",
+    "params": {},
+    "stop": {},
+    "count": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 28.374558303886914,
+    "avg_win": 28.374558303886914,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 28.37455830388691,
+    "max_dd": 0.0,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "跳空高开({'min_gap':0.8,'max_gap':3.0})[SL5TP12]",
+    "strategy": "跳空高开",
+    "params": {
+      "min_gap": 0.8,
+      "max_gap": 3.0
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 2,
+    "win_rate": 100.0,
+    "avg_pnl": 12.0,
+    "avg_win": 12.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 25.44000000000002,
+    "max_dd": 0.0,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "跳空高开({'min_gap':0.8,'max_gap':3.0})[SL4TP10]",
+    "strategy": "跳空高开",
+    "params": {
+      "min_gap": 0.8,
+      "max_gap": 3.0
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 2,
+    "win_rate": 100.0,
+    "avg_pnl": 10.0,
+    "avg_win": 10.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 21.000000000000018,
+    "max_dd": 0.0,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "放量突破({'vol_mult':2.0,'min_amp':3.0})",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 2.0,
+      "min_amp": 3.0
+    },
+    "stop": {},
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 11.177000150475033,
+    "avg_win": 28.374558303886914,
+    "avg_loss": -6.020558002936849,
+    "profit_factor": 4.712944928035857,
+    "total_pnl": 20.645693560187418,
+    "max_dd": 6.020558002936848,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "突破MA20",
+    "strategy": "突破MA20",
+    "params": {},
+    "stop": {},
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 10.889733139673515,
+    "avg_win": 28.374558303886914,
+    "avg_loss": -6.595092024539884,
+    "profit_factor": 4.302374887007965,
+    "total_pnl": 19.908138047648972,
+    "max_dd": 6.595092024539884,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "放量突破({'vol_mult':1.5,'min_amp':2.5})[SL6TP15]",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 1.5,
+      "min_amp": 2.5
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 4,
+    "win_rate": 50.0,
+    "avg_pnl": 4.5,
+    "avg_win": 15.0,
+    "avg_loss": -6.0,
+    "profit_factor": 2.5,
+    "total_pnl": 16.856099999999973,
+    "max_dd": 6.000000000000005,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "跳空高开({'min_gap':0.8,'max_gap':3.0})[SL3TP8]",
+    "strategy": "跳空高开",
+    "params": {
+      "min_gap": 0.8,
+      "max_gap": 3.0
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 2,
+    "win_rate": 100.0,
+    "avg_pnl": 8.0,
+    "avg_win": 8.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 16.64000000000001,
+    "max_dd": 0.0,
+    "avg_hold": 2.5
+  },
+  {
+    "name": "跳空高开({'min_gap':1.5,'max_gap':5.0})[SL6TP15]",
+    "strategy": "跳空高开",
+    "params": {
+      "min_gap": 1.5,
+      "max_gap": 5.0
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 15.0,
+    "avg_win": 15.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 14.999999999999991,
+    "max_dd": 0.0,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "组合量价MACD[SL6TP15]",
+    "strategy": "组合量价MACD",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 15.0,
+    "avg_win": 15.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 14.999999999999991,
+    "max_dd": 0.0,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "晨星形态[SL3TP8]",
+    "strategy": "晨星形态",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 6,
+    "win_rate": 50.0,
+    "avg_pnl": 2.5,
+    "avg_win": 8.0,
+    "avg_loss": -3.0,
+    "profit_factor": 2.6666666666666665,
+    "total_pnl": 14.970513017600018,
+    "max_dd": 8.732700000000005,
+    "avg_hold": 1.5
+  },
+  {
+    "name": "放量突破({'vol_mult':1.5,'min_amp':2.5})[SL5TP12]",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 1.5,
+      "min_amp": 2.5
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 4,
+    "win_rate": 50.0,
+    "avg_pnl": 3.5,
+    "avg_win": 12.0,
+    "avg_loss": -5.0,
+    "profit_factor": 2.4,
+    "total_pnl": 13.209599999999998,
+    "max_dd": 5.000000000000006,
+    "avg_hold": 3.25
+  },
+  {
+    "name": "量价底背离[SL6TP15]",
+    "strategy": "量价底背离",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 6.388888888888892,
+    "avg_win": 15.0,
+    "avg_loss": -2.222222222222216,
+    "profit_factor": 6.750000000000019,
+    "total_pnl": 12.444444444444436,
+    "max_dd": 2.2222222222222223,
+    "avg_hold": 4.5
+  },
+  {
+    "name": "跳空高开({'min_gap':1.5,'max_gap':5.0})[SL5TP12]",
+    "strategy": "跳空高开",
+    "params": {
+      "min_gap": 1.5,
+      "max_gap": 5.0
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 12.0,
+    "avg_win": 12.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 12.00000000000001,
+    "max_dd": 0.0,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "组合量价MACD[SL5TP12]",
+    "strategy": "组合量价MACD",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 12.0,
+    "avg_win": 12.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 12.00000000000001,
+    "max_dd": 0.0,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "放量突破({'vol_mult':1.5,'min_amp':2.5})[SL4TP10]",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 1.5,
+      "min_amp": 2.5
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 4,
+    "win_rate": 50.0,
+    "avg_pnl": 3.0,
+    "avg_win": 10.0,
+    "avg_loss": -4.0,
+    "profit_factor": 2.5,
+    "total_pnl": 11.513600000000013,
+    "max_dd": 4.000000000000004,
+    "avg_hold": 3.0
+  },
+  {
+    "name": "跳空高开({'min_gap':1.5,'max_gap':5.0})[SL4TP10]",
+    "strategy": "跳空高开",
+    "params": {
+      "min_gap": 1.5,
+      "max_gap": 5.0
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 10.0,
+    "avg_win": 10.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 10.000000000000009,
+    "max_dd": 0.0,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "组合量价MACD[SL4TP10]",
+    "strategy": "组合量价MACD",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 10.0,
+    "avg_win": 10.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 10.000000000000009,
+    "max_dd": 0.0,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "放量突破({'vol_mult':1.5,'min_amp':2.5})[SL3TP8]",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 1.5,
+      "min_amp": 2.5
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 4,
+    "win_rate": 50.0,
+    "avg_pnl": 2.5,
+    "avg_win": 8.0,
+    "avg_loss": -3.0,
+    "profit_factor": 2.6666666666666665,
+    "total_pnl": 9.746576000000019,
+    "max_dd": 3.0000000000000027,
+    "avg_hold": 1.75
+  },
+  {
+    "name": "放量突破({'vol_mult':1.2,'min_amp':2.0})[SL3TP8]",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 1.2,
+      "min_amp": 2.0
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 8,
+    "win_rate": 37.5,
+    "avg_pnl": 1.125,
+    "avg_win": 8.0,
+    "avg_loss": -3.0,
+    "profit_factor": 1.6,
+    "total_pnl": 8.175755698259835,
+    "max_dd": 8.732700000000005,
+    "avg_hold": 2.625
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':30})",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 30
+    },
+    "stop": {},
+    "count": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 8.165467625899279,
+    "avg_win": 8.165467625899279,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 8.16546762589927,
+    "max_dd": 0.0,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "放量突破({'vol_mult':2.0,'min_amp':3.0})[SL6TP15]",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 2.0,
+      "min_amp": 3.0
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 4.5,
+    "avg_win": 15.0,
+    "avg_loss": -6.0,
+    "profit_factor": 2.5,
+    "total_pnl": 8.099999999999996,
+    "max_dd": 6.000000000000005,
+    "avg_hold": 3.5
+  },
+  {
+    "name": "突破MA20[SL6TP15]",
+    "strategy": "突破MA20",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 4.5,
+    "avg_win": 15.0,
+    "avg_loss": -6.0,
+    "profit_factor": 2.5,
+    "total_pnl": 8.099999999999996,
+    "max_dd": 6.000000000000005,
+    "avg_hold": 5.5
+  },
+  {
+    "name": "跳空高开({'min_gap':1.5,'max_gap':5.0})[SL3TP8]",
+    "strategy": "跳空高开",
+    "params": {
+      "min_gap": 1.5,
+      "max_gap": 5.0
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 8.0,
+    "avg_win": 8.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 8.000000000000007,
+    "max_dd": 0.0,
+    "avg_hold": 1.0
+  },
+  {
+    "name": "组合量价MACD[SL3TP8]",
+    "strategy": "组合量价MACD",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 1,
+    "win_rate": 100.0,
+    "avg_pnl": 8.0,
+    "avg_win": 8.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_pnl": 8.000000000000007,
+    "max_dd": 0.0,
+    "avg_hold": 1.0
+  },
+  {
+    "name": "晨星形态[SL4TP10]",
+    "strategy": "晨星形态",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 5,
+    "win_rate": 40.0,
+    "avg_pnl": 1.6,
+    "avg_win": 10.0,
+    "avg_loss": -4.0,
+    "profit_factor": 1.6666666666666667,
+    "total_pnl": 7.053056000000013,
+    "max_dd": 11.526400000000002,
+    "avg_hold": 2.2
+  },
+  {
+    "name": "放量突破({'vol_mult':2.0,'min_amp':3.0})[SL5TP12]",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 2.0,
+      "min_amp": 3.0
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 3.5,
+    "avg_win": 12.0,
+    "avg_loss": -5.0,
+    "profit_factor": 2.4,
+    "total_pnl": 6.400000000000006,
+    "max_dd": 5.000000000000004,
+    "avg_hold": 3.0
+  },
+  {
+    "name": "量价底背离[SL5TP12]",
+    "strategy": "量价底背离",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 3.5,
+    "avg_win": 12.0,
+    "avg_loss": -5.0,
+    "profit_factor": 2.4,
+    "total_pnl": 6.400000000000006,
+    "max_dd": 5.0000000000000036,
+    "avg_hold": 2.5
+  },
+  {
+    "name": "突破MA20[SL5TP12]",
+    "strategy": "突破MA20",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 3.5,
+    "avg_win": 12.0,
+    "avg_loss": -5.0,
+    "profit_factor": 2.4,
+    "total_pnl": 6.400000000000006,
+    "max_dd": 5.000000000000004,
+    "avg_hold": 5.5
+  },
+  {
+    "name": "放量突破({'vol_mult':2.0,'min_amp':3.0})[SL4TP10]",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 2.0,
+      "min_amp": 3.0
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 3.0,
+    "avg_win": 10.0,
+    "avg_loss": -4.0,
+    "profit_factor": 2.5,
+    "total_pnl": 5.600000000000005,
+    "max_dd": 4.0000000000000036,
+    "avg_hold": 2.5
+  },
+  {
+    "name": "量价底背离[SL4TP10]",
+    "strategy": "量价底背离",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 3.0,
+    "avg_win": 10.0,
+    "avg_loss": -4.0,
+    "profit_factor": 2.5,
+    "total_pnl": 5.600000000000005,
+    "max_dd": 4.0000000000000036,
+    "avg_hold": 2.5
+  },
+  {
+    "name": "突破MA20[SL4TP10]",
+    "strategy": "突破MA20",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 3.0,
+    "avg_win": 10.0,
+    "avg_loss": -4.0,
+    "profit_factor": 2.5,
+    "total_pnl": 5.600000000000005,
+    "max_dd": 4.0000000000000036,
+    "avg_hold": 5.5
+  },
+  {
+    "name": "放量突破({'vol_mult':2.0,'min_amp':3.0})[SL3TP8]",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 2.0,
+      "min_amp": 3.0
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 2.5,
+    "avg_win": 8.0,
+    "avg_loss": -3.0,
+    "profit_factor": 2.6666666666666665,
+    "total_pnl": 4.760000000000009,
+    "max_dd": 3.0000000000000027,
+    "avg_hold": 1.0
+  },
+  {
+    "name": "量价底背离[SL3TP8]",
+    "strategy": "量价底背离",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 2.5,
+    "avg_win": 8.0,
+    "avg_loss": -3.0,
+    "profit_factor": 2.6666666666666665,
+    "total_pnl": 4.760000000000009,
+    "max_dd": 2.9999999999999987,
+    "avg_hold": 2.0
+  },
+  {
+    "name": "突破MA20[SL3TP8]",
+    "strategy": "突破MA20",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 2.5,
+    "avg_win": 8.0,
+    "avg_loss": -3.0,
+    "profit_factor": 2.6666666666666665,
+    "total_pnl": 4.760000000000009,
+    "max_dd": 3.0000000000000027,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "晨星形态",
+    "strategy": "晨星形态",
+    "params": {},
+    "stop": {},
+    "count": 4,
+    "win_rate": 25.0,
+    "avg_pnl": 1.616828453169463,
+    "avg_win": 28.374558303886914,
+    "avg_loss": -7.302414830403021,
+    "profit_factor": 1.2952134767689771,
+    "total_pnl": 2.2295887810594994,
+    "max_dd": 14.372216376643488,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "量价底背离",
+    "strategy": "量价底背离",
+    "params": {},
+    "stop": {},
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 1.006967608034989,
+    "avg_win": 4.236157438292194,
+    "avg_loss": -2.222222222222216,
+    "profit_factor": 1.9062708472314926,
+    "total_pnl": 1.9197983841079402,
+    "max_dd": 2.22222222222221,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "强势股回调[SL3TP8]",
+    "strategy": "强势股回调",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 3,
+    "win_rate": 33.33333333333333,
+    "avg_pnl": 0.6666666666666666,
+    "avg_win": 8.0,
+    "avg_loss": -3.0,
+    "profit_factor": 1.3333333333333333,
+    "total_pnl": 1.6172000000000075,
+    "max_dd": 5.910000000000004,
+    "avg_hold": 3.6666666666666665
+  },
+  {
+    "name": "强势股回调[SL6TP15]",
+    "strategy": "强势股回调",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 3,
+    "win_rate": 33.33333333333333,
+    "avg_pnl": 1.0,
+    "avg_win": 15.0,
+    "avg_loss": -6.0,
+    "profit_factor": 1.25,
+    "total_pnl": 1.6139999999999821,
+    "max_dd": 11.640000000000006,
+    "avg_hold": 3.6666666666666665
+  },
+  {
+    "name": "强势股回调[SL4TP10]",
+    "strategy": "强势股回调",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 3,
+    "win_rate": 33.33333333333333,
+    "avg_pnl": 0.6666666666666666,
+    "avg_win": 10.0,
+    "avg_loss": -4.0,
+    "profit_factor": 1.25,
+    "total_pnl": 1.3759999999999994,
+    "max_dd": 7.8400000000000025,
+    "avg_hold": 3.6666666666666665
+  },
+  {
+    "name": "强势股回调[SL5TP12]",
+    "strategy": "强势股回调",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 3,
+    "win_rate": 33.33333333333333,
+    "avg_pnl": 0.6666666666666666,
+    "avg_win": 12.0,
+    "avg_loss": -5.0,
+    "profit_factor": 1.2,
+    "total_pnl": 1.0800000000000143,
+    "max_dd": 9.750000000000004,
+    "avg_hold": 3.6666666666666665
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':40})",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 40
+    },
+    "stop": {},
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": 0.5305755395683446,
+    "avg_win": 2.499999999999991,
+    "avg_loss": -1.438848920863302,
+    "profit_factor": 1.7375000000000027,
+    "total_pnl": 1.0251798561150993,
+    "max_dd": 1.4388489208633093,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "MACD金叉",
+    "strategy": "MACD金叉",
+    "params": {},
+    "stop": {},
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "MACD金叉[SL3TP8]",
+    "strategy": "MACD金叉",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "MACD金叉[SL4TP10]",
+    "strategy": "MACD金叉",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "MACD金叉[SL5TP12]",
+    "strategy": "MACD金叉",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "MACD金叉[SL6TP15]",
+    "strategy": "MACD金叉",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':15})",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 15
+    },
+    "stop": {},
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':15})[SL3TP8]",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 15
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':15})[SL4TP10]",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 15
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':15})[SL5TP12]",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 15
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':15})[SL6TP15]",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 15
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':20})",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 20
+    },
+    "stop": {},
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':20})[SL3TP8]",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 20
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':20})[SL4TP10]",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 20
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':20})[SL5TP12]",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 20
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':20})[SL6TP15]",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 20
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "盘整突破({'days':3,'max_range':5})",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 3,
+      "max_range": 5
+    },
+    "stop": {},
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "盘整突破({'days':3,'max_range':5})[SL3TP8]",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 3,
+      "max_range": 5
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "盘整突破({'days':3,'max_range':5})[SL4TP10]",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 3,
+      "max_range": 5
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "盘整突破({'days':3,'max_range':5})[SL5TP12]",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 3,
+      "max_range": 5
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "盘整突破({'days':3,'max_range':5})[SL6TP15]",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 3,
+      "max_range": 5
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "盘整突破({'days':5,'max_range':6})",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 5,
+      "max_range": 6
+    },
+    "stop": {},
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "盘整突破({'days':5,'max_range':6})[SL3TP8]",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 5,
+      "max_range": 6
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "盘整突破({'days':5,'max_range':6})[SL4TP10]",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 5,
+      "max_range": 6
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "盘整突破({'days':5,'max_range':6})[SL5TP12]",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 5,
+      "max_range": 6
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "盘整突破({'days':5,'max_range':6})[SL6TP15]",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 5,
+      "max_range": 6
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "涨停回封",
+    "strategy": "涨停回封",
+    "params": {},
+    "stop": {},
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "涨停回封[SL3TP8]",
+    "strategy": "涨停回封",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "涨停回封[SL4TP10]",
+    "strategy": "涨停回封",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "涨停回封[SL5TP12]",
+    "strategy": "涨停回封",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "涨停回封[SL6TP15]",
+    "strategy": "涨停回封",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "低位放量",
+    "strategy": "低位放量",
+    "params": {},
+    "stop": {},
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "低位放量[SL3TP8]",
+    "strategy": "低位放量",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "低位放量[SL4TP10]",
+    "strategy": "低位放量",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "低位放量[SL5TP12]",
+    "strategy": "低位放量",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "低位放量[SL6TP15]",
+    "strategy": "低位放量",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 0,
+    "win_rate": 0,
+    "avg_pnl": 0,
+    "total_pnl": 0,
+    "profit_factor": 0,
+    "max_dd": 0
+  },
+  {
+    "name": "放量突破({'vol_mult':1.2,'min_amp':2.0})[SL4TP10]",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 1.2,
+      "min_amp": 2.0
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 7,
+    "win_rate": 28.57142857142857,
+    "avg_pnl": 0.0,
+    "avg_win": 10.0,
+    "avg_loss": -4.0,
+    "profit_factor": 1.0,
+    "total_pnl": -1.3399035903999934,
+    "max_dd": 11.526400000000002,
+    "avg_hold": 3.4285714285714284
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':30})",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 30
+    },
+    "stop": {},
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -1.438848920863302,
+    "avg_win": 0,
+    "avg_loss": -1.438848920863302,
+    "profit_factor": 0.0,
+    "total_pnl": -1.4388489208633004,
+    "max_dd": 1.4388489208633004,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':35})",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 35
+    },
+    "stop": {},
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -1.438848920863302,
+    "avg_win": 0,
+    "avg_loss": -1.438848920863302,
+    "profit_factor": 0.0,
+    "total_pnl": -1.4388489208633004,
+    "max_dd": 1.4388489208633004,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "组合超跌共振",
+    "strategy": "组合超跌共振",
+    "params": {},
+    "stop": {},
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -1.438848920863302,
+    "avg_win": 0,
+    "avg_loss": -1.438848920863302,
+    "profit_factor": 0.0,
+    "total_pnl": -1.4388489208633004,
+    "max_dd": 1.4388489208633004,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "放量突破({'vol_mult':1.5,'min_amp':2.5})",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 1.5,
+      "min_amp": 2.5
+    },
+    "stop": {},
+    "count": 3,
+    "win_rate": 33.33333333333333,
+    "avg_pnl": 1.1936173842673068,
+    "avg_win": 28.374558303886914,
+    "avg_loss": -12.396853075542497,
+    "profit_factor": 1.144425852713642,
+    "total_pnl": -2.003301226227394,
+    "max_dd": 18.77314814814815,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "放量突破({'vol_mult':1.2,'min_amp':2.0})[SL5TP12]",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 1.2,
+      "min_amp": 2.0
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 7,
+    "win_rate": 28.57142857142857,
+    "avg_pnl": -0.14285714285714285,
+    "avg_win": 12.0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.96,
+    "total_pnl": -2.93691920000001,
+    "max_dd": 14.262500000000012,
+    "avg_hold": 3.5714285714285716
+  },
+  {
+    "name": "放量突破({'vol_mult':1.2,'min_amp':2.0})[SL6TP15]",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 1.2,
+      "min_amp": 2.0
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 7,
+    "win_rate": 28.57142857142857,
+    "avg_pnl": 0.0,
+    "avg_win": 15.0,
+    "avg_loss": -6.0,
+    "profit_factor": 1.0,
+    "total_pnl": -2.941193037600043,
+    "max_dd": 16.94160000000001,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':30})[SL3TP8]",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 30
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_pnl": -3.0000000000000027,
+    "max_dd": 3.0000000000000027,
+    "avg_hold": 2.0
+  },
+  {
+    "name": "盘整突破({'days':5,'max_range':8})[SL3TP8]",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 5,
+      "max_range": 8
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_pnl": -3.0000000000000027,
+    "max_dd": 3.0000000000000027,
+    "avg_hold": 1.0
+  },
+  {
+    "name": "组合超跌共振[SL3TP8]",
+    "strategy": "组合超跌共振",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_pnl": -3.0000000000000027,
+    "max_dd": 3.0000000000000027,
+    "avg_hold": 1.0
+  },
+  {
+    "name": "组合趋势回调[SL3TP8]",
+    "strategy": "组合趋势回调",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_pnl": -3.0000000000000027,
+    "max_dd": 3.0000000000000027,
+    "avg_hold": 3.0
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':40})[SL6TP15]",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 40
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 2,
+    "win_rate": 50.0,
+    "avg_pnl": -1.7500000000000044,
+    "avg_win": 2.499999999999991,
+    "avg_loss": -6.0,
+    "profit_factor": 0.4166666666666652,
+    "total_pnl": -3.650000000000009,
+    "max_dd": 6.000000000000001,
+    "avg_hold": 6.5
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':30})[SL4TP10]",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 30
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -4.0,
+    "avg_win": 0,
+    "avg_loss": -4.0,
+    "profit_factor": 0.0,
+    "total_pnl": -4.0000000000000036,
+    "max_dd": 4.0000000000000036,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "盘整突破({'days':5,'max_range':8})[SL4TP10]",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 5,
+      "max_range": 8
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -4.0,
+    "avg_win": 0,
+    "avg_loss": -4.0,
+    "profit_factor": 0.0,
+    "total_pnl": -4.0000000000000036,
+    "max_dd": 4.0000000000000036,
+    "avg_hold": 1.0
+  },
+  {
+    "name": "组合超跌共振[SL4TP10]",
+    "strategy": "组合超跌共振",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -4.0,
+    "avg_win": 0,
+    "avg_loss": -4.0,
+    "profit_factor": 0.0,
+    "total_pnl": -4.0000000000000036,
+    "max_dd": 4.0000000000000036,
+    "avg_hold": 1.0
+  },
+  {
+    "name": "组合趋势回调[SL4TP10]",
+    "strategy": "组合趋势回调",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -4.0,
+    "avg_win": 0,
+    "avg_loss": -4.0,
+    "profit_factor": 0.0,
+    "total_pnl": -4.0000000000000036,
+    "max_dd": 4.0000000000000036,
+    "avg_hold": 3.0
+  },
+  {
+    "name": "晨星形态[SL6TP15]",
+    "strategy": "晨星形态",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 4,
+    "win_rate": 25.0,
+    "avg_pnl": -0.75,
+    "avg_win": 15.0,
+    "avg_loss": -6.0,
+    "profit_factor": 0.8333333333333334,
+    "total_pnl": -4.482840000000021,
+    "max_dd": 11.640000000000006,
+    "avg_hold": 4.25
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':30})[SL5TP12]",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 30
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -5.0,
+    "avg_win": 0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.0,
+    "total_pnl": -5.000000000000004,
+    "max_dd": 5.000000000000004,
+    "avg_hold": 5.0
+  },
+  {
+    "name": "盘整突破({'days':5,'max_range':8})[SL5TP12]",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 5,
+      "max_range": 8
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -5.0,
+    "avg_win": 0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.0,
+    "total_pnl": -5.000000000000004,
+    "max_dd": 5.000000000000004,
+    "avg_hold": 2.0
+  },
+  {
+    "name": "组合超跌共振[SL5TP12]",
+    "strategy": "组合超跌共振",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -5.0,
+    "avg_win": 0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.0,
+    "total_pnl": -5.000000000000004,
+    "max_dd": 5.000000000000004,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "组合趋势回调[SL5TP12]",
+    "strategy": "组合趋势回调",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -5.0,
+    "avg_win": 0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.0,
+    "total_pnl": -5.000000000000004,
+    "max_dd": 5.000000000000004,
+    "avg_hold": 3.0
+  },
+  {
+    "name": "强势股回调",
+    "strategy": "强势股回调",
+    "params": {},
+    "stop": {},
+    "count": 3,
+    "win_rate": 33.33333333333333,
+    "avg_pnl": -1.6731453398133578,
+    "avg_win": 10.010482180293502,
+    "avg_loss": -7.514959099866788,
+    "profit_factor": 0.666037036746544,
+    "total_pnl": -5.909553743772822,
+    "max_dd": 14.471380916207021,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "阳线吞没[SL3TP8]",
+    "strategy": "阳线吞没",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 2,
+    "win_rate": 0.0,
+    "avg_pnl": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_pnl": -5.910000000000004,
+    "max_dd": 5.910000000000004,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "组合趋势回调",
+    "strategy": "组合趋势回调",
+    "params": {},
+    "stop": {},
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -5.943309966473644,
+    "avg_win": 0,
+    "avg_loss": -5.943309966473644,
+    "profit_factor": 0.0,
+    "total_pnl": -5.943309966473642,
+    "max_dd": 5.943309966473642,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':30})[SL6TP15]",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 30
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -6.0,
+    "avg_win": 0,
+    "avg_loss": -6.0,
+    "profit_factor": 0.0,
+    "total_pnl": -6.000000000000005,
+    "max_dd": 6.000000000000005,
+    "avg_hold": 5.0
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':35})[SL6TP15]",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 35
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -6.0,
+    "avg_win": 0,
+    "avg_loss": -6.0,
+    "profit_factor": 0.0,
+    "total_pnl": -6.000000000000005,
+    "max_dd": 6.000000000000005,
+    "avg_hold": 5.0
+  },
+  {
+    "name": "KDJ金叉低位({'j_max':30})[SL6TP15]",
+    "strategy": "KDJ金叉低位",
+    "params": {
+      "j_max": 30
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -6.0,
+    "avg_win": 0,
+    "avg_loss": -6.0,
+    "profit_factor": 0.0,
+    "total_pnl": -6.000000000000005,
+    "max_dd": 6.000000000000005,
+    "avg_hold": 5.0
+  },
+  {
+    "name": "盘整突破({'days':5,'max_range':8})[SL6TP15]",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 5,
+      "max_range": 8
+    },
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -6.0,
+    "avg_win": 0,
+    "avg_loss": -6.0,
+    "profit_factor": 0.0,
+    "total_pnl": -6.000000000000005,
+    "max_dd": 6.000000000000005,
+    "avg_hold": 3.0
+  },
+  {
+    "name": "组合超跌共振[SL6TP15]",
+    "strategy": "组合超跌共振",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -6.0,
+    "avg_win": 0,
+    "avg_loss": -6.0,
+    "profit_factor": 0.0,
+    "total_pnl": -6.000000000000005,
+    "max_dd": 6.000000000000005,
+    "avg_hold": 5.0
+  },
+  {
+    "name": "组合趋势回调[SL6TP15]",
+    "strategy": "组合趋势回调",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -6.0,
+    "avg_win": 0,
+    "avg_loss": -6.0,
+    "profit_factor": 0.0,
+    "total_pnl": -6.000000000000005,
+    "max_dd": 6.000000000000005,
+    "avg_hold": 3.0
+  },
+  {
+    "name": "盘整突破({'days':5,'max_range':8})",
+    "strategy": "盘整突破",
+    "params": {
+      "days": 5,
+      "max_range": 8
+    },
+    "stop": {},
+    "count": 1,
+    "win_rate": 0.0,
+    "avg_pnl": -6.020558002936849,
+    "avg_win": 0,
+    "avg_loss": -6.020558002936849,
+    "profit_factor": 0.0,
+    "total_pnl": -6.020558002936848,
+    "max_dd": 6.020558002936848,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "阳线吞没[SL4TP10]",
+    "strategy": "阳线吞没",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 2,
+    "win_rate": 0.0,
+    "avg_pnl": -4.0,
+    "avg_win": 0,
+    "avg_loss": -4.0,
+    "profit_factor": 0.0,
+    "total_pnl": -7.8400000000000025,
+    "max_dd": 7.8400000000000025,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':30})[SL3TP8]",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 30
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 3,
+    "win_rate": 0.0,
+    "avg_pnl": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_pnl": -8.732700000000005,
+    "max_dd": 8.732700000000005,
+    "avg_hold": 2.6666666666666665
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':35})[SL3TP8]",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 35
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 3,
+    "win_rate": 0.0,
+    "avg_pnl": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_pnl": -8.732700000000005,
+    "max_dd": 8.732700000000005,
+    "avg_hold": 2.6666666666666665
+  },
+  {
+    "name": "晨星形态[SL5TP12]",
+    "strategy": "晨星形态",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 5,
+    "win_rate": 20.0,
+    "avg_pnl": -1.6,
+    "avg_win": 12.0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.6,
+    "total_pnl": -8.775300000000009,
+    "max_dd": 14.262500000000012,
+    "avg_hold": 3.8
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':30})[SL5TP12]",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 30
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 2,
+    "win_rate": 0.0,
+    "avg_pnl": -5.0,
+    "avg_win": 0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.0,
+    "total_pnl": -9.750000000000004,
+    "max_dd": 9.750000000000004,
+    "avg_hold": 5.0
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':35})[SL5TP12]",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 35
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 2,
+    "win_rate": 0.0,
+    "avg_pnl": -5.0,
+    "avg_win": 0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.0,
+    "total_pnl": -9.750000000000004,
+    "max_dd": 9.750000000000004,
+    "avg_hold": 5.0
+  },
+  {
+    "name": "阳线吞没[SL5TP12]",
+    "strategy": "阳线吞没",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 2,
+    "win_rate": 0.0,
+    "avg_pnl": -5.0,
+    "avg_win": 0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.0,
+    "total_pnl": -9.750000000000004,
+    "max_dd": 9.750000000000004,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "支撑位反弹[SL4TP10]",
+    "strategy": "支撑位反弹",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 4,
+    "win_rate": 25.0,
+    "avg_pnl": -2.543881723812521,
+    "avg_win": 1.824473104749916,
+    "avg_loss": -4.0,
+    "profit_factor": 0.15203942539582635,
+    "total_pnl": -9.912222963195983,
+    "max_dd": 11.526400000000002,
+    "avg_hold": 5.25
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':40})[SL3TP8]",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 40
+    },
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 4,
+    "win_rate": 0.0,
+    "avg_pnl": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_pnl": -11.470719000000006,
+    "max_dd": 11.470719000000006,
+    "avg_hold": 3.0
+  },
+  {
+    "name": "支撑位反弹[SL3TP8]",
+    "strategy": "支撑位反弹",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 4,
+    "win_rate": 0.0,
+    "avg_pnl": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_pnl": -11.470719000000006,
+    "max_dd": 11.470719000000006,
+    "avg_hold": 2.5
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':30})[SL4TP10]",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 30
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 3,
+    "win_rate": 0.0,
+    "avg_pnl": -4.0,
+    "avg_win": 0,
+    "avg_loss": -4.0,
+    "profit_factor": 0.0,
+    "total_pnl": -11.526400000000002,
+    "max_dd": 11.526400000000002,
+    "avg_hold": 3.0
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':35})[SL4TP10]",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 35
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 3,
+    "win_rate": 0.0,
+    "avg_pnl": -4.0,
+    "avg_win": 0,
+    "avg_loss": -4.0,
+    "profit_factor": 0.0,
+    "total_pnl": -11.526400000000002,
+    "max_dd": 11.526400000000002,
+    "avg_hold": 3.0
+  },
+  {
+    "name": "阳线吞没[SL6TP15]",
+    "strategy": "阳线吞没",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 2,
+    "win_rate": 0.0,
+    "avg_pnl": -6.0,
+    "avg_win": 0,
+    "avg_loss": -6.0,
+    "profit_factor": 0.0,
+    "total_pnl": -11.640000000000006,
+    "max_dd": 11.640000000000006,
+    "avg_hold": 4.0
+  },
+  {
+    "name": "支撑位反弹[SL5TP12]",
+    "strategy": "支撑位反弹",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 4,
+    "win_rate": 25.0,
+    "avg_pnl": -3.293881723812521,
+    "avg_win": 1.824473104749916,
+    "avg_loss": -5.0,
+    "profit_factor": 0.12163154031666107,
+    "total_pnl": -12.698242371815061,
+    "max_dd": 14.262500000000017,
+    "avg_hold": 5.0
+  },
+  {
+    "name": "布林带反弹[SL3TP8]",
+    "strategy": "布林带反弹",
+    "params": {},
+    "stop": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "count": 6,
+    "win_rate": 0.0,
+    "avg_pnl": -2.5,
+    "avg_win": 0,
+    "avg_loss": -2.5,
+    "profit_factor": 0.0,
+    "total_pnl": -14.12659743000001,
+    "max_dd": 14.12659743000001,
+    "avg_hold": 2.8333333333333335
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':40})[SL5TP12]",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 40
+    },
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 3,
+    "win_rate": 0.0,
+    "avg_pnl": -5.0,
+    "avg_win": 0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.0,
+    "total_pnl": -14.262500000000012,
+    "max_dd": 14.262500000000012,
+    "avg_hold": 5.0
+  },
+  {
+    "name": "RSI超跌反弹({'rsi_thresh':40})[SL4TP10]",
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_thresh": 40
+    },
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 4,
+    "win_rate": 0.0,
+    "avg_pnl": -4.0,
+    "avg_win": 0,
+    "avg_loss": -4.0,
+    "profit_factor": 0.0,
+    "total_pnl": -15.065344000000003,
+    "max_dd": 15.065344000000003,
+    "avg_hold": 3.5
+  },
+  {
+    "name": "布林带反弹[SL4TP10]",
+    "strategy": "布林带反弹",
+    "params": {},
+    "stop": {
+      "stop_loss": 4,
+      "take_profit": 10
+    },
+    "count": 5,
+    "win_rate": 0.0,
+    "avg_pnl": -3.2,
+    "avg_win": 0,
+    "avg_loss": -3.2,
+    "profit_factor": 0.0,
+    "total_pnl": -15.065344000000003,
+    "max_dd": 15.065344000000003,
+    "avg_hold": 3.8
+  },
+  {
+    "name": "支撑位反弹[SL6TP15]",
+    "strategy": "支撑位反弹",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 4,
+    "win_rate": 25.0,
+    "avg_pnl": -4.043881723812521,
+    "avg_win": 1.824473104749916,
+    "avg_loss": -6.0,
+    "profit_factor": 0.1013596169305509,
+    "total_pnl": -15.426221830764408,
+    "max_dd": 16.941600000000008,
+    "avg_hold": 5.0
+  },
+  {
+    "name": "阳线吞没",
+    "strategy": "阳线吞没",
+    "params": {},
+    "stop": {},
+    "count": 2,
+    "win_rate": 0.0,
+    "avg_pnl": -8.113711311571064,
+    "avg_win": 0,
+    "avg_loss": -8.113711311571064,
+    "profit_factor": 0.0,
+    "total_pnl": -15.592161556056395,
+    "max_dd": 15.592161556056395,
+    "avg_hold": 6.0
+  },
+  {
+    "name": "布林带反弹",
+    "strategy": "布林带反弹",
+    "params": {},
+    "stop": {},
+    "count": 3,
+    "win_rate": 0.0,
+    "avg_pnl": -5.506229305372936,
+    "avg_win": 0,
+    "avg_loss": -5.506229305372936,
+    "profit_factor": 0.0,
+    "total_pnl": -15.821742557952433,
+    "max_dd": 15.821742557952433,
+    "avg_hold": 6.666666666666667
+  },
+  {
+    "name": "支撑位反弹",
+    "strategy": "支撑位反弹",
+    "params": {},
+    "stop": {},
+    "count": 3,
+    "win_rate": 33.33333333333333,
+    "avg_pnl": -5.699997744503178,
+    "avg_win": 1.824473104749916,
+    "avg_loss": -9.462233169129725,
+    "profit_factor": 0.09640816666314087,
+    "total_pnl": -17.334913386339235,
+    "max_dd": 18.816091954022987,
+    "avg_hold": 8.0
+  },
+  {
+    "name": "布林带反弹[SL5TP12]",
+    "strategy": "布林带反弹",
+    "params": {},
+    "stop": {
+      "stop_loss": 5,
+      "take_profit": 12
+    },
+    "count": 5,
+    "win_rate": 0.0,
+    "avg_pnl": -4.0,
+    "avg_win": 0,
+    "avg_loss": -4.0,
+    "profit_factor": 0.0,
+    "total_pnl": -18.549375000000012,
+    "max_dd": 18.549375000000012,
+    "avg_hold": 3.8
+  },
+  {
+    "name": "布林带反弹[SL6TP15]",
+    "strategy": "布林带反弹",
+    "params": {},
+    "stop": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "count": 5,
+    "win_rate": 0.0,
+    "avg_pnl": -4.8,
+    "avg_win": 0,
+    "avg_loss": -4.8,
+    "profit_factor": 0.0,
+    "total_pnl": -21.92510400000002,
+    "max_dd": 21.92510400000002,
+    "avg_hold": 3.8
+  },
+  {
+    "name": "放量突破({'vol_mult':1.2,'min_amp':2.0})",
+    "strategy": "放量突破",
+    "params": {
+      "vol_mult": 1.2,
+      "min_amp": 2.0
+    },
+    "stop": {},
+    "count": 6,
+    "win_rate": 16.666666666666664,
+    "avg_pnl": -3.5888761597687378,
+    "avg_win": 28.374558303886914,
+    "avg_loss": -9.981563052499869,
+    "profit_factor": 0.568539379146246,
+    "total_pnl": -24.63389596623653,
+    "max_dd": 26.59718705335539,
+    "avg_hold": 7.333333333333333
+  }
+]

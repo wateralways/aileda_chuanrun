@@ -1,0 +1,1562 @@
+[
+  {
+    "strategy": "放量突破",
+    "params": {
+      "vol_threshold": 2.0,
+      "min_amplitude": 3.0
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 15.00295333727111,
+    "avg_win": 15.00295333727111,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 15.002953337271109,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "放量突破(止损5%止盈10%)",
+    "params": {
+      "vol_threshold": 2.0,
+      "min_amplitude": 3.0,
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 10.0,
+    "avg_win": 10.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 10.000000000000009,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 7.0
+  },
+  {
+    "strategy": "放量突破(止损3%止盈8%)",
+    "params": {
+      "vol_threshold": 2.0,
+      "min_amplitude": 3.0,
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_return": -3.0000000000000027,
+    "max_drawdown": 3.0000000000000027,
+    "avg_hold_days": 2.0
+  },
+  {
+    "strategy": "放量突破(止损4%止盈12%)",
+    "params": {
+      "vol_threshold": 2.0,
+      "min_amplitude": 3.0,
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 12.0,
+    "avg_win": 12.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 12.00000000000001,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 7.0
+  },
+  {
+    "strategy": "放量突破(止损6%止盈15%)",
+    "params": {
+      "vol_threshold": 2.0,
+      "min_amplitude": 3.0,
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 15.0,
+    "avg_win": 15.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 14.999999999999991,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "放量突破(v1.5)",
+    "params": {
+      "vol_threshold": 1.5,
+      "min_amplitude": 2.5
+    },
+    "total_trades": 4,
+    "win_rate": 100.0,
+    "avg_return": 12.776432662888814,
+    "avg_win": 12.776432662888814,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 60.297113537940916,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "放量突破(v1.5)(止损5%止盈10%)",
+    "params": {
+      "vol_threshold": 1.5,
+      "min_amplitude": 2.5,
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 4,
+    "win_rate": 25.0,
+    "avg_return": -1.25,
+    "avg_win": 10.0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.6666666666666666,
+    "total_return": -5.6887500000000095,
+    "max_drawdown": 14.262500000000014,
+    "avg_hold_days": 2.5
+  },
+  {
+    "strategy": "放量突破(v1.5)(止损3%止盈8%)",
+    "params": {
+      "vol_threshold": 1.5,
+      "min_amplitude": 2.5,
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 4,
+    "win_rate": 50.0,
+    "avg_return": 2.5,
+    "avg_win": 8.0,
+    "avg_loss": -3.0,
+    "profit_factor": 2.6666666666666665,
+    "total_return": 9.746575999999996,
+    "max_drawdown": 5.910000000000012,
+    "avg_hold_days": 1.5
+  },
+  {
+    "strategy": "放量突破(v1.5)(止损4%止盈12%)",
+    "params": {
+      "vol_threshold": 1.5,
+      "min_amplitude": 2.5,
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 4,
+    "win_rate": 25.0,
+    "avg_return": 0.0,
+    "avg_win": 12.0,
+    "avg_loss": -4.0,
+    "profit_factor": 1.0,
+    "total_return": -0.9095679999999828,
+    "max_drawdown": 11.526399999999994,
+    "avg_hold_days": 2.0
+  },
+  {
+    "strategy": "放量突破(v1.5)(止损6%止盈15%)",
+    "params": {
+      "vol_threshold": 1.5,
+      "min_amplitude": 2.5,
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 4,
+    "win_rate": 50.0,
+    "avg_return": 4.5,
+    "avg_win": 15.0,
+    "avg_loss": -6.0,
+    "profit_factor": 2.5,
+    "total_return": 16.856099999999973,
+    "max_drawdown": 11.640000000000006,
+    "avg_hold_days": 4.5
+  },
+  {
+    "strategy": "放量突破(v3_amp2)",
+    "params": {
+      "vol_threshold": 3.0,
+      "min_amplitude": 2.0
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "放量突破(v3_amp2)(止损5%止盈10%)",
+    "params": {
+      "vol_threshold": 3.0,
+      "min_amplitude": 2.0,
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "放量突破(v3_amp2)(止损3%止盈8%)",
+    "params": {
+      "vol_threshold": 3.0,
+      "min_amplitude": 2.0,
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "放量突破(v3_amp2)(止损4%止盈12%)",
+    "params": {
+      "vol_threshold": 3.0,
+      "min_amplitude": 2.0,
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "放量突破(v3_amp2)(止损6%止盈15%)",
+    "params": {
+      "vol_threshold": 3.0,
+      "min_amplitude": 2.0,
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "RSI超跌反弹",
+    "params": {
+      "rsi_low": 35
+    },
+    "total_trades": 3,
+    "win_rate": 33.33333333333333,
+    "avg_return": -0.17122297621674434,
+    "avg_win": 15.994623655913983,
+    "avg_loss": -8.254146292282108,
+    "profit_factor": 0.9688841879910385,
+    "total_return": -3.0699606404088753,
+    "max_drawdown": 16.435748223017615,
+    "avg_hold_days": 5.666666666666667
+  },
+  {
+    "strategy": "RSI超跌反弹(止损5%止盈10%)",
+    "params": {
+      "rsi_low": 35,
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 4,
+    "win_rate": 25.0,
+    "avg_return": -0.11295180722891993,
+    "avg_win": 10.0,
+    "avg_loss": -3.483935742971893,
+    "profit_factor": 0.9567723342939466,
+    "total_return": -1.1735316265060525,
+    "max_drawdown": 10.157756024096418,
+    "avg_hold_days": 1.75
+  },
+  {
+    "strategy": "RSI超跌反弹(止损3%止盈8%)",
+    "params": {
+      "rsi_low": 35,
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 4,
+    "win_rate": 0.0,
+    "avg_return": -2.36295180722892,
+    "avg_win": 0,
+    "avg_loss": -2.36295180722892,
+    "profit_factor": 0.0,
+    "total_return": -9.145052259036168,
+    "max_drawdown": 9.145052259036168,
+    "avg_hold_days": 1.5
+  },
+  {
+    "strategy": "RSI超跌反弹(止损4%止盈12%)",
+    "params": {
+      "rsi_low": 35,
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 4,
+    "win_rate": 25.0,
+    "avg_return": 0.88704819277108,
+    "avg_win": 12.0,
+    "avg_loss": -2.8172690763052266,
+    "profit_factor": 1.4198146828225202,
+    "total_return": 2.7528481927710846,
+    "max_drawdown": 8.256385542168683,
+    "avg_hold_days": 1.75
+  },
+  {
+    "strategy": "RSI超跌反弹(止损6%止盈15%)",
+    "params": {
+      "rsi_low": 35,
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 4,
+    "win_rate": 25.0,
+    "avg_return": 0.63704819277108,
+    "avg_win": 15.0,
+    "avg_loss": -4.15060240963856,
+    "profit_factor": 1.2046444121915802,
+    "total_return": 1.1549006024096142,
+    "max_drawdown": 12.039216867469895,
+    "avg_hold_days": 2.25
+  },
+  {
+    "strategy": "RSI超跌反弹(宽松)",
+    "params": {
+      "rsi_low": 40
+    },
+    "total_trades": 3,
+    "win_rate": 33.33333333333333,
+    "avg_return": -0.17122297621674434,
+    "avg_win": 15.994623655913983,
+    "avg_loss": -8.254146292282108,
+    "profit_factor": 0.9688841879910385,
+    "total_return": -3.0699606404088753,
+    "max_drawdown": 16.435748223017615,
+    "avg_hold_days": 5.666666666666667
+  },
+  {
+    "strategy": "RSI超跌反弹(宽松)(止损5%止盈10%)",
+    "params": {
+      "rsi_low": 40,
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 4,
+    "win_rate": 25.0,
+    "avg_return": -0.11295180722891993,
+    "avg_win": 10.0,
+    "avg_loss": -3.483935742971893,
+    "profit_factor": 0.9567723342939466,
+    "total_return": -1.1735316265060525,
+    "max_drawdown": 10.157756024096418,
+    "avg_hold_days": 1.75
+  },
+  {
+    "strategy": "RSI超跌反弹(宽松)(止损3%止盈8%)",
+    "params": {
+      "rsi_low": 40,
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 4,
+    "win_rate": 0.0,
+    "avg_return": -2.36295180722892,
+    "avg_win": 0,
+    "avg_loss": -2.36295180722892,
+    "profit_factor": 0.0,
+    "total_return": -9.145052259036168,
+    "max_drawdown": 9.145052259036168,
+    "avg_hold_days": 1.5
+  },
+  {
+    "strategy": "RSI超跌反弹(宽松)(止损4%止盈12%)",
+    "params": {
+      "rsi_low": 40,
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 4,
+    "win_rate": 25.0,
+    "avg_return": 0.88704819277108,
+    "avg_win": 12.0,
+    "avg_loss": -2.8172690763052266,
+    "profit_factor": 1.4198146828225202,
+    "total_return": 2.7528481927710846,
+    "max_drawdown": 8.256385542168683,
+    "avg_hold_days": 1.75
+  },
+  {
+    "strategy": "RSI超跌反弹(宽松)(止损6%止盈15%)",
+    "params": {
+      "rsi_low": 40,
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 4,
+    "win_rate": 25.0,
+    "avg_return": 0.63704819277108,
+    "avg_win": 15.0,
+    "avg_loss": -4.15060240963856,
+    "profit_factor": 1.2046444121915802,
+    "total_return": 1.1549006024096142,
+    "max_drawdown": 12.039216867469895,
+    "avg_hold_days": 2.25
+  },
+  {
+    "strategy": "RSI超跌反弹(严格)",
+    "params": {
+      "rsi_low": 30
+    },
+    "total_trades": 2,
+    "win_rate": 0.0,
+    "avg_return": -8.254146292282108,
+    "avg_win": 0,
+    "avg_loss": -8.254146292282108,
+    "profit_factor": 0.0,
+    "total_return": -16.43574822301761,
+    "max_drawdown": 16.43574822301761,
+    "avg_hold_days": 4.5
+  },
+  {
+    "strategy": "RSI超跌反弹(严格)(止损5%止盈10%)",
+    "params": {
+      "rsi_low": 30,
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 3,
+    "win_rate": 0.0,
+    "avg_return": -3.483935742971893,
+    "avg_win": 0,
+    "avg_loss": -3.483935742971893,
+    "profit_factor": 0.0,
+    "total_return": -10.157756024096399,
+    "max_drawdown": 10.157756024096399,
+    "avg_hold_days": 1.3333333333333333
+  },
+  {
+    "strategy": "RSI超跌反弹(严格)(止损3%止盈8%)",
+    "params": {
+      "rsi_low": 30,
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 3,
+    "win_rate": 0.0,
+    "avg_return": -2.15060240963856,
+    "avg_win": 0,
+    "avg_loss": -2.15060240963856,
+    "profit_factor": 0.0,
+    "total_return": -6.335105421686771,
+    "max_drawdown": 6.335105421686771,
+    "avg_hold_days": 1.3333333333333333
+  },
+  {
+    "strategy": "RSI超跌反弹(严格)(止损4%止盈12%)",
+    "params": {
+      "rsi_low": 30,
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 3,
+    "win_rate": 0.0,
+    "avg_return": -2.8172690763052266,
+    "avg_win": 0,
+    "avg_loss": -2.8172690763052266,
+    "profit_factor": 0.0,
+    "total_return": -8.256385542168687,
+    "max_drawdown": 8.256385542168687,
+    "avg_hold_days": 1.3333333333333333
+  },
+  {
+    "strategy": "RSI超跌反弹(严格)(止损6%止盈15%)",
+    "params": {
+      "rsi_low": 30,
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 3,
+    "win_rate": 0.0,
+    "avg_return": -4.15060240963856,
+    "avg_win": 0,
+    "avg_loss": -4.15060240963856,
+    "profit_factor": 0.0,
+    "total_return": -12.039216867469904,
+    "max_drawdown": 12.039216867469904,
+    "avg_hold_days": 1.6666666666666667
+  },
+  {
+    "strategy": "跳空高开",
+    "params": {
+      "min_gap": 1.5,
+      "max_gap": 5.0
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 15.00295333727111,
+    "avg_win": 15.00295333727111,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 15.002953337271109,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "跳空高开(止损5%止盈10%)",
+    "params": {
+      "min_gap": 1.5,
+      "max_gap": 5.0,
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 10.0,
+    "avg_win": 10.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 10.000000000000009,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 7.0
+  },
+  {
+    "strategy": "跳空高开(止损3%止盈8%)",
+    "params": {
+      "min_gap": 1.5,
+      "max_gap": 5.0,
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_return": -3.0000000000000027,
+    "max_drawdown": 3.0000000000000027,
+    "avg_hold_days": 2.0
+  },
+  {
+    "strategy": "跳空高开(止损4%止盈12%)",
+    "params": {
+      "min_gap": 1.5,
+      "max_gap": 5.0,
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 12.0,
+    "avg_win": 12.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 12.00000000000001,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 7.0
+  },
+  {
+    "strategy": "跳空高开(止损6%止盈15%)",
+    "params": {
+      "min_gap": 1.5,
+      "max_gap": 5.0,
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 15.0,
+    "avg_win": 15.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 14.999999999999991,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "跳空高开(小)",
+    "params": {
+      "min_gap": 0.8,
+      "max_gap": 3.0
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 15.00295333727111,
+    "avg_win": 15.00295333727111,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 15.002953337271109,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "跳空高开(小)(止损5%止盈10%)",
+    "params": {
+      "min_gap": 0.8,
+      "max_gap": 3.0,
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 10.0,
+    "avg_win": 10.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 10.000000000000009,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 7.0
+  },
+  {
+    "strategy": "跳空高开(小)(止损3%止盈8%)",
+    "params": {
+      "min_gap": 0.8,
+      "max_gap": 3.0,
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_return": -3.0000000000000027,
+    "max_drawdown": 3.0000000000000027,
+    "avg_hold_days": 2.0
+  },
+  {
+    "strategy": "跳空高开(小)(止损4%止盈12%)",
+    "params": {
+      "min_gap": 0.8,
+      "max_gap": 3.0,
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 12.0,
+    "avg_win": 12.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 12.00000000000001,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 7.0
+  },
+  {
+    "strategy": "跳空高开(小)(止损6%止盈15%)",
+    "params": {
+      "min_gap": 0.8,
+      "max_gap": 3.0,
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 15.0,
+    "avg_win": 15.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 14.999999999999991,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "MACD金叉",
+    "params": {},
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 7.836990595611285,
+    "avg_win": 7.836990595611285,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 7.836990595611293,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "MACD金叉(止损5%止盈10%)",
+    "params": {
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 10.0,
+    "avg_win": 10.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 10.000000000000009,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "MACD金叉(止损3%止盈8%)",
+    "params": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 8.0,
+    "avg_win": 8.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 8.000000000000007,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 7.0
+  },
+  {
+    "strategy": "MACD金叉(止损4%止盈12%)",
+    "params": {
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 7.836990595611285,
+    "avg_win": 7.836990595611285,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 7.836990595611293,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "MACD金叉(止损6%止盈15%)",
+    "params": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 7.836990595611285,
+    "avg_win": 7.836990595611285,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 7.836990595611293,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "KDJ金叉",
+    "params": {
+      "j_max": 20
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "KDJ金叉(止损5%止盈10%)",
+    "params": {
+      "j_max": 20,
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "KDJ金叉(止损3%止盈8%)",
+    "params": {
+      "j_max": 20,
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "KDJ金叉(止损4%止盈12%)",
+    "params": {
+      "j_max": 20,
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "KDJ金叉(止损6%止盈15%)",
+    "params": {
+      "j_max": 20,
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "KDJ金叉(极低位)",
+    "params": {
+      "j_max": 10
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "KDJ金叉(极低位)(止损5%止盈10%)",
+    "params": {
+      "j_max": 10,
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "KDJ金叉(极低位)(止损3%止盈8%)",
+    "params": {
+      "j_max": 10,
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "KDJ金叉(极低位)(止损4%止盈12%)",
+    "params": {
+      "j_max": 10,
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "KDJ金叉(极低位)(止损6%止盈15%)",
+    "params": {
+      "j_max": 10,
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "布林带反弹",
+    "params": {},
+    "total_trades": 2,
+    "win_rate": 100.0,
+    "avg_return": 9.410746201966049,
+    "avg_win": 9.410746201966049,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 19.547587131367305,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "布林带反弹(止损5%止盈10%)",
+    "params": {
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 3,
+    "win_rate": 66.66666666666666,
+    "avg_return": 5.0,
+    "avg_win": 10.0,
+    "avg_loss": -5.0,
+    "profit_factor": 4.0,
+    "total_return": 14.949999999999996,
+    "max_drawdown": 5.000000000000014,
+    "avg_hold_days": 4.666666666666667
+  },
+  {
+    "strategy": "布林带反弹(止损3%止盈8%)",
+    "params": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 3,
+    "win_rate": 0.0,
+    "avg_return": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_return": -8.732700000000005,
+    "max_drawdown": 8.732700000000005,
+    "avg_hold_days": 1.6666666666666667
+  },
+  {
+    "strategy": "布林带反弹(止损4%止盈12%)",
+    "params": {
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 3,
+    "win_rate": 33.33333333333333,
+    "avg_return": 1.3333333333333333,
+    "avg_win": 12.0,
+    "avg_loss": -4.0,
+    "profit_factor": 1.5,
+    "total_return": 3.219200000000022,
+    "max_drawdown": 7.839999999999988,
+    "avg_hold_days": 2.3333333333333335
+  },
+  {
+    "strategy": "布林带反弹(止损6%止盈15%)",
+    "params": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 2,
+    "win_rate": 50.0,
+    "avg_return": 4.5,
+    "avg_win": 15.0,
+    "avg_loss": -6.0,
+    "profit_factor": 2.5,
+    "total_return": 8.099999999999996,
+    "max_drawdown": 5.9999999999999964,
+    "avg_hold_days": 4.0
+  },
+  {
+    "strategy": "盘整突破",
+    "params": {
+      "days": 5
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 24.821312540610787,
+    "avg_win": 24.821312540610787,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 24.821312540610798,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "盘整突破(止损5%止盈10%)",
+    "params": {
+      "days": 5,
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 10.0,
+    "avg_win": 10.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 10.000000000000009,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 1.0
+  },
+  {
+    "strategy": "盘整突破(止损3%止盈8%)",
+    "params": {
+      "days": 5,
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 8.0,
+    "avg_win": 8.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 8.000000000000007,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 1.0
+  },
+  {
+    "strategy": "盘整突破(止损4%止盈12%)",
+    "params": {
+      "days": 5,
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 12.0,
+    "avg_win": 12.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 12.00000000000001,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 2.0
+  },
+  {
+    "strategy": "盘整突破(止损6%止盈15%)",
+    "params": {
+      "days": 5,
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 15.0,
+    "avg_win": 15.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 14.999999999999991,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 4.0
+  },
+  {
+    "strategy": "盘整突破(3日)",
+    "params": {
+      "days": 3
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 24.821312540610787,
+    "avg_win": 24.821312540610787,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 24.821312540610798,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "盘整突破(3日)(止损5%止盈10%)",
+    "params": {
+      "days": 3,
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 10.0,
+    "avg_win": 10.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 10.000000000000009,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 1.0
+  },
+  {
+    "strategy": "盘整突破(3日)(止损3%止盈8%)",
+    "params": {
+      "days": 3,
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 8.0,
+    "avg_win": 8.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 8.000000000000007,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 1.0
+  },
+  {
+    "strategy": "盘整突破(3日)(止损4%止盈12%)",
+    "params": {
+      "days": 3,
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 12.0,
+    "avg_win": 12.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 12.00000000000001,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 2.0
+  },
+  {
+    "strategy": "盘整突破(3日)(止损6%止盈15%)",
+    "params": {
+      "days": 3,
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 15.0,
+    "avg_win": 15.0,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 14.999999999999991,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 4.0
+  },
+  {
+    "strategy": "强势股回调",
+    "params": {},
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -9.96629754453539,
+    "avg_win": 0,
+    "avg_loss": -9.96629754453539,
+    "profit_factor": 0.0,
+    "total_return": -9.966297544535397,
+    "max_drawdown": 9.966297544535397,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "强势股回调(止损5%止盈10%)",
+    "params": {
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -5.0,
+    "avg_win": 0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.0,
+    "total_return": -5.000000000000004,
+    "max_drawdown": 5.000000000000004,
+    "avg_hold_days": 1.0
+  },
+  {
+    "strategy": "强势股回调(止损3%止盈8%)",
+    "params": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_return": -3.0000000000000027,
+    "max_drawdown": 3.0000000000000027,
+    "avg_hold_days": 1.0
+  },
+  {
+    "strategy": "强势股回调(止损4%止盈12%)",
+    "params": {
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -4.0,
+    "avg_win": 0,
+    "avg_loss": -4.0,
+    "profit_factor": 0.0,
+    "total_return": -4.0000000000000036,
+    "max_drawdown": 4.0000000000000036,
+    "avg_hold_days": 1.0
+  },
+  {
+    "strategy": "强势股回调(止损6%止盈15%)",
+    "params": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -6.0,
+    "avg_win": 0,
+    "avg_loss": -6.0,
+    "profit_factor": 0.0,
+    "total_return": -6.000000000000005,
+    "max_drawdown": 6.000000000000005,
+    "avg_hold_days": 1.0
+  },
+  {
+    "strategy": "涨停回封",
+    "params": {},
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "涨停回封(止损5%止盈10%)",
+    "params": {
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "涨停回封(止损3%止盈8%)",
+    "params": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "涨停回封(止损4%止盈12%)",
+    "params": {
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "涨停回封(止损6%止盈15%)",
+    "params": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "组合策略1(量价+MACD)",
+    "params": {},
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "组合策略1(量价+MACD)(止损5%止盈10%)",
+    "params": {
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "组合策略1(量价+MACD)(止损3%止盈8%)",
+    "params": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "组合策略1(量价+MACD)(止损4%止盈12%)",
+    "params": {
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "组合策略1(量价+MACD)(止损6%止盈15%)",
+    "params": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 0,
+    "win_rate": 0,
+    "avg_return": 0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "profit_factor": 0,
+    "total_return": 0,
+    "max_drawdown": 0,
+    "avg_hold_days": 0
+  },
+  {
+    "strategy": "组合策略2(超跌共振)",
+    "params": {},
+    "total_trades": 1,
+    "win_rate": 100.0,
+    "avg_return": 5.416666666666668,
+    "avg_win": 5.416666666666668,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "total_return": 5.41666666666667,
+    "max_drawdown": 0.0,
+    "avg_hold_days": 8.0
+  },
+  {
+    "strategy": "组合策略2(超跌共振)(止损5%止盈10%)",
+    "params": {
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -5.0,
+    "avg_win": 0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.0,
+    "total_return": -5.000000000000004,
+    "max_drawdown": 5.000000000000004,
+    "avg_hold_days": 2.0
+  },
+  {
+    "strategy": "组合策略2(超跌共振)(止损3%止盈8%)",
+    "params": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_return": -3.0000000000000027,
+    "max_drawdown": 3.0000000000000027,
+    "avg_hold_days": 2.0
+  },
+  {
+    "strategy": "组合策略2(超跌共振)(止损4%止盈12%)",
+    "params": {
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -4.0,
+    "avg_win": 0,
+    "avg_loss": -4.0,
+    "profit_factor": 0.0,
+    "total_return": -4.0000000000000036,
+    "max_drawdown": 4.0000000000000036,
+    "avg_hold_days": 2.0
+  },
+  {
+    "strategy": "组合策略2(超跌共振)(止损6%止盈15%)",
+    "params": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -6.0,
+    "avg_win": 0,
+    "avg_loss": -6.0,
+    "profit_factor": 0.0,
+    "total_return": -6.000000000000005,
+    "max_drawdown": 6.000000000000005,
+    "avg_hold_days": 3.0
+  },
+  {
+    "strategy": "组合策略3(趋势回调)",
+    "params": {},
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -10.027223230490021,
+    "avg_win": 0,
+    "avg_loss": -10.027223230490021,
+    "profit_factor": 0.0,
+    "total_return": -10.027223230490023,
+    "max_drawdown": 10.027223230490023,
+    "avg_hold_days": 6.0
+  },
+  {
+    "strategy": "组合策略3(趋势回调)(止损5%止盈10%)",
+    "params": {
+      "stop_loss": 5,
+      "take_profit": 10
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -5.0,
+    "avg_win": 0,
+    "avg_loss": -5.0,
+    "profit_factor": 0.0,
+    "total_return": -5.000000000000004,
+    "max_drawdown": 5.000000000000004,
+    "avg_hold_days": 1.0
+  },
+  {
+    "strategy": "组合策略3(趋势回调)(止损3%止盈8%)",
+    "params": {
+      "stop_loss": 3,
+      "take_profit": 8
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -3.0,
+    "avg_win": 0,
+    "avg_loss": -3.0,
+    "profit_factor": 0.0,
+    "total_return": -3.0000000000000027,
+    "max_drawdown": 3.0000000000000027,
+    "avg_hold_days": 1.0
+  },
+  {
+    "strategy": "组合策略3(趋势回调)(止损4%止盈12%)",
+    "params": {
+      "stop_loss": 4,
+      "take_profit": 12
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -4.0,
+    "avg_win": 0,
+    "avg_loss": -4.0,
+    "profit_factor": 0.0,
+    "total_return": -4.0000000000000036,
+    "max_drawdown": 4.0000000000000036,
+    "avg_hold_days": 1.0
+  },
+  {
+    "strategy": "组合策略3(趋势回调)(止损6%止盈15%)",
+    "params": {
+      "stop_loss": 6,
+      "take_profit": 15
+    },
+    "total_trades": 1,
+    "win_rate": 0.0,
+    "avg_return": -6.0,
+    "avg_win": 0,
+    "avg_loss": -6.0,
+    "profit_factor": 0.0,
+    "total_return": -6.000000000000005,
+    "max_drawdown": 6.000000000000005,
+    "avg_hold_days": 2.0
+  }
+]
