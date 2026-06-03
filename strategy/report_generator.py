@@ -623,6 +623,9 @@ def generate_stats_and_strategy_page():
 
 def generate_strategy_html(stats):
     """生成动态策略说明页"""
+    # 检测是否在 strategy/ 子目录中运行
+    docs_dir = '../docs' if os.path.basename(os.getcwd()) == 'strategy' else 'docs'
+    os.makedirs(docs_dir, exist_ok=True)
     
     # 构建动态统计HTML（JS会覆盖这部分，但作为fallback）
     def stat_cell(name, key):
@@ -1067,9 +1070,10 @@ def generate_strategy_html(stats):
 </body>
 </html>'''
     
-    with open('docs/strategy.html', 'w', encoding='utf-8') as f:
+    strategy_path = f'{docs_dir}/strategy.html'
+    with open(strategy_path, 'w', encoding='utf-8') as f:
         f.write(html)
-    print(f"策略说明页已更新: docs/strategy.html")
+    print(f"策略说明页已更新: {strategy_path}")
 
 
 if __name__ == '__main__':
