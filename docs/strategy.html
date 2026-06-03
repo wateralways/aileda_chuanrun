@@ -44,6 +44,7 @@
         .badge.green { background: rgba(0,212,170,0.15); color: #00d4aa; }
         .badge.orange { background: rgba(255,170,0,0.15); color: #ffaa00; }
         .badge.red { background: rgba(255,80,80,0.15); color: #ff5050; }
+        .badge.blue { background: rgba(74,144,217,0.15); color: #4a90d9; }
         
         .rule-box {
             background: rgba(0,212,170,0.05);
@@ -67,6 +68,25 @@
         .nav a:hover { text-decoration: underline; }
         
         .footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        
+        .live-track {
+            background: linear-gradient(135deg, rgba(0,212,170,0.08) 0%, rgba(74,144,217,0.05) 100%);
+            border: 1px solid rgba(0,212,170,0.15);
+        }
+        .live-tag {
+            display: inline-block;
+            font-size: 0.7em;
+            padding: 2px 10px;
+            border-radius: 10px;
+            background: #00d4aa;
+            color: #0f0f23;
+            font-weight: 700;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        .live-tag::before { content: "● "; animation: blink 2s infinite; }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .stat-note { font-size: 0.8em; color: #888; margin-top: 8px; }
     </style>
 </head>
 <body>
@@ -77,24 +97,63 @@
         </div>
         
         <h1>📖 策略详细说明</h1>
-        <p class="subtitle">川润股份(002272) & 爱乐达(300696) 短线8天策略 | 回测区间：2026-01-05 ~ 2026-06-03</p>
+        <p class="subtitle">川润股份(002272) & 爱乐达(300696) & 高澜股份(300499) | 短线8天策略</p>
         
         <h2>一、策略总览</h2>
         <div class="card">
             <table>
-                <tr><th>维度</th><th>川润股份</th><th>爱乐达</th></tr>
-                <tr><td>策略类型</td><td><span class="badge green">趋势突破（追涨）</span></td><td><span class="badge orange">回调反弹（低吸）</span></td></tr>
-                <tr><td>核心策略</td><td class="highlight">放量突破</td><td class="highlight">连阴首阳</td></tr>
-                <tr><td>最佳持股</td><td class="highlight">8天（越久越好）</td><td class="highlight">严格8天</td></tr>
-                <tr><td>胜率</td><td>80~100%</td><td>50~62.5%</td></tr>
-                <tr><td>总收益</td><td class="highlight">+57~60%</td><td class="highlight">+24~25%</td></tr>
-                <tr><td>止损设置</td><td class="danger">❌ 不设置止损</td><td>✅ 可设4%止损</td></tr>
+                <tr><th>维度</th><th>川润股份</th><th>爱乐达</th><th>高澜股份</th></tr>
+                <tr><td>策略类型</td><td><span class="badge green">趋势突破（追涨）</span></td><td><span class="badge orange">回调反弹（低吸）</span></td><td><span class="badge blue">跳空高开（追涨）</span></td></tr>
+                <tr><td>核心策略</td><td class="highlight">放量突破</td><td class="highlight">连阴首阳</td><td class="highlight">跳空高开</td></tr>
+                <tr><td>最佳持股</td><td class="highlight">8天（越久越好）</td><td class="highlight">严格8天</td><td class="highlight">8天</td></tr>
+                <tr><td>历史回测胜率</td><td>80~100%</td><td>50~62.5%</td><td>77.8%</td></tr>
+                <tr><td>历史回测收益</td><td class="highlight">+57~60%</td><td class="highlight">+24~25%</td><td class="highlight">+102.68%</td></tr>
+                <tr><td>止损设置</td><td class="danger">❌ 不设置止损</td><td>✅ 可设4%止损</td><td>✅ 可设6%止损</td></tr>
             </table>
         </div>
         
-        <h2>二、川润股份策略详解</h2>
+        <h2>二、实盘跟踪 <span class="live-tag">LIVE</span></h2>
+        <p class="stat-note">以下数据基于策略实际触发后的真实表现，随每日扫描自动更新。部分信号尚未到8天卖出日，收益待结算。</p>
+        <div class="card live-track">
+            <table>
+                <tr><th>股票</th><th>触发次数</th><th>已完成</th><th>胜率</th><th>总收益</th><th>平均收益</th><th>最大盈利</th><th>最大亏损</th></tr>
+                <tr>
+                    <td><b>川润股份</b></td>
+                    <td><span data-stat="川润股份-total_trades">-</span></td>
+                    <td><span data-stat="川润股份-completed_trades">-</span></td>
+                    <td class="highlight"><span data-stat="川润股份-win_rate">-</span></td>
+                    <td class="highlight"><span data-stat="川润股份-total_return">-</span></td>
+                    <td><span data-stat="川润股份-avg_return">-</span></td>
+                    <td class="highlight"><span data-stat="川润股份-max_profit">-</span></td>
+                    <td class="danger"><span data-stat="川润股份-max_loss">-</span></td>
+                </tr>
+                <tr>
+                    <td><b>爱乐达</b></td>
+                    <td><span data-stat="爱乐达-total_trades">1</span></td>
+                    <td><span data-stat="爱乐达-completed_trades">-</span></td>
+                    <td class="highlight"><span data-stat="爱乐达-win_rate">-</span></td>
+                    <td class="highlight"><span data-stat="爱乐达-total_return">+0.00%</span></td>
+                    <td><span data-stat="爱乐达-avg_return">-</span></td>
+                    <td class="highlight"><span data-stat="爱乐达-max_profit">-</span></td>
+                    <td class="danger"><span data-stat="爱乐达-max_loss">-</span></td>
+                </tr>
+                <tr>
+                    <td><b>高澜股份</b></td>
+                    <td><span data-stat="高澜股份-total_trades">-</span></td>
+                    <td><span data-stat="高澜股份-completed_trades">-</span></td>
+                    <td class="highlight"><span data-stat="高澜股份-win_rate">-</span></td>
+                    <td class="highlight"><span data-stat="高澜股份-total_return">-</span></td>
+                    <td><span data-stat="高澜股份-avg_return">-</span></td>
+                    <td class="highlight"><span data-stat="高澜股份-max_profit">-</span></td>
+                    <td class="danger"><span data-stat="高澜股份-max_loss">-</span></td>
+                </tr>
+            </table>
+            <p class="stat-note">更新于 <span id="stats-update-time">2026-06-04 00:15:11</span></p>
+        </div>
         
-        <h3>2.1 首选策略：放量突破</h3>
+        <h2>三、川润股份策略详解</h2>
+        
+        <h3>3.1 首选策略：放量突破</h3>
         <div class="card">
             <p>回测表现：<span class="highlight">4次交易，胜率100%，总收益+60.30%</span></p>
             
@@ -122,7 +181,7 @@
             </table>
         </div>
         
-        <h3>2.2 备选策略：组合A</h3>
+        <h3>3.2 备选策略：组合A</h3>
         <div class="card">
             <p>回测表现：<span class="highlight">5次交易，胜率80%，总收益+57.69%</span></p>
             <p>在放量突破的基础上，增加两种底部反转形态作为补充信号：</p>
@@ -133,7 +192,7 @@
             <p>适合希望交易频率更高的场景，但会多1次小额亏损（-1.63%）。</p>
         </div>
         
-        <h3>2.3 持股天数敏感性</h3>
+        <h3>3.3 持股天数敏感性</h3>
         <div class="card">
             <table>
                 <tr><th>持股天数</th><th>交易次数</th><th>胜率</th><th>总收益</th></tr>
@@ -145,9 +204,9 @@
             <p class="warning">核心发现：持股7天后胜率跃升至100%，川润的趋势延续性极强。但超过8天交易次数减少，8天是最佳平衡点。</p>
         </div>
         
-        <h2>三、爱乐达策略详解</h2>
+        <h2>四、爱乐达策略详解</h2>
         
-        <h3>3.1 首选策略：连阴首阳</h3>
+        <h3>4.1 首选策略：连阴首阳</h3>
         <div class="card">
             <p>回测表现：<span class="highlight">8次交易，胜率62.5%，总收益+24.81%</span></p>
             
@@ -178,14 +237,14 @@
             </table>
         </div>
         
-        <h3>3.2 辅助策略：放量见底</h3>
+        <h3>4.2 辅助策略：放量见底</h3>
         <div class="card">
             <p>回测表现：<span class="highlight">1次交易，胜率100%，收益+28.37%</span></p>
             <p>信号极其稀少但精准——成交量创10日新高、价格不再跌、前期跌幅>5%。</p>
             <p>不要单独等这个信号，但当它出现时，<strong>可加大仓位</strong>。</p>
         </div>
         
-        <h3>3.3 持股天数敏感性</h3>
+        <h3>4.3 持股天数敏感性</h3>
         <div class="card">
             <table>
                 <tr><th>持股天数</th><th>交易次数</th><th>胜率</th><th>总收益</th></tr>
@@ -199,26 +258,9 @@
             <p class="warning">核心发现：持股1天巨亏-4.10%，说明爱乐达反弹次日极少立刻大涨。6天是死亡陷阱（-15.52%），8天是最佳甜蜜点。超过10天胜率暴跌。</p>
         </div>
         
-        <h2>四、关键禁忌</h2>
-        <div class="card">
-            <div class="rule-box danger">
-                <strong>❌ 川润股份绝对不能做的事：</strong><br>
-                1. 设置3-5%的止损 → 会让胜率从100%暴跌到33%，收益从+60%降到+3%<br>
-                2. 持股少于5天就卖 → 前3-5天可能浮亏或微利，第7天后才开始发力<br>
-                3. 突破当天没买，次日追高 → 策略要求收盘前确认信号后买入
-            </div>
-            <div class="rule-box danger">
-                <strong>❌ 爱乐达绝对不能做的事：</strong><br>
-                1. 追涨突破 → 放量突破策略在爱乐达上亏损-2%，5月11日追高亏18.77%<br>
-                2. 持股1-2天就卖 → 次日极少立刻大涨，必须拿满8天<br>
-                3. 在RSI>70时买入 → 高位反弹陷阱
-            </div>
-        </div>
+        <h2>五、高澜股份策略详解</h2>
         
-        
-        <h2>七、高澜股份策略详解</h2>
-        
-        <h3>7.1 首选策略：跳空高开</h3>
+        <h3>5.1 首选策略：跳空高开</h3>
         <div class="card">
             <p>回测表现：<span class="highlight">9次交易，胜率77.8%，总收益+102.68%，盈亏比10.64，最大回撤仅6.10%</span></p>
             
@@ -252,7 +294,7 @@
             <p class="warning">核心发现：7盈2亏，胜率77.8%。最大盈利+21.50%，最大亏损仅-6.10%。这是三只股票中<span class="highlight">风险收益比最佳</span>的策略。</p>
         </div>
         
-        <h3>7.2 持股天数敏感性</h3>
+        <h3>5.2 持股天数敏感性</h3>
         <div class="card">
             <table>
                 <tr><th>持股天数</th><th>交易次数</th><th>胜率</th><th>总收益</th></tr>
@@ -265,7 +307,7 @@
             <p class="warning">8天是最佳甜蜜点，超过后收益递减。</p>
         </div>
         
-        <h3>7.3 高澜股份 vs 川润股份</h3>
+        <h3>5.3 高澜股份 vs 川润股份</h3>
         <div class="card">
             <table>
                 <tr><th>维度</th><th>川润股份</th><th>高澜股份</th></tr>
@@ -278,7 +320,30 @@
             </table>
             <p>高澜股份虽然胜率略低，但<span class="highlight">交易次数更多、收益更高、回撤可控</span>，实盘可操作性更强。</p>
         </div>
-<h2>五、实盘操作SOP</h2>
+        
+        <h2>六、关键禁忌</h2>
+        <div class="card">
+            <div class="rule-box danger">
+                <strong>❌ 川润股份绝对不能做的事：</strong><br>
+                1. 设置3-5%的止损 → 会让胜率从100%暴跌到33%，收益从+60%降到+3%<br>
+                2. 持股少于5天就卖 → 前3-5天可能浮亏或微利，第7天后才开始发力<br>
+                3. 突破当天没买，次日追高 → 策略要求收盘前确认信号后买入
+            </div>
+            <div class="rule-box danger">
+                <strong>❌ 爱乐达绝对不能做的事：</strong><br>
+                1. 追涨突破 → 放量突破策略在爱乐达上亏损-2%，5月11日追高亏18.77%<br>
+                2. 持股1-2天就卖 → 次日极少立刻大涨，必须拿满8天<br>
+                3. 在RSI>70时买入 → 高位反弹陷阱
+            </div>
+            <div class="rule-box danger">
+                <strong>❌ 高澜股份绝对不能做的事：</strong><br>
+                1. 跳空>5%时追高 → 高开过多易回落，严格控制在0.8%~5%区间<br>
+                2. 缩量跳空买入 → 必须放量确认，否则假突破概率大增<br>
+                3. 持股少于5天 → 跳空高开后常有小回调，5天内卖出易亏损
+            </div>
+        </div>
+        
+        <h2>七、实盘操作SOP</h2>
         <div class="card">
             <h3>川润股份 SOP</h3>
             <div class="rule-box">
@@ -298,9 +363,19 @@
                 5. 买入后设日历提醒，8个交易日后卖出<br>
                 6. 如浮亏超4%，次日开盘考虑止损
             </div>
+            
+            <h3>高澜股份 SOP</h3>
+            <div class="rule-box">
+                1. 每天14:30开始观察<br>
+                2. 检查是否跳空高开0.8%~5%<br>
+                3. 确认收阳且放量（量比>1.2）<br>
+                4. 14:45确认信号后，收盘前买入<br>
+                5. 买入后设日历提醒，8个交易日后卖出<br>
+                6. 可设6%止损+15%止盈，降低回撤
+            </div>
         </div>
         
-        <h2>六、技术实现</h2>
+        <h2>八、技术实现</h2>
         <div class="card">
             <p><strong>自动扫描：</strong>GitHub Actions 每天北京时间14:45自动运行</p>
             <p><strong>数据来源：</strong>Tushare Pro API</p>
@@ -308,12 +383,46 @@
             <p><strong>策略代码：</strong><code>strategy/signals.py</code></p>
             <p><strong>扫描脚本：</strong><code>strategy/daily_scan.py</code></p>
             <p><strong>报告生成：</strong><code>strategy/report_generator.py</code></p>
+            <p><strong>信号跟踪：</strong>每次扫描自动计算8天后收益率，胜率实时更新</p>
         </div>
         
         <div class="footer">
-            <p>策略基于2026年1-6月历史数据回测 | 样本量有限，未来表现可能不同</p>
+            <p>策略基于2025-2026年历史数据回测 | 实盘跟踪数据随每日扫描自动更新</p>
             <p style="margin-top:10px; color:#ff5050;">⚠️ 本策略仅供学习研究，不构成投资建议。股市有风险，投资需谨慎。</p>
         </div>
     </div>
+    
+    <script>
+    // 动态加载最新统计（支持GitHub Pages跨域，通过fetch stats.json）
+    (function() {
+        // 尝试从相对路径加载 stats.json
+        fetch('../reports/stats.json')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('stats-update-time').textContent = data.update_time || '-';
+                const stocks = data.stocks || {};
+                const fmt = (v, suffix) => v != null ? (v > 0 && suffix === '%' ? '+' : '') + v + suffix : '-';
+                
+                Object.keys(stocks).forEach(name => {
+                    const s = stocks[name];
+                    const prefix = name + '-';
+                    const map = {
+                        [prefix + 'total_trades']: s.total_trades,
+                        [prefix + 'completed_trades']: s.completed_trades,
+                        [prefix + 'win_rate']: fmt(s.win_rate, '%'),
+                        [prefix + 'total_return']: fmt(s.total_return, '%'),
+                        [prefix + 'avg_return']: fmt(s.avg_return, '%'),
+                        [prefix + 'max_profit']: fmt(s.max_profit, '%'),
+                        [prefix + 'max_loss']: fmt(s.max_loss, '%'),
+                    };
+                    Object.keys(map).forEach(key => {
+                        const el = document.querySelector('[data-stat="' + key + '"]');
+                        if (el) el.textContent = map[key];
+                    });
+                });
+            })
+            .catch(e => console.log('stats.json 加载失败（可能首次运行或无数据）:', e));
+    })();
+    </script>
 </body>
 </html>
