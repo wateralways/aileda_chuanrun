@@ -338,7 +338,7 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
     </div>
     
     <div class="footer">
-        <p><a href="docs/strategy.html">📖 策略详细说明</a> | <a href="https://github.com/wateralways/aileda_chuanrun">📁 GitHub</a></p>
+        <p><a href="/aileda_chuanrun/docs/strategy.html">📖 策略详细说明</a> | <a href="https://github.com/wateralways/aileda_chuanrun">📁 GitHub</a></p>
         <p style="margin-top:6px; color:#444;">⚠️ 本报告仅供学习研究，不构成投资建议</p>
     </div>
 </body>
@@ -735,7 +735,7 @@ def generate_strategy_html(stats):
 <body>
     <div class="container">
         <div class="nav">
-            <a href="../reports/index.html">📊 返回日报</a>
+            <a href="/aileda_chuanrun/">📊 返回日报</a>
             <a href="https://github.com/wateralways/aileda_chuanrun">📁 GitHub仓库</a>
         </div>
         
