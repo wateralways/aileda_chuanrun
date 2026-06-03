@@ -330,7 +330,7 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
     
     <!-- 历史 -->
     <div class="history-section">
-        <div class="history-title">📈 近7日信号记录</div>
+        <div class="history-title">📈 近30天信号记录</div>
         <table class="history-table">
             <tr><th>日期</th><th>川润</th><th>爱乐达</th><th>高澜</th></tr>
             {{history_rows}}
@@ -504,7 +504,7 @@ def generate_report(json_path=None):
     
     # === 历史记录 ===
     history_rows = ""
-    files = sorted(glob.glob('reports/signal_*.json'), reverse=True)[:7]
+    files = sorted(glob.glob('reports/signal_*.json'), reverse=True)[:30]
     for f in files:
         try:
             with open(f, 'r', encoding='utf-8') as fp:
@@ -527,7 +527,18 @@ def generate_report(json_path=None):
     # === 组装 ===
     html = HTML_TEMPLATE
     html = html.replace('{{date}}', date)
-    html = html.replace('{{scan_time}}', scan_time.split()[1] if ' ' in scan_time else scan_time)
+    # 转北京时间
+    def to_bjt(st):
+        try:
+            dt = datetime.strptime(st, '%Y-%m-%d %H:%M:%S')
+            dt = dt.replace(hour=(dt.hour+8)%24)
+            if dt.hour < 8:  # 跨天了
+                dt = dt.replace(day=dt.day+1)
+            return dt.strftime('%H:%M:%S')
+        except Exception:
+            return st
+    bjt_time = to_bjt(scan_time)
+    html = html.replace('{{scan_time}}', bjt_time)
     html = html.replace('{{overview_chips}}', '\n'.join(overview_chips))
     html = html.replace('{{summary_card}}', summary_html)
     html = html.replace('{{stock_sections}}', '\n'.join(stock_sections))
