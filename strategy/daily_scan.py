@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-每日尾盘扫描 - 川润股份 & 爱乐达
-每天14:45运行，检查是否触发买入信号
+每日尾盘扫描 - 川润股份 & 爱乐达 & 高澜股份
+每天14:45运行，检查是否触发买入信号，并跟踪历史信号8天后收益
 """
 import tushare as ts
 import pandas as pd
 import json
 import os
-import sys
+import glob
 from datetime import datetime
 from signals import scan_signals
 
 # Tushare Token（优先从环境变量读取）
 TUSHARE_TOKEN = os.environ.get('TUSHARE_TOKEN', '701a94c30c5d1c7af41602c8ebd47b1ca7a2c49bfdd5419379f40c8d')
+
 
 def get_daily_data(ts_code, start_date='20260101', end_date=None):
     """获取日线数据"""
@@ -27,6 +28,59 @@ def get_daily_data(ts_code, start_date='20260101', end_date=None):
         return None
     df = df.sort_values('trade_date').reset_index(drop=True)
     return df
+
+
+def calculate_return(df, signal_date, buy_price):
+    """从df中计算signal_date后第8个交易日的收益"""
+    df = df.copy()
+    df['trade_date_str'] = df['trade_date'].astype(str)
+    mask = df['trade_date_str'] == signal_date.replace('-', '')
+    if not mask.any():
+        return None
+    idx = df[mask].index[0]
+    sell_idx = idx + 8
+    if sell_idx >= len(df):
+        return None  # 8天后数据还没到
+    sell_row = df.iloc[sell_idx]
+    sell_price = float(sell_row['close'])
+    return_pct = (sell_price - buy_price) / buy_price * 100
+    return {
+        'sell_date': str(sell_row['trade_date']),
+        'sell_price': round(sell_price, 2),
+        'return_pct': round(return_pct, 2)
+    }
+
+
+def update_signal_returns(name, code, df):
+    """更新该股票所有历史信号的8天后收益"""
+    files = sorted(glob.glob('reports/signal_*.json'))
+    for f in files:
+        try:
+            with open(f, 'r', encoding='utf-8') as fp:
+                data = json.load(fp)
+            modified = False
+            for stock in data['signals']:
+                if stock['name'] != name or not stock.get('has_signal'):
+                    continue
+                # 确保有 buy_price
+                if 'buy_price' not in stock:
+                    stock['buy_price'] = stock['latest_close']
+                    modified = True
+                # 计算8天后收益（如果还没算过）
+                if 'sell_price' not in stock:
+                    signal_date = data['date']
+                    result = calculate_return(df, signal_date, stock['buy_price'])
+                    if result:
+                        stock.update(result)
+                        modified = True
+                        print(f"  [收益] {name} {signal_date} 买入¥{stock['buy_price']:.2f} -> {result['sell_date']} 卖出¥{result['sell_price']:.2f} ({result['return_pct']:+.2f}%)")
+            if modified:
+                with open(f, 'w', encoding='utf-8') as fp:
+                    json.dump(data, fp, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"  [警告] 更新{f}失败: {e}")
+            continue
+
 
 def main():
     stocks = {
@@ -76,15 +130,21 @@ def main():
             }
         }
         
-        results['signals'].append(stock_result)
-        
+        # 如果触发信号，记录买入价
         if signals:
+            stock_result['buy_price'] = float(latest['close'])
             print(f"  [!] 触发信号: {len(signals)}个")
             for s in signals:
                 tag = "[主]" if s['type'] == 'primary' else "[极]" if s['type'] == 'high_confidence' else "[辅]"
                 print(f"    {tag} [{s['strategy']}] 置信度:{s['confidence']} - {s['description']}")
         else:
             print(f"  [OK] 无信号")
+        
+        results['signals'].append(stock_result)
+        
+        # 更新该股票所有历史信号的8天后收益
+        print(f"  更新历史信号收益...")
+        update_signal_returns(name, code, df)
         print()
     
     # 保存JSON结果
@@ -95,6 +155,7 @@ def main():
     print(f"结果已保存: {json_path}")
     
     return results
+
 
 if __name__ == '__main__':
     main()
