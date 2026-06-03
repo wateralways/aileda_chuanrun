@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-06-03 22:05:57",
+  "scan_time": "2026-06-03 15:23:15",
   "date": "2026-06-03",
   "signals": [
     {
@@ -46,6 +46,26 @@
         "bb_pct": 0.159,
         "price_position": 0.048,
         "up_days": 1,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "latest_date": "20260603",
+      "latest_close": 37.0,
+      "latest_pct_chg": 0.271,
+      "signals": [],
+      "has_signal": false,
+      "indicators": {
+        "vol_ratio": 0.94,
+        "rsi14": 36.63,
+        "rsi6": 14.87,
+        "macd": -0.861,
+        "amplitude": 4.95,
+        "bb_pct": 0.055,
+        "price_position": 0.148,
+        "up_days": 2,
         "down_days": 0
       }
     }
