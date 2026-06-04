@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-每日尾盘扫描 - 川润股份 & 爱乐达 & 高澜股份
-每天14:45运行，检查是否触发买入信号，并跟踪历史信号8天后收益
+每日盘后扫描 - 川润股份 & 爱乐达 & 高澜股份
+每天北京时间19:00运行，用Tushare完整数据确认信号，
+并对比盘中预警（14:45实时扫描结果），跟踪历史信号8天后收益
 """
 import tushare as ts
 import pandas as pd
@@ -82,6 +83,60 @@ def update_signal_returns(name, code, df):
             continue
 
 
+def load_realtime_data(date_str):
+    """加载当天的盘中预警数据"""
+    rt_path = f"reports/realtime_{date_str}.json"
+    if not os.path.exists(rt_path):
+        return None
+    try:
+        with open(rt_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"  [警告] 读取盘中预警失败: {e}")
+        return None
+
+
+def compare_with_realtime(stock_result, realtime_data):
+    """对比盘中预警和盘后确认"""
+    if not realtime_data:
+        return None
+    
+    # 找到对应股票的盘中预警
+    rt_stock = None
+    for s in realtime_data.get('signals', []):
+        if s['name'] == stock_result['name']:
+            rt_stock = s
+            break
+    
+    if not rt_stock:
+        return None
+    
+    daily_has = stock_result['has_signal']
+    realtime_has = rt_stock.get('has_signal', False)
+    
+    if daily_has and realtime_has:
+        match = "match"  # ✅ 盘中预警正确
+        note = "盘中预警与盘后确认一致"
+    elif daily_has and not realtime_has:
+        match = "missed"  # ⚠️ 盘中漏报
+        note = "盘中未预警，盘后确认有信号（尾盘异动）"
+    elif not daily_has and realtime_has:
+        match = "false_alarm"  # ⚠️ 盘中误报
+        note = "盘中有预警，盘后确认无信号（尾盘回落）"
+    else:
+        match = "match"  # ✅ 都观望
+        note = "盘中盘后均无信号"
+    
+    return {
+        'match': match,
+        'note': note,
+        'realtime_has_signal': realtime_has,
+        'realtime_time': realtime_data.get('scan_time', ''),
+        'realtime_signals': rt_stock.get('signals', []),
+        'realtime_indicators': rt_stock.get('indicators', {}),
+    }
+
+
 def main():
     stocks = {
         '川润股份': '002272.SZ',
@@ -89,13 +144,24 @@ def main():
         '高澜股份': '300499.SZ'
     }
     
+    today_str = datetime.now().strftime('%Y-%m-%d')
+    
     results = {
+        'type': 'daily',
         'scan_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        'date': datetime.now().strftime('%Y-%m-%d'),
+        'date': today_str,
+        'data_source': 'tushare',
         'signals': []
     }
     
-    print(f"===== 每日策略扫描 {results['scan_time']} =====\n")
+    # 加载盘中预警数据
+    realtime_data = load_realtime_data(today_str)
+    if realtime_data:
+        print(f"===== 每日策略扫描 {results['scan_time']} =====")
+        print(f"盘中预警时间: {realtime_data.get('scan_time', '未知')}\n")
+    else:
+        print(f"===== 每日策略扫描 {results['scan_time']} =====")
+        print("(未找到盘中预警数据)\n")
     
     for name, code in stocks.items():
         print(f"扫描 {name} ({code})...")
@@ -139,6 +205,13 @@ def main():
                 print(f"    {tag} [{s['strategy']}] 置信度:{s['confidence']} - {s['description']}")
         else:
             print(f"  [OK] 无信号")
+        
+        # 对比盘中预警
+        comparison = compare_with_realtime(stock_result, realtime_data)
+        if comparison:
+            stock_result['realtime_comparison'] = comparison
+            emoji = {"match": "✅", "missed": "⚠️", "false_alarm": "⚠️"}.get(comparison['match'], "")
+            print(f"  {emoji} 盘中对比: {comparison['note']}")
         
         results['signals'].append(stock_result)
         
