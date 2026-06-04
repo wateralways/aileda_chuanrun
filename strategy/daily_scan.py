@@ -10,7 +10,7 @@ import pandas as pd
 import json
 import os
 import glob
-from datetime import datetime
+from datetime import datetime, timezone
 from signals import scan_signals
 
 # Tushare Token（优先从环境变量读取）
@@ -22,7 +22,7 @@ def get_daily_data(ts_code, start_date='20260101', end_date=None):
     ts.set_token(TUSHARE_TOKEN)
     pro = ts.pro_api()
     if end_date is None:
-        end_date = datetime.now().strftime('%Y%m%d')
+        end_date = datetime.now(timezone.utc).replace(tzinfo=None).strftime('%Y%m%d')
     
     df = pro.daily(ts_code=ts_code, start_date=start_date, end_date=end_date)
     if df is None or df.empty:
@@ -144,11 +144,11 @@ def main():
         '高澜股份': '300499.SZ'
     }
     
-    today_str = datetime.now().strftime('%Y-%m-%d')
+    today_str = datetime.now(timezone.utc).replace(tzinfo=None).strftime('%Y-%m-%d')
     
     results = {
         'type': 'daily',
-        'scan_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'scan_time': datetime.now(timezone.utc).replace(tzinfo=None).strftime('%Y-%m-%d %H:%M:%S'),
         'date': today_str,
         'data_source': 'tushare',
         'signals': []
