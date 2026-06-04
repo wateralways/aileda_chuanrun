@@ -52,20 +52,17 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
         /* 信号总览条 */
         .overview {
             display: flex;
-            gap: 8px;
+            flex-direction: column;
+            gap: 10px;
             padding: 12px 16px;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
         }
-        .overview::-webkit-scrollbar { display: none; }
         
         .overview-chip {
-            flex: 0 0 auto;
-            min-width: 110px;
-            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
             border-radius: 14px;
-            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -77,29 +74,42 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
             background: rgba(255,255,255,0.03);
             border: 1.5px solid rgba(255,255,255,0.08);
         }
+        .overview-chip .chip-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+        .overview-chip .chip-emoji { font-size: 1.3em; }
         .overview-chip .chip-stock {
-            font-size: 0.85em;
+            font-size: 0.9em;
             font-weight: 700;
             color: #fff;
         }
         .overview-chip .chip-status {
             font-size: 0.7em;
-            margin-top: 4px;
+            margin-top: 2px;
             font-weight: 600;
         }
         .overview-chip.buy .chip-status { color: #00d4aa; }
         .overview-chip.wait .chip-status { color: #666; }
+        .overview-chip .chip-right {
+            text-align: right;
+        }
         .overview-chip .chip-price {
-            font-size: 0.65em;
-            color: #888;
+            font-size: 1.1em;
+            font-weight: 700;
+        }
+        .overview-chip .chip-pct {
+            font-size: 0.7em;
             margin-top: 2px;
         }
         .overview-chip .dot {
             position: absolute;
-            top: 8px;
-            right: 8px;
-            width: 8px;
-            height: 8px;
+            top: 10px;
+            right: 10px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
@@ -334,7 +344,7 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
         <table class="history-table">
             <tr><th>日期</th><th>川润</th><th>爱乐达</th><th>高澜</th></tr>
             {{history_rows}}
-        </table>
+        </table></div>
     </div>
     
     <div class="footer">
@@ -388,31 +398,43 @@ def generate_report(json_path=None):
         
         # 盘中预警对比标记 + 实时价格
         rt_badge = ''
-        rt_price_html = f'¥{stock["latest_close"]:.2f} ({stock["latest_pct_chg"]:+.2f}%)'
+        chip_price = f'¥{stock["latest_close"]:.2f}'
+        chip_pct = f'{stock["latest_pct_chg"]:+.2f}%'
+        chip_live = ''
         if rt_data:
             rt_stock = next((s for s in rt_data.get('signals', []) if s['name'] == stock['name']), None)
             if rt_stock:
                 rt_has = rt_stock.get('has_signal', False)
                 rt = rt_stock['realtime']
                 # 优先显示实时价格
-                rt_price_html = f'¥{rt["current"]:.2f} ({rt["pct_chg"]:+.2f}%) <span style="font-size:0.6em;color:#888">实时</span>'
+                chip_price = f'¥{rt["current"]:.2f}'
+                chip_pct = f'{rt["pct_chg"]:+.2f}%'
+                chip_live = '<span style="font-size:0.55em;color:#888;margin-left:4px;">实时</span>'
                 if is_buy and rt_has:
-                    rt_badge = '<div style="font-size:0.6em;color:#00d4aa;margin-top:2px;">✅ 盘中一致</div>'
+                    rt_badge = '<div style="font-size:0.65em;color:#00d4aa;margin-top:2px;">✅ 盘中一致</div>'
                     rt_match_count += 1
                 elif is_buy and not rt_has:
-                    rt_badge = '<div style="font-size:0.6em;color:#ffaa00;margin-top:2px;">⚠️ 尾盘异动</div>'
+                    rt_badge = '<div style="font-size:0.65em;color:#ffaa00;margin-top:2px;">⚠️ 尾盘异动</div>'
                 elif not is_buy and rt_has:
-                    rt_badge = '<div style="font-size:0.6em;color:#ffaa00;margin-top:2px;">⚠️ 尾盘回落</div>'
+                    rt_badge = '<div style="font-size:0.65em;color:#ffaa00;margin-top:2px;">⚠️ 尾盘回落</div>'
                 else:
                     rt_match_count += 1
         
         chip = f'''
         <div class="overview-chip {chip_class}">
             <div class="dot"></div>
-            <div class="chip-stock">{stock_emojis.get(stock['name'], '')} {stock['name']}</div>
-            <div class="chip-status">{status_text}</div>
-            {rt_badge}
-            <div class="chip-price">{rt_price_html}</div>
+            <div class="chip-left">
+                <span class="chip-emoji">{stock_emojis.get(stock['name'], '')}</span>
+                <div>
+                    <div class="chip-stock">{stock['name']}</div>
+                    <div class="chip-status">{status_text}</div>
+                    {rt_badge}
+                </div>
+            </div>
+            <div class="chip-right">
+                <div class="chip-price">{chip_price}{chip_live}</div>
+                <div class="chip-pct" style="color:{'#00d4aa' if stock['latest_pct_chg']>=0 else '#ff5050'}">{chip_pct}</div>
+            </div>
         </div>
         '''
         overview_chips.append(chip)
@@ -723,33 +745,35 @@ def generate_strategy_html(stats):
             color: #e0e0e0;
             line-height: 1.8;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        h1 { color: #00d4aa; font-size: 2.2em; margin-bottom: 10px; text-align: center; }
-        h2 { color: #4a90d9; font-size: 1.5em; margin: 40px 0 20px; border-bottom: 2px solid rgba(74,144,217,0.3); padding-bottom: 10px; }
-        h3 { color: #ffaa00; font-size: 1.2em; margin: 30px 0 15px; }
-        .subtitle { text-align: center; color: #888; margin-bottom: 40px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px 16px; }
+        h1 { color: #00d4aa; font-size: 1.6em; margin-bottom: 8px; text-align: center; }
+        h2 { color: #4a90d9; font-size: 1.15em; margin: 28px 0 14px; border-bottom: 2px solid rgba(74,144,217,0.3); padding-bottom: 8px; }
+        h3 { color: #ffaa00; font-size: 1em; margin: 20px 0 10px; }
+        .subtitle { text-align: center; color: #888; margin-bottom: 24px; font-size: 0.85em; }
         
         .card {
             background: rgba(255,255,255,0.05);
-            border-radius: 16px;
-            padding: 28px;
-            margin: 24px 0;
+            border-radius: 14px;
+            padding: 18px 16px;
+            margin: 14px 0;
             border: 1px solid rgba(255,255,255,0.08);
         }
         
-        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95em; }
-        th { text-align: left; padding: 12px; background: rgba(0,212,170,0.1); color: #00d4aa; font-weight: 600; }
-        td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-        tr:hover { background: rgba(255,255,255,0.03); }
+        /* 表格横向滚动 */
+        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -16px; padding: 0 16px; }
+        .table-wrap table { min-width: 100%; white-space: nowrap; font-size: 0.82em; border-collapse: collapse; }
+        .table-wrap th { text-align: left; padding: 10px 12px; background: rgba(0,212,170,0.1); color: #00d4aa; font-weight: 600; }
+        .table-wrap td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .table-wrap tr:hover { background: rgba(255,255,255,0.03); }
         
         .highlight { color: #00d4aa; font-weight: 600; }
         .warning { color: #ffaa00; }
         .danger { color: #ff5050; }
         .badge {
             display: inline-block;
-            padding: 3px 12px;
-            border-radius: 12px;
-            font-size: 0.85em;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 0.75em;
             font-weight: 600;
         }
         .badge.green { background: rgba(0,212,170,0.15); color: #00d4aa; }
@@ -757,28 +781,52 @@ def generate_strategy_html(stats):
         .badge.red { background: rgba(255,80,80,0.15); color: #ff5050; }
         .badge.blue { background: rgba(74,144,217,0.15); color: #4a90d9; }
         
+        /* 策略总览卡片 */
+        .strategy-cards { display: flex; flex-direction: column; gap: 12px; }
+        .st-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 14px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .st-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .st-emoji { font-size: 1.3em; }
+        .st-name { font-size: 1em; font-weight: 700; flex: 1; color: #fff; }
+        .st-body { display: flex; flex-direction: column; gap: 6px; }
+        .st-row { display: flex; justify-content: space-between; font-size: 0.85em; }
+        .st-label { color: #888; }
+        .st-val { font-weight: 600; }
+        
         .rule-box {
             background: rgba(0,212,170,0.05);
-            border-left: 4px solid #00d4aa;
-            padding: 16px 20px;
-            margin: 16px 0;
-            border-radius: 0 12px 12px 0;
+            border-left: 3px solid #00d4aa;
+            padding: 12px 14px;
+            margin: 12px 0;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.9em;
         }
         .rule-box.danger { background: rgba(255,80,80,0.05); border-left-color: #ff5050; }
         
         code {
             background: rgba(255,255,255,0.1);
-            padding: 2px 8px;
+            padding: 1px 6px;
             border-radius: 4px;
             font-family: "Fira Code", monospace;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
         
-        .nav { text-align: center; margin-bottom: 40px; }
-        .nav a { color: #4a90d9; text-decoration: none; margin: 0 15px; }
+        .nav { text-align: center; margin-bottom: 24px; font-size: 0.85em; }
+        .nav a { color: #4a90d9; text-decoration: none; margin: 0 10px; }
         .nav a:hover { text-decoration: underline; }
         
-        .footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9em; }
+        .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.8em; }
         
         .live-track {
             background: linear-gradient(135deg, rgba(0,212,170,0.08) 0%, rgba(74,144,217,0.05) 100%);
@@ -786,18 +834,18 @@ def generate_strategy_html(stats):
         }
         .live-tag {
             display: inline-block;
-            font-size: 0.7em;
-            padding: 2px 10px;
-            border-radius: 10px;
+            font-size: 0.65em;
+            padding: 2px 8px;
+            border-radius: 8px;
             background: #00d4aa;
             color: #0f0f23;
             font-weight: 700;
-            margin-left: 10px;
+            margin-left: 8px;
             vertical-align: middle;
         }
         .live-tag::before { content: "● "; animation: blink 2s infinite; }
         @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
-        .stat-note { font-size: 0.8em; color: #888; margin-top: 8px; }
+        .stat-note { font-size: 0.78em; color: #888; margin-top: 8px; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -812,21 +860,56 @@ def generate_strategy_html(stats):
         
         <h2>一、策略总览</h2>
         <div class="card">
-            <table>
-                <tr><th>维度</th><th>川润股份</th><th>爱乐达</th><th>高澜股份</th></tr>
-                <tr><td>策略类型</td><td><span class="badge green">趋势突破（追涨）</span></td><td><span class="badge orange">回调反弹（低吸）</span></td><td><span class="badge blue">跳空高开（追涨）</span></td></tr>
-                <tr><td>核心策略</td><td class="highlight">放量突破</td><td class="highlight">连阴首阳</td><td class="highlight">跳空高开</td></tr>
-                <tr><td>最佳持股</td><td class="highlight">8天（越久越好）</td><td class="highlight">严格8天</td><td class="highlight">8天</td></tr>
-                <tr><td>历史回测胜率</td><td>80~100%</td><td>50~62.5%</td><td>77.8%</td></tr>
-                <tr><td>历史回测收益</td><td class="highlight">+57~60%</td><td class="highlight">+24~25%</td><td class="highlight">+102.68%</td></tr>
-                <tr><td>止损设置</td><td class="danger">❌ 不设置止损</td><td>✅ 可设4%止损</td><td>✅ 可设6%止损</td></tr>
-            </table>
+            <div class="strategy-cards">
+                <div class="st-card">
+                    <div class="st-header">
+                        <span class="st-emoji">🔷</span>
+                        <span class="st-name">川润股份</span>
+                        <span class="badge green">趋势突破</span>
+                    </div>
+                    <div class="st-body">
+                        <div class="st-row"><span class="st-label">核心策略</span><span class="st-val highlight">放量突破</span></div>
+                        <div class="st-row"><span class="st-label">最佳持股</span><span class="st-val highlight">8天（越久越好）</span></div>
+                        <div class="st-row"><span class="st-label">历史回测胜率</span><span class="st-val">80~100%</span></div>
+                        <div class="st-row"><span class="st-label">历史回测收益</span><span class="st-val highlight">+57~60%</span></div>
+                        <div class="st-row"><span class="st-label">止损设置</span><span class="st-val danger">❌ 不设止损</span></div>
+                    </div>
+                </div>
+                <div class="st-card">
+                    <div class="st-header">
+                        <span class="st-emoji">🔶</span>
+                        <span class="st-name">爱乐达</span>
+                        <span class="badge orange">回调反弹</span>
+                    </div>
+                    <div class="st-body">
+                        <div class="st-row"><span class="st-label">核心策略</span><span class="st-val highlight">连阴首阳</span></div>
+                        <div class="st-row"><span class="st-label">最佳持股</span><span class="st-val highlight">严格8天</span></div>
+                        <div class="st-row"><span class="st-label">历史回测胜率</span><span class="st-val">50~62.5%</span></div>
+                        <div class="st-row"><span class="st-label">历史回测收益</span><span class="st-val highlight">+24~25%</span></div>
+                        <div class="st-row"><span class="st-label">止损设置</span><span class="st-val">✅ 可设4%止损</span></div>
+                    </div>
+                </div>
+                <div class="st-card">
+                    <div class="st-header">
+                        <span class="st-emoji">🔹</span>
+                        <span class="st-name">高澜股份</span>
+                        <span class="badge blue">跳空高开</span>
+                    </div>
+                    <div class="st-body">
+                        <div class="st-row"><span class="st-label">核心策略</span><span class="st-val highlight">跳空高开</span></div>
+                        <div class="st-row"><span class="st-label">最佳持股</span><span class="st-val highlight">8天</span></div>
+                        <div class="st-row"><span class="st-label">历史回测胜率</span><span class="st-val">77.8%</span></div>
+                        <div class="st-row"><span class="st-label">历史回测收益</span><span class="st-val highlight">+102.68%</span></div>
+                        <div class="st-row"><span class="st-label">止损设置</span><span class="st-val">✅ 可设6%止损</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <h2>二、实盘跟踪 <span class="live-tag">LIVE</span></h2>
         <p class="stat-note">以下数据基于策略实际触发后的真实表现，随每日扫描自动更新。部分信号尚未到8天卖出日，收益待结算。</p>
         <div class="card live-track">
-            <table>
+            <div class="table-wrap"><table>
                 <tr><th>股票</th><th>触发次数</th><th>已完成</th><th>胜率</th><th>总收益</th><th>平均收益</th><th>最大盈利</th><th>最大亏损</th></tr>
                 <tr>
                     <td><b>川润股份</b></td>
@@ -858,7 +941,7 @@ def generate_strategy_html(stats):
                     <td class="highlight">''' + stat_cell('高澜股份', 'max_profit') + '''</td>
                     <td class="danger">''' + stat_cell('高澜股份', 'max_loss') + '''</td>
                 </tr>
-            </table>
+            </table></div>
             <p class="stat-note">更新于 <span id="stats-update-time">''' + stats.get('update_time', '-') + '''</span></p>
         </div>
         
@@ -883,13 +966,13 @@ def generate_strategy_html(stats):
             </div>
             
             <p><strong>逐笔交易明细：</strong></p>
-            <table>
+            <div class="table-wrap"><table>
                 <tr><th>买入日期</th><th>买入价</th><th>卖出日期</th><th>卖出价</th><th>盈亏</th></tr>
                 <tr><td>2026-02-06</td><td>15.39</td><td>2026-02-26</td><td>19.21</td><td class="highlight">+24.82%</td></tr>
                 <tr><td>2026-02-27</td><td>19.47</td><td>2026-03-11</td><td>20.69</td><td>+6.27%</td></tr>
                 <tr><td>2026-03-30</td><td>18.06</td><td>2026-04-10</td><td>19.12</td><td>+5.87%</td></tr>
                 <tr><td>2026-05-07</td><td>19.86</td><td>2026-05-19</td><td>22.67</td><td class="highlight">+14.15%</td></tr>
-            </table>
+            </table></div>
         </div>
         
         <h3>3.2 备选策略：组合A</h3>
@@ -905,13 +988,13 @@ def generate_strategy_html(stats):
         
         <h3>3.3 持股天数敏感性</h3>
         <div class="card">
-            <table>
+            <div class="table-wrap"><table>
                 <tr><th>持股天数</th><th>交易次数</th><th>胜率</th><th>总收益</th></tr>
                 <tr><td>3天</td><td>4</td><td>50%</td><td>+7.25%</td></tr>
                 <tr><td>5天</td><td>4</td><td>75%</td><td>+14.96%</td></tr>
                 <tr><td class="highlight">8天</td><td class="highlight">4</td><td class="highlight">100%</td><td class="highlight">+60.30%</td></tr>
                 <tr><td>12天</td><td>3</td><td>100%</td><td>+80.12%</td></tr>
-            </table>
+            </table></div>
             <p class="warning">核心发现：持股7天后胜率跃升至100%，川润的趋势延续性极强。但超过8天交易次数减少，8天是最佳平衡点。</p>
         </div>
         
@@ -935,7 +1018,7 @@ def generate_strategy_html(stats):
             </div>
             
             <p><strong>逐笔交易明细：</strong></p>
-            <table>
+            <div class="table-wrap"><table>
                 <tr><th>买入日期</th><th>买入价</th><th>卖出日期</th><th>卖出价</th><th>盈亏</th></tr>
                 <tr><td>2026-01-19</td><td>31.10</td><td>2026-01-29</td><td>33.80</td><td>+8.68%</td></tr>
                 <tr><td>2026-02-03</td><td>32.00</td><td>2026-02-13</td><td>32.80</td><td>+2.50%</td></tr>
@@ -945,7 +1028,7 @@ def generate_strategy_html(stats):
                 <tr><td>2026-04-14</td><td>31.99</td><td>2026-04-24</td><td>37.64</td><td class="highlight">+17.66%</td></tr>
                 <tr><td>2026-04-27</td><td>38.61</td><td>2026-05-12</td><td>43.11</td><td class="highlight">+11.66%</td></tr>
                 <tr><td>2026-05-28</td><td>32.91</td><td>2026-06-03</td><td>29.74</td><td class="danger">-9.63%</td></tr>
-            </table>
+            </table></div>
         </div>
         
         <h3>4.2 辅助策略：放量见底</h3>
@@ -957,7 +1040,7 @@ def generate_strategy_html(stats):
         
         <h3>4.3 持股天数敏感性</h3>
         <div class="card">
-            <table>
+            <div class="table-wrap"><table>
                 <tr><th>持股天数</th><th>交易次数</th><th>胜率</th><th>总收益</th></tr>
                 <tr><td>1天</td><td>19</td><td>36.8%</td><td class="danger">-4.10%</td></tr>
                 <tr><td>3天</td><td>14</td><td>57.1%</td><td>+9.23%</td></tr>
@@ -965,7 +1048,7 @@ def generate_strategy_html(stats):
                 <tr><td class="highlight">8天</td><td class="highlight">8</td><td class="highlight">62.5%</td><td class="highlight">+24.81%</td></tr>
                 <tr><td>12天</td><td>6</td><td>33.3%</td><td>+8.82%</td></tr>
                 <tr><td>15天</td><td>6</td><td>16.7%</td><td class="danger">-12.84%</td></tr>
-            </table>
+            </table></div>
             <p class="warning">核心发现：持股1天巨亏-4.10%，说明爱乐达反弹次日极少立刻大涨。6天是死亡陷阱（-15.52%），8天是最佳甜蜜点。超过10天胜率暴跌。</p>
         </div>
         
@@ -989,7 +1072,7 @@ def generate_strategy_html(stats):
             </div>
             
             <p><strong>逐笔交易明细：</strong></p>
-            <table>
+            <div class="table-wrap"><table>
                 <tr><th>买入日期</th><th>买入价</th><th>卖出日期</th><th>卖出价</th><th>盈亏</th></tr>
                 <tr><td>2025-07-31</td><td>20.13</td><td>2025-08-12</td><td>22.83</td><td class="highlight">+13.41%</td></tr>
                 <tr><td>2025-09-10</td><td>29.38</td><td>2025-09-22</td><td>33.16</td><td class="highlight">+12.87%</td></tr>
@@ -1000,27 +1083,27 @@ def generate_strategy_html(stats):
                 <tr><td>2026-03-10</td><td>41.79</td><td>2026-03-20</td><td>39.24</td><td>-6.10%</td></tr>
                 <tr><td>2026-04-08</td><td>37.40</td><td>2026-04-20</td><td>44.97</td><td class="highlight">+20.24%</td></tr>
                 <tr><td>2026-05-06</td><td>40.48</td><td>2026-05-18</td><td>43.98</td><td>+8.65%</td></tr>
-            </table>
+            </table></div>
             
             <p class="warning">核心发现：7盈2亏，胜率77.8%。最大盈利+21.50%，最大亏损仅-6.10%。这是三只股票中<span class="highlight">风险收益比最佳</span>的策略。</p>
         </div>
         
         <h3>5.2 持股天数敏感性</h3>
         <div class="card">
-            <table>
+            <div class="table-wrap"><table>
                 <tr><th>持股天数</th><th>交易次数</th><th>胜率</th><th>总收益</th></tr>
                 <tr><td>3天</td><td>14</td><td>57.1%</td><td>+9.23%</td></tr>
                 <tr><td>5天</td><td>12</td><td>58.3%</td><td>+21.35%</td></tr>
                 <tr><td class="highlight">8天</td><td class="highlight">9</td><td class="highlight">77.8%</td><td class="highlight">+102.68%</td></tr>
                 <tr><td>10天</td><td>8</td><td>75.0%</td><td>+63.20%</td></tr>
                 <tr><td>12天</td><td>7</td><td>71.4%</td><td>+45.42%</td></tr>
-            </table>
+            </table></div>
             <p class="warning">8天是最佳甜蜜点，超过后收益递减。</p>
         </div>
         
         <h3>5.3 高澜股份 vs 川润股份</h3>
         <div class="card">
-            <table>
+            <div class="table-wrap"><table>
                 <tr><th>维度</th><th>川润股份</th><th>高澜股份</th></tr>
                 <tr><td>最佳策略</td><td>放量突破</td><td>跳空高开</td></tr>
                 <tr><td>胜率</td><td>100%</td><td>77.8%</td></tr>
@@ -1028,7 +1111,7 @@ def generate_strategy_html(stats):
                 <tr><td>最大回撤</td><td>0%</td><td>6.10%</td></tr>
                 <tr><td>盈亏比</td><td>∞</td><td>10.64</td></tr>
                 <tr><td>交易次数</td><td>4次</td><td>9次</td></tr>
-            </table>
+            </table></div>
             <p>高澜股份虽然胜率略低，但<span class="highlight">交易次数更多、收益更高、回撤可控</span>，实盘可操作性更强。</p>
         </div>
         
