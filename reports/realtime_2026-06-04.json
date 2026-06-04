@@ -1,0 +1,103 @@
+{
+  "type": "realtime",
+  "date": "2026-06-04",
+  "scan_time": "2026-06-04 07:54:22",
+  "data_source": "sina_realtime + tushare_history",
+  "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "realtime": {
+        "open": 19.42,
+        "high": 20.05,
+        "low": 19.2,
+        "current": 19.81,
+        "volume": 39639800,
+        "estimated_volume": 39639800,
+        "pct_chg": -0.1,
+        "date": "2026-06-04",
+        "time": "15:00:00"
+      },
+      "has_signal": false,
+      "signals": [],
+      "indicators": {
+        "vol_ratio": 4.75,
+        "rsi14": 53.02,
+        "rsi6": 30.32,
+        "macd": 0.213,
+        "amplitude": 4.43,
+        "bb_pct": 0.333,
+        "up_days": 0,
+        "down_days": 2
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "realtime": {
+        "open": 29.16,
+        "high": 30.98,
+        "low": 29.16,
+        "current": 30.33,
+        "volume": 6877596,
+        "estimated_volume": 6877596,
+        "pct_chg": 1.98,
+        "date": "2026-06-04",
+        "time": "15:35:30"
+      },
+      "has_signal": true,
+      "signals": [
+        {
+          "strategy": "连阴首阳",
+          "type": "primary",
+          "confidence": "高",
+          "description": "连续阴线后出现首根阳线，RSI<60"
+        },
+        {
+          "strategy": "放量见底",
+          "type": "high_confidence",
+          "confidence": "极高",
+          "description": "成交量创10日新高，价格止跌，前期跌幅>5%"
+        }
+      ],
+      "indicators": {
+        "vol_ratio": 4.79,
+        "rsi14": 17.19,
+        "rsi6": 38.29,
+        "macd": -1.678,
+        "amplitude": 6.24,
+        "bb_pct": 0.221,
+        "up_days": 2,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "realtime": {
+        "open": 36.42,
+        "high": 38.56,
+        "low": 36.18,
+        "current": 38.25,
+        "volume": 28274521,
+        "estimated_volume": 28274521,
+        "pct_chg": 3.57,
+        "date": "2026-06-04",
+        "time": "15:35:45"
+      },
+      "has_signal": false,
+      "signals": [],
+      "indicators": {
+        "vol_ratio": 4.8,
+        "rsi14": 40.42,
+        "rsi6": 33.46,
+        "macd": -0.972,
+        "amplitude": 6.58,
+        "bb_pct": 0.186,
+        "up_days": 3,
+        "down_days": 0
+      }
+    }
+  ]
+}
