@@ -20,7 +20,7 @@ import pandas as pd
 import json
 import os
 import tushare as ts
-from datetime import datetime
+from datetime import datetime, timezone
 from signals import scan_signals, calc_indicators
 
 TUSHARE_TOKEN = os.environ.get('TUSHARE_TOKEN', '701a94c30c5d1c7af41602c8ebd47b1ca7a2c49bfdd5419379f40c8d')
@@ -178,7 +178,7 @@ def merge_realtime_data(df_history, rt):
 
 
 def main():
-    now = datetime.now()
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
     today_str = now.strftime('%Y%m%d')
     
     results = {
