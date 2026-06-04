@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>⚡ 盘中实时预警 - 2026-06-04</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:#0a0a1a; color:#e0e0e0; min-height:100vh; padding-bottom:20px; }
+.topbar { background:linear-gradient(135deg,#1a1a3e,#0f0f2e); padding:14px 16px 10px; border-bottom:1px solid rgba(255,255,255,0.06); }
+.topbar-title { font-size:1.05em; font-weight:700; color:#ffaa00; display:flex; align-items:center; gap:6px; }
+.topbar-title::before { content:"●"; color:#ff5050; animation:blink 1.5s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.topbar-date { font-size:0.7em; color:#666; margin-top:3px; }
+
+.chips { display:flex; gap:8px; padding:10px 14px; overflow-x:auto; scrollbar-width:none; }
+.chips::-webkit-scrollbar { display:none; }
+.chip { flex:0 0 auto; min-width:110px; padding:12px 14px; border-radius:14px; text-align:center; position:relative; overflow:hidden; }
+.chip.buy { background:linear-gradient(135deg,rgba(0,212,170,0.15),rgba(0,150,100,0.1)); border:1.5px solid rgba(0,212,170,0.4); }
+.chip.wait { background:rgba(255,255,255,0.03); border:1.5px solid rgba(255,255,255,0.08); }
+.chip .dot { position:absolute; top:7px; right:7px; width:7px; height:7px; border-radius:50%; }
+.chip.buy .dot { background:#00d4aa; box-shadow:0 0 6px #00d4aa; animation:blink 2s infinite; }
+.chip.wait .dot { background:#444; }
+.chip .name { font-size:0.82em; font-weight:700; color:#fff; }
+.chip .status { font-size:0.68em; margin-top:3px; font-weight:600; }
+.chip.buy .status { color:#00d4aa; }
+.chip.wait .status { color:#666; }
+.chip .price { font-size:0.7em; margin-top:2px; }
+.chip .time { font-size:0.6em; color:#555; margin-top:2px; }
+
+.summary { margin:10px 14px; padding:12px 14px; border-radius:12px; background:rgba(255,170,0,0.06); border:1px solid rgba(255,170,0,0.15); }
+.summary-row { display:flex; justify-content:space-between; align-items:center; }
+.summary-label { font-size:0.78em; color:#888; }
+.summary-val { font-size:1.2em; font-weight:700; color:#ffaa00; }
+.summary-note { font-size:0.7em; color:#666; margin-top:6px; line-height:1.5; }
+
+.section { margin:12px 14px; border-radius:14px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); overflow:hidden; }
+.section.buy-active { border-color:rgba(0,212,170,0.25); box-shadow:0 0 15px rgba(0,212,170,0.04); }
+.sec-header { padding:12px 14px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.04); }
+.sec-header .code { font-size:0.65em; color:#888; background:rgba(255,255,255,0.06); padding:1px 6px; border-radius:6px; margin-left:4px; }
+.rt-price { font-size:1.1em; font-weight:700; text-align:right; }
+.rt-price.up { color:#00d4aa; }
+.rt-price.down { color:#ff5050; }
+.rt-price .pct { font-size:0.75em; display:block; margin-top:1px; }
+.sec-body { padding:12px 14px; }
+.sig-box { padding:10px 12px; border-radius:10px; margin-bottom:10px; font-size:0.85em; }
+.sig-box.buy { background:linear-gradient(135deg,rgba(0,212,170,0.1),rgba(0,100,80,0.08)); border:1px solid rgba(0,212,170,0.2); color:#00d4aa; }
+.sig-box.wait { background:rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.08); text-align:center; color:#666; padding:16px; }
+.ind-row { display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; }
+.ind-row::-webkit-scrollbar { display:none; }
+.ind { flex:0 0 auto; min-width:70px; text-align:center; padding:8px 10px; background:rgba(0,0,0,0.2); border-radius:8px; }
+.ind .label { font-size:0.6em; color:#888; margin-bottom:2px; }
+.ind .val { font-size:0.9em; font-weight:700; }
+
+.footer { text-align:center; padding:20px 14px; color:#555; font-size:0.7em; line-height:1.8; }
+.footer a { color:#4a90d9; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="topbar">
+    <div class="topbar-title">⚡ 盘中实时预警</div>
+    <div class="topbar-date">2026-06-04 15:57:49 | 数据来自新浪财经 | 实时刷新中</div>
+</div>
+<div class="chips">
+    
+        <div class="chip wait">
+            <div class="dot"></div>
+            <div class="name">🔷 川润股份</div>
+            <div class="status">⏳ 观望</div>
+            <div class="price" style="color:#ff5050">¥19.81 (-0.10%)</div>
+            <div class="time">15:00:00</div>
+        </div>
+        <div class="chip buy">
+            <div class="dot"></div>
+            <div class="name">🔶 爱乐达</div>
+            <div class="status">🔥 买入信号</div>
+            <div class="price" style="color:#00d4aa">¥30.33 (+1.98%)</div>
+            <div class="time">15:35:30</div>
+        </div>
+        <div class="chip wait">
+            <div class="dot"></div>
+            <div class="name">🔹 高澜股份</div>
+            <div class="status">⏳ 观望</div>
+            <div class="price" style="color:#00d4aa">¥38.25 (+3.57%)</div>
+            <div class="time">15:35:45</div>
+        </div>
+</div>
+<div class="summary">
+    <div class="summary-row">
+        <span class="summary-label">盘中可买入</span>
+        <span class="summary-val">1 只</span>
+    </div>
+    <div class="summary-note">
+        ⚠️ 盘中数据不完整，量比/振幅为估算值。<br>
+        成交量按交易时间比例修正（当前 15:57:49）。<br>
+        <b>正式信号以 19:00 盘后确认为准。</b>
+    </div>
+</div>
+
+        <div class="section ">
+            <div class="sec-header">
+                <div><b>川润股份</b> <span class="code">002272.SZ</span></div>
+                <div class="rt-price down">¥19.81 <span class="pct">-0.10%</span></div>
+            </div>
+            <div class="sec-body">
+                <div class="sig-box wait">⏳ 暂无买入信号</div>
+                <div class="ind-row">
+                    <div class="ind"><div class="label">开盘</div><div class="val">19.42</div></div>
+                    <div class="ind"><div class="label">最高</div><div class="val">20.05</div></div>
+                    <div class="ind"><div class="label">最低</div><div class="val">19.20</div></div>
+                    <div class="ind"><div class="label">量比(估)</div><div class="val">4.75</div></div>
+                    <div class="ind"><div class="label">RSI14</div><div class="val">53.0</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="section buy-active">
+            <div class="sec-header">
+                <div><b>爱乐达</b> <span class="code">300696.SZ</span></div>
+                <div class="rt-price up">¥30.33 <span class="pct">+1.98%</span></div>
+            </div>
+            <div class="sec-body">
+                <div class="sig-box buy"><b>🔥 连阴首阳</b> 连续阴线后出现首根阳线，RSI<60</div><div class="sig-box buy"><b>🔥 放量见底</b> 成交量创10日新高，价格止跌，前期跌幅>5%</div>
+                <div class="ind-row">
+                    <div class="ind"><div class="label">开盘</div><div class="val">29.16</div></div>
+                    <div class="ind"><div class="label">最高</div><div class="val">30.98</div></div>
+                    <div class="ind"><div class="label">最低</div><div class="val">29.16</div></div>
+                    <div class="ind"><div class="label">量比(估)</div><div class="val">4.79</div></div>
+                    <div class="ind"><div class="label">RSI14</div><div class="val">17.2</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="section ">
+            <div class="sec-header">
+                <div><b>高澜股份</b> <span class="code">300499.SZ</span></div>
+                <div class="rt-price up">¥38.25 <span class="pct">+3.57%</span></div>
+            </div>
+            <div class="sec-body">
+                <div class="sig-box wait">⏳ 暂无买入信号</div>
+                <div class="ind-row">
+                    <div class="ind"><div class="label">开盘</div><div class="val">36.42</div></div>
+                    <div class="ind"><div class="label">最高</div><div class="val">38.56</div></div>
+                    <div class="ind"><div class="label">最低</div><div class="val">36.18</div></div>
+                    <div class="ind"><div class="label">量比(估)</div><div class="val">4.80</div></div>
+                    <div class="ind"><div class="label">RSI14</div><div class="val">40.4</div></div>
+                </div>
+            </div>
+        </div>
+<div class="footer">
+    <p><a href="/aileda_chuanrun/docs/strategy.html">📖 策略说明</a> | <a href="https://github.com/wateralways/aileda_chuanrun">📁 GitHub</a></p>
+    <p style="margin-top:4px; color:#444;">⚠️ 本报告仅供学习研究，不构成投资建议</p>
+</div>
+</body>
+</html>
