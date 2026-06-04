@@ -360,11 +360,22 @@ def generate_report(json_path=None):
     date = data['date']
     scan_time = data['scan_time']
     
+    # === 加载盘中预警数据 ===
+    rt_data = None
+    rt_path = f"reports/realtime_{date}.json"
+    if os.path.exists(rt_path):
+        try:
+            with open(rt_path, 'r', encoding='utf-8') as f:
+                rt_data = json.load(f)
+        except Exception:
+            pass
+    
     # === 生成顶部总览芯片 ===
     overview_chips = []
     stock_emojis = {'川润股份': '🔷', '爱乐达': '🔶', '高澜股份': '🔹'}
     
     buy_count = 0
+    rt_match_count = 0
     for stock in data['signals']:
         is_buy = stock['has_signal']
         if is_buy:
@@ -375,17 +386,48 @@ def generate_report(json_path=None):
             chip_class = 'wait'
             status_text = '⏳ 观望'
         
+        # 盘中预警对比标记
+        rt_badge = ''
+        if rt_data:
+            rt_stock = next((s for s in rt_data.get('signals', []) if s['name'] == stock['name']), None)
+            if rt_stock:
+                rt_has = rt_stock.get('has_signal', False)
+                if is_buy and rt_has:
+                    rt_badge = '<div style="font-size:0.6em;color:#00d4aa;margin-top:2px;">✅ 盘中一致</div>'
+                    rt_match_count += 1
+                elif is_buy and not rt_has:
+                    rt_badge = '<div style="font-size:0.6em;color:#ffaa00;margin-top:2px;">⚠️ 尾盘异动</div>'
+                elif not is_buy and rt_has:
+                    rt_badge = '<div style="font-size:0.6em;color:#ffaa00;margin-top:2px;">⚠️ 尾盘回落</div>'
+                else:
+                    rt_match_count += 1
+        
         chip = f'''
         <div class="overview-chip {chip_class}">
             <div class="dot"></div>
             <div class="chip-stock">{stock_emojis.get(stock['name'], '')} {stock['name']}</div>
             <div class="chip-status">{status_text}</div>
+            {rt_badge}
             <div class="chip-price">¥{stock['latest_close']:.2f} ({stock['latest_pct_chg']:+.2f}%)</div>
         </div>
         '''
         overview_chips.append(chip)
     
     # === 生成汇总卡片 ===
+    rt_summary = ''
+    if rt_data:
+        rt_time = rt_data.get('scan_time', '').split()[1] if ' ' in rt_data.get('scan_time', '') else rt_data.get('scan_time', '')
+        try:
+            from datetime import datetime as _dt
+            rt_dt = _dt.strptime(rt_data.get('scan_time', ''), '%Y-%m-%d %H:%M:%S')
+            rt_dt = rt_dt.replace(hour=(rt_dt.hour+8)%24)
+            if rt_dt.hour < 8:
+                rt_dt = rt_dt.replace(day=rt_dt.day+1)
+            rt_time = rt_dt.strftime('%H:%M:%S')
+        except Exception:
+            pass
+        rt_summary = f'<div class="summary-detail" style="margin-top:8px;font-size:0.75em;color:#888;">⚡ 盘中预警 {rt_time} | {rt_match_count}/3 只状态一致</div>'
+    
     if buy_count > 0:
         summary_html = f'''
         <div class="summary-card">
@@ -396,6 +438,7 @@ def generate_report(json_path=None):
             <div class="summary-detail">
                 {{buy_list}}
             </div>
+            {rt_summary}
         </div>
         '''
         buy_names = [s['name'] for s in data['signals'] if s['has_signal']]
@@ -409,6 +452,7 @@ def generate_report(json_path=None):
                 <span class="summary-value wait">0 只</span>
             </div>
             <div class="summary-detail">今日3只股票均无买入信号，继续观望，等待机会。</div>
+            {rt_summary}
         </div>
         '''
     
@@ -422,6 +466,17 @@ def generate_report(json_path=None):
         # 价格颜色
         price_change_class = 'up' if stock['latest_pct_chg'] >= 0 else 'down'
         
+        # 盘中预警对比
+        rt_compare_html = ''
+        if 'realtime_comparison' in stock:
+            comp = stock['realtime_comparison']
+            match = comp.get('match', '')
+            note = comp.get('note', '')
+            if match == 'match':
+                rt_compare_html = f'<div style="font-size:0.75em;color:#00d4aa;margin:4px 0;">✅ {note}</div>'
+            else:
+                rt_compare_html = f'<div style="font-size:0.75em;color:#ffaa00;margin:4px 0;">⚠️ {note}</div>'
+        
         # 信号区域
         if is_buy:
             signals_html = ""
@@ -433,16 +488,18 @@ def generate_report(json_path=None):
                     <div class="signal-desc">{sig['description']}</div>
                 </div>
                 '''
-            action_tip = '''
+            action_tip = f'''
             <div class="action-tip">
                 <b>🎯 操作建议：</b>今日收盘前确认信号，可择机买入。买入后严格持有8个交易日。
+                {rt_compare_html}
             </div>
             '''
         else:
-            signals_html = '''
+            signals_html = f'''
             <div class="signal-area wait">
                 <div style="font-size:1.1em; margin-bottom:4px;">⏳ 暂无买入信号</div>
                 <div>今日未触发策略条件</div>
+                {rt_compare_html}
             </div>
             '''
             action_tip = ''
