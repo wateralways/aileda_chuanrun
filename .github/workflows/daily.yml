@@ -7,15 +7,6 @@ on:
     # 盘后确认: 每天 UTC 11:00 (北京时间 19:00)
     - cron: '0 11 * * 1-5'
   workflow_dispatch:
-    inputs:
-      scan_mode:
-        description: '扫描模式'
-        required: true
-        default: 'daily'
-        type: choice
-        options:
-          - realtime
-          - daily
 
 permissions:
   contents: write
@@ -47,7 +38,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
-    # ===== 盘中扫描 (14:45 BJT) =====
+    # ===== 盘中扫描 (14:45 BJT / workflow_dispatch) =====
     - name: 盘中扫描 (Realtime)
       if: github.event.schedule == '45 6 * * 1-5' || github.event_name == 'workflow_dispatch'
       env:
@@ -61,37 +52,14 @@ jobs:
       if: github.event.schedule == '45 6 * * 1-5' || github.event_name == 'workflow_dispatch'
       run: |
         cp strategy/reports/realtime_*.json reports/ 2>/dev/null || true
+        cp strategy/reports/realtime_*.html reports/ 2>/dev/null || true
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git add reports/
         git diff --cached --quiet || git commit -m "⚡ Realtime scan $(date +%Y-%m-%d)"
         git push || true
     
-    # 盘中扫描后部署实时报告到 Pages
-    - name: Prepare site for Pages (realtime)
-      if: github.event.schedule == '45 6 * * 1-5' || github.event_name == 'workflow_dispatch'
-      run: |
-        mkdir -p _site/reports _site/docs
-        cp strategy/reports/realtime_index.html _site/index.html
-        cp strategy/reports/realtime_*.html _site/reports/ 2>/dev/null || true
-        cp strategy/reports/realtime_*.json _site/reports/ 2>/dev/null || true
-        cp docs/strategy.html _site/docs/
-    
-    - name: Setup Pages (realtime)
-      if: github.event.schedule == '45 6 * * 1-5' || github.event_name == 'workflow_dispatch'
-      uses: actions/configure-pages@v5
-      
-    - name: Upload artifact (realtime)
-      if: github.event.schedule == '45 6 * * 1-5' || github.event_name == 'workflow_dispatch'
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: '_site'
-        
-    - name: Deploy to GitHub Pages (realtime)
-      if: github.event.schedule == '45 6 * * 1-5' || github.event_name == 'workflow_dispatch'
-      uses: actions/deploy-pages@v4
-    
-    # ===== 盘后确认 (19:00 BJT) =====
+    # ===== 盘后确认 (19:00 BJT / workflow_dispatch) =====
     - name: 盘后确认 (Daily)
       if: github.event.schedule == '0 11 * * 1-5' || github.event_name == 'workflow_dispatch'
       env:
@@ -107,6 +75,7 @@ jobs:
       run: |
         cp -r strategy/reports/* reports/ 2>/dev/null || true
     
+    # ===== 统一部署 Pages（只执行一次）=====
     - name: Prepare site for Pages
       if: github.event.schedule == '0 11 * * 1-5' || github.event_name == 'workflow_dispatch'
       run: |
@@ -115,8 +84,12 @@ jobs:
         cp reports/index.html _site/reports/
         cp reports/*.html _site/reports/ 2>/dev/null || true
         cp docs/strategy.html _site/docs/
-        # 根目录放一份最新报告作为首页
-        cp reports/index.html _site/index.html
+        # 根目录首页：优先用正式报告，如没有则用盘中报告
+        if [ -f reports/index.html ]; then
+          cp reports/index.html _site/index.html
+        elif [ -f reports/realtime_index.html ]; then
+          cp reports/realtime_index.html _site/index.html
+        fi
     
     - name: Setup Pages
       if: github.event.schedule == '0 11 * * 1-5' || github.event_name == 'workflow_dispatch'
