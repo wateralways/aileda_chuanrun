@@ -7,7 +7,7 @@ HTML报告生成器 - 生成每日策略扫描报告网页
 import json
 import os
 import glob
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 HTML_TEMPLATE = '''<!DOCTYPE html>
 <html lang="zh-CN">
@@ -418,11 +418,9 @@ def generate_report(json_path=None):
     if rt_data:
         rt_time = rt_data.get('scan_time', '').split()[1] if ' ' in rt_data.get('scan_time', '') else rt_data.get('scan_time', '')
         try:
-            from datetime import datetime as _dt
+            from datetime import datetime as _dt, timedelta as _td
             rt_dt = _dt.strptime(rt_data.get('scan_time', ''), '%Y-%m-%d %H:%M:%S')
-            rt_dt = rt_dt.replace(hour=(rt_dt.hour+8)%24)
-            if rt_dt.hour < 8:
-                rt_dt = rt_dt.replace(day=rt_dt.day+1)
+            rt_dt = rt_dt + _td(hours=8)
             rt_time = rt_dt.strftime('%H:%M:%S')
         except Exception:
             pass
@@ -584,13 +582,11 @@ def generate_report(json_path=None):
     # === 组装 ===
     html = HTML_TEMPLATE
     html = html.replace('{{date}}', date)
-    # 转北京时间
+    # UTC 转北京时间 (+8)
     def to_bjt(st):
         try:
             dt = datetime.strptime(st, '%Y-%m-%d %H:%M:%S')
-            dt = dt.replace(hour=(dt.hour+8)%24)
-            if dt.hour < 8:  # 跨天了
-                dt = dt.replace(day=dt.day+1)
+            dt = dt + timedelta(hours=8)
             return dt.strftime('%H:%M:%S')
         except Exception:
             return st
@@ -654,7 +650,7 @@ def generate_stats_and_strategy_page():
             continue
     
     # 汇总统计
-    stats = {'update_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 'stocks': {}}
+    stats = {'update_time': (datetime.now(timezone.utc).replace(tzinfo=None) + timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S'), 'stocks': {}}
     for name, s in stock_stats.items():
         total = len(s['trades'])
         completed = sum(1 for t in s['trades'] if 'return_pct' in t)
