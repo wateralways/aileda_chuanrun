@@ -67,6 +67,30 @@ jobs:
         git diff --cached --quiet || git commit -m "⚡ Realtime scan $(date +%Y-%m-%d)"
         git push || true
     
+    # 盘中扫描后部署实时报告到 Pages
+    - name: Prepare site for Pages (realtime)
+      if: github.event.schedule == '45 6 * * 1-5'
+      run: |
+        mkdir -p _site/reports _site/docs
+        cp strategy/reports/realtime_index.html _site/index.html
+        cp strategy/reports/realtime_*.html _site/reports/ 2>/dev/null || true
+        cp strategy/reports/realtime_*.json _site/reports/ 2>/dev/null || true
+        cp docs/strategy.html _site/docs/
+    
+    - name: Setup Pages (realtime)
+      if: github.event.schedule == '45 6 * * 1-5'
+      uses: actions/configure-pages@v5
+      
+    - name: Upload artifact (realtime)
+      if: github.event.schedule == '45 6 * * 1-5'
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '_site'
+        
+    - name: Deploy to GitHub Pages (realtime)
+      if: github.event.schedule == '45 6 * * 1-5'
+      uses: actions/deploy-pages@v4
+    
     # ===== 盘后确认 (19:00 BJT) =====
     - name: 盘后确认 (Daily)
       if: github.event.schedule == '0 11 * * 1-5' || github.event_name == 'workflow_dispatch'
