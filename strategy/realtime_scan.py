@@ -177,6 +177,175 @@ def merge_realtime_data(df_history, rt):
     return new_df
 
 
+def generate_realtime_html(data):
+    """生成盘中实时报告 HTML（简化版，部署到 Pages 首页）"""
+    date = data['date']
+    scan_time = data['scan_time']
+    stocks = data['signals']
+    
+    # 转换时间为北京时间显示
+    def bjt_time(utc_str):
+        try:
+            from datetime import datetime, timedelta
+            dt = datetime.strptime(utc_str, '%Y-%m-%d %H:%M:%S')
+            dt = dt + timedelta(hours=8)
+            return dt.strftime('%H:%M:%S')
+        except:
+            return utc_str
+    
+    # 构建芯片
+    chips = []
+    stock_emojis = {'川润股份': '🔷', '爱乐达': '🔶', '高澜股份': '🔹'}
+    buy_count = 0
+    for s in stocks:
+        is_buy = s['has_signal']
+        if is_buy:
+            buy_count += 1
+            chip_class = 'buy'
+            status = '🔥 买入信号'
+        else:
+            chip_class = 'wait'
+            status = '⏳ 观望'
+        rt = s['realtime']
+        pct = rt['pct_chg']
+        color = '#00d4aa' if pct >= 0 else '#ff5050'
+        chips.append(f'''
+        <div class="chip {chip_class}">
+            <div class="dot"></div>
+            <div class="name">{stock_emojis.get(s['name'],'')} {s['name']}</div>
+            <div class="status">{status}</div>
+            <div class="price" style="color:{color}">¥{rt['current']:.2f} ({pct:+.2f}%)</div>
+            <div class="time">{rt['time']}</div>
+        </div>''')
+    
+    # 构建股票详情
+    sections = []
+    for s in stocks:
+        rt = s['realtime']
+        ind = s['indicators']
+        is_buy = s['has_signal']
+        section_class = 'buy-active' if is_buy else ''
+        pct = rt['pct_chg']
+        price_color = 'up' if pct >= 0 else 'down'
+        
+        if is_buy:
+            sig_html = ""
+            for sig in s['signals']:
+                sig_html += f'''<div class="sig-box buy"><b>🔥 {sig['strategy']}</b> {sig['description']}</div>'''
+        else:
+            sig_html = '<div class="sig-box wait">⏳ 暂无买入信号</div>'
+        
+        sections.append(f'''
+        <div class="section {section_class}">
+            <div class="sec-header">
+                <div><b>{s['name']}</b> <span class="code">{s['code']}</span></div>
+                <div class="rt-price {price_color}">¥{rt['current']:.2f} <span class="pct">{pct:+.2f}%</span></div>
+            </div>
+            <div class="sec-body">
+                {sig_html}
+                <div class="ind-row">
+                    <div class="ind"><div class="label">开盘</div><div class="val">{rt['open']:.2f}</div></div>
+                    <div class="ind"><div class="label">最高</div><div class="val">{rt['high']:.2f}</div></div>
+                    <div class="ind"><div class="label">最低</div><div class="val">{rt['low']:.2f}</div></div>
+                    <div class="ind"><div class="label">量比(估)</div><div class="val">{ind.get('vol_ratio','-'):.2f}</div></div>
+                    <div class="ind"><div class="label">RSI14</div><div class="val">{ind.get('rsi14','-'):.1f}</div></div>
+                </div>
+            </div>
+        </div>''')
+    
+    html = f'''<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>⚡ 盘中实时预警 - {date}</title>
+<style>
+* {{ margin:0; padding:0; box-sizing:border-box; }}
+body {{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:#0a0a1a; color:#e0e0e0; min-height:100vh; padding-bottom:20px; }}
+.topbar {{ background:linear-gradient(135deg,#1a1a3e,#0f0f2e); padding:14px 16px 10px; border-bottom:1px solid rgba(255,255,255,0.06); }}
+.topbar-title {{ font-size:1.05em; font-weight:700; color:#ffaa00; display:flex; align-items:center; gap:6px; }}
+.topbar-title::before {{ content:"●"; color:#ff5050; animation:blink 1.5s infinite; }}
+@keyframes blink {{ 0%,100%{{opacity:1}} 50%{{opacity:0.3}} }}
+.topbar-date {{ font-size:0.7em; color:#666; margin-top:3px; }}
+
+.chips {{ display:flex; gap:8px; padding:10px 14px; overflow-x:auto; scrollbar-width:none; }}
+.chips::-webkit-scrollbar {{ display:none; }}
+.chip {{ flex:0 0 auto; min-width:110px; padding:12px 14px; border-radius:14px; text-align:center; position:relative; overflow:hidden; }}
+.chip.buy {{ background:linear-gradient(135deg,rgba(0,212,170,0.15),rgba(0,150,100,0.1)); border:1.5px solid rgba(0,212,170,0.4); }}
+.chip.wait {{ background:rgba(255,255,255,0.03); border:1.5px solid rgba(255,255,255,0.08); }}
+.chip .dot {{ position:absolute; top:7px; right:7px; width:7px; height:7px; border-radius:50%; }}
+.chip.buy .dot {{ background:#00d4aa; box-shadow:0 0 6px #00d4aa; animation:blink 2s infinite; }}
+.chip.wait .dot {{ background:#444; }}
+.chip .name {{ font-size:0.82em; font-weight:700; color:#fff; }}
+.chip .status {{ font-size:0.68em; margin-top:3px; font-weight:600; }}
+.chip.buy .status {{ color:#00d4aa; }}
+.chip.wait .status {{ color:#666; }}
+.chip .price {{ font-size:0.7em; margin-top:2px; }}
+.chip .time {{ font-size:0.6em; color:#555; margin-top:2px; }}
+
+.summary {{ margin:10px 14px; padding:12px 14px; border-radius:12px; background:rgba(255,170,0,0.06); border:1px solid rgba(255,170,0,0.15); }}
+.summary-row {{ display:flex; justify-content:space-between; align-items:center; }}
+.summary-label {{ font-size:0.78em; color:#888; }}
+.summary-val {{ font-size:1.2em; font-weight:700; color:#ffaa00; }}
+.summary-note {{ font-size:0.7em; color:#666; margin-top:6px; line-height:1.5; }}
+
+.section {{ margin:12px 14px; border-radius:14px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); overflow:hidden; }}
+.section.buy-active {{ border-color:rgba(0,212,170,0.25); box-shadow:0 0 15px rgba(0,212,170,0.04); }}
+.sec-header {{ padding:12px 14px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.04); }}
+.sec-header .code {{ font-size:0.65em; color:#888; background:rgba(255,255,255,0.06); padding:1px 6px; border-radius:6px; margin-left:4px; }}
+.rt-price {{ font-size:1.1em; font-weight:700; text-align:right; }}
+.rt-price.up {{ color:#00d4aa; }}
+.rt-price.down {{ color:#ff5050; }}
+.rt-price .pct {{ font-size:0.75em; display:block; margin-top:1px; }}
+.sec-body {{ padding:12px 14px; }}
+.sig-box {{ padding:10px 12px; border-radius:10px; margin-bottom:10px; font-size:0.85em; }}
+.sig-box.buy {{ background:linear-gradient(135deg,rgba(0,212,170,0.1),rgba(0,100,80,0.08)); border:1px solid rgba(0,212,170,0.2); color:#00d4aa; }}
+.sig-box.wait {{ background:rgba(255,255,255,0.02); border:1px dashed rgba(255,255,255,0.08); text-align:center; color:#666; padding:16px; }}
+.ind-row {{ display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; }}
+.ind-row::-webkit-scrollbar {{ display:none; }}
+.ind {{ flex:0 0 auto; min-width:70px; text-align:center; padding:8px 10px; background:rgba(0,0,0,0.2); border-radius:8px; }}
+.ind .label {{ font-size:0.6em; color:#888; margin-bottom:2px; }}
+.ind .val {{ font-size:0.9em; font-weight:700; }}
+
+.footer {{ text-align:center; padding:20px 14px; color:#555; font-size:0.7em; line-height:1.8; }}
+.footer a {{ color:#4a90d9; text-decoration:none; }}
+</style>
+</head>
+<body>
+<div class="topbar">
+    <div class="topbar-title">⚡ 盘中实时预警</div>
+    <div class="topbar-date">{date} {bjt_time(scan_time)} | 数据来自新浪财经 | 实时刷新中</div>
+</div>
+<div class="chips">
+    {''.join(chips)}
+</div>
+<div class="summary">
+    <div class="summary-row">
+        <span class="summary-label">盘中可买入</span>
+        <span class="summary-val">{buy_count} 只</span>
+    </div>
+    <div class="summary-note">
+        ⚠️ 盘中数据不完整，量比/振幅为估算值。<br>
+        成交量按交易时间比例修正（当前 {bjt_time(scan_time)}）。<br>
+        <b>正式信号以 19:00 盘后确认为准。</b>
+    </div>
+</div>
+{''.join(sections)}
+<div class="footer">
+    <p><a href="/aileda_chuanrun/docs/strategy.html">📖 策略说明</a> | <a href="https://github.com/wateralways/aileda_chuanrun">📁 GitHub</a></p>
+    <p style="margin-top:4px; color:#444;">⚠️ 本报告仅供学习研究，不构成投资建议</p>
+</div>
+</body>
+</html>'''
+    
+    # 保存盘中报告
+    with open('reports/realtime_index.html', 'w', encoding='utf-8') as f:
+        f.write(html)
+    
+    print(f"盘中实时报告已生成: reports/realtime_index.html")
+
+
+
 def main():
     now = datetime.now(timezone.utc).replace(tzinfo=None)
     today_str = now.strftime('%Y%m%d')
@@ -273,8 +442,10 @@ def main():
         json.dump(results, f, ensure_ascii=False, indent=2)
     print(f"\n盘中预警已保存: {json_path}")
     
+    # 生成盘中实时报告 HTML
+    generate_realtime_html(results)
+    
     return results
-
 
 if __name__ == '__main__':
     main()
