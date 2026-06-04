@@ -1,6 +1,6 @@
 {
   "type": "daily",
-  "scan_time": "2026-06-04 08:02:10",
+  "scan_time": "2026-06-04 08:21:38",
   "date": "2026-06-04",
   "data_source": "tushare",
   "signals": [
@@ -27,7 +27,7 @@
         "match": "match",
         "note": "盘中盘后均无信号",
         "realtime_has_signal": false,
-        "realtime_time": "2026-06-04 08:02:04",
+        "realtime_time": "2026-06-04 08:21:33",
         "realtime_signals": [],
         "realtime_indicators": {
           "vol_ratio": 4.75,
@@ -72,7 +72,7 @@
         "match": "match",
         "note": "盘中预警与盘后确认一致",
         "realtime_has_signal": true,
-        "realtime_time": "2026-06-04 08:02:04",
+        "realtime_time": "2026-06-04 08:21:33",
         "realtime_signals": [
           {
             "strategy": "连阴首阳",
@@ -122,7 +122,7 @@
         "match": "match",
         "note": "盘中盘后均无信号",
         "realtime_has_signal": false,
-        "realtime_time": "2026-06-04 08:02:04",
+        "realtime_time": "2026-06-04 08:21:33",
         "realtime_signals": [],
         "realtime_indicators": {
           "vol_ratio": 4.8,
