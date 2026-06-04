@@ -386,12 +386,16 @@ def generate_report(json_path=None):
             chip_class = 'wait'
             status_text = '⏳ 观望'
         
-        # 盘中预警对比标记
+        # 盘中预警对比标记 + 实时价格
         rt_badge = ''
+        rt_price_html = f'¥{stock["latest_close"]:.2f} ({stock["latest_pct_chg"]:+.2f}%)'
         if rt_data:
             rt_stock = next((s for s in rt_data.get('signals', []) if s['name'] == stock['name']), None)
             if rt_stock:
                 rt_has = rt_stock.get('has_signal', False)
+                rt = rt_stock['realtime']
+                # 优先显示实时价格
+                rt_price_html = f'¥{rt["current"]:.2f} ({rt["pct_chg"]:+.2f}%) <span style="font-size:0.6em;color:#888">实时</span>'
                 if is_buy and rt_has:
                     rt_badge = '<div style="font-size:0.6em;color:#00d4aa;margin-top:2px;">✅ 盘中一致</div>'
                     rt_match_count += 1
@@ -408,7 +412,7 @@ def generate_report(json_path=None):
             <div class="chip-stock">{stock_emojis.get(stock['name'], '')} {stock['name']}</div>
             <div class="chip-status">{status_text}</div>
             {rt_badge}
-            <div class="chip-price">¥{stock['latest_close']:.2f} ({stock['latest_pct_chg']:+.2f}%)</div>
+            <div class="chip-price">{rt_price_html}</div>
         </div>
         '''
         overview_chips.append(chip)
@@ -461,8 +465,19 @@ def generate_report(json_path=None):
         is_buy = stock['has_signal']
         section_class = 'buy-active' if is_buy else ''
         
-        # 价格颜色
-        price_change_class = 'up' if stock['latest_pct_chg'] >= 0 else 'down'
+        # 优先使用实时价格（如有）
+        display_price = stock['latest_close']
+        display_pct = stock['latest_pct_chg']
+        price_label = ''
+        if rt_data:
+            rt_stock = next((s for s in rt_data.get('signals', []) if s['name'] == stock['name']), None)
+            if rt_stock:
+                rt = rt_stock['realtime']
+                display_price = rt['current']
+                display_pct = rt['pct_chg']
+                price_label = ' <span style="font-size:0.6em;color:#888">(实时)</span>'
+        
+        price_change_class = 'up' if display_pct >= 0 else 'down'
         
         # 盘中预警对比
         rt_compare_html = ''
@@ -523,8 +538,8 @@ def generate_report(json_path=None):
                     </div>
                 </div>
                 <div class="stock-price">
-                    <div class="stock-price-value">¥{stock['latest_close']:.2f}</div>
-                    <div class="stock-price-change {price_change_class}">{stock['latest_pct_chg']:+.2f}%</div>
+                    <div class="stock-price-value">¥{display_price:.2f}{price_label}</div>
+                    <div class="stock-price-change {price_change_class}">{display_pct:+.2f}%</div>
                 </div>
             </div>
             <div class="stock-body">
