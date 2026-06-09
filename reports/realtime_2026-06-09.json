@@ -1,7 +1,7 @@
 {
   "type": "realtime",
   "date": "2026-06-09",
-  "scan_time": "2026-06-09 02:40:24",
+  "scan_time": "2026-06-09 10:24:07",
   "data_source": "sina_realtime + tushare_history",
   "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
   "signals": [
@@ -10,14 +10,14 @@
       "code": "002272.SZ",
       "realtime": {
         "open": 18.91,
-        "high": 19.47,
+        "high": 20.1,
         "low": 18.78,
-        "current": 19.26,
-        "volume": 27432117,
-        "estimated_volume": 78181778,
-        "pct_chg": 5.13,
+        "current": 19.93,
+        "volume": 64061571,
+        "estimated_volume": 64061571,
+        "pct_chg": 8.79,
         "date": "2026-06-09",
-        "time": "10:40:24"
+        "time": "15:00:00"
       },
       "has_signal": true,
       "signals": [
@@ -26,15 +26,21 @@
           "type": "primary",
           "confidence": "高",
           "description": "成交量放大1.5倍以上，价格突破前高，收阳线"
+        },
+        {
+          "strategy": "晨星形态",
+          "type": "secondary",
+          "confidence": "中",
+          "description": "下跌末端出现晨星反转K线组合"
         }
       ],
       "indicators": {
-        "vol_ratio": 4.89,
-        "rsi14": 29.63,
-        "rsi6": 42.03,
-        "macd": -0.181,
-        "amplitude": 3.67,
-        "bb_pct": 0.285,
+        "vol_ratio": 4.87,
+        "rsi14": 32.85,
+        "rsi6": 53.35,
+        "macd": -0.128,
+        "amplitude": 7.03,
+        "bb_pct": 0.364,
         "up_days": 1,
         "down_days": 0
       }
@@ -45,23 +51,23 @@
       "realtime": {
         "open": 29.44,
         "high": 29.93,
-        "low": 28.81,
-        "current": 29.13,
-        "volume": 1819900,
-        "estimated_volume": 5186731,
-        "pct_chg": 0.07,
+        "low": 28.77,
+        "current": 29.7,
+        "volume": 4905744,
+        "estimated_volume": 4905744,
+        "pct_chg": 2.03,
         "date": "2026-06-09",
-        "time": "10:40:21"
+        "time": "15:35:30"
       },
       "has_signal": false,
       "signals": [],
       "indicators": {
-        "vol_ratio": 4.74,
-        "rsi14": 18.2,
-        "rsi6": 32.19,
-        "macd": -1.884,
-        "amplitude": 3.89,
-        "bb_pct": 0.228,
+        "vol_ratio": 4.72,
+        "rsi14": 21.72,
+        "rsi6": 41.67,
+        "macd": -1.839,
+        "amplitude": 4.03,
+        "bb_pct": 0.258,
         "up_days": 1,
         "down_days": 0
       }
@@ -71,24 +77,31 @@
       "code": "300499.SZ",
       "realtime": {
         "open": 34.68,
-        "high": 35.3,
+        "high": 36.3,
         "low": 34.1,
-        "current": 34.5,
-        "volume": 10017609,
-        "estimated_volume": 28550275,
-        "pct_chg": 1.47,
+        "current": 36.09,
+        "volume": 25257876,
+        "estimated_volume": 25257876,
+        "pct_chg": 6.15,
         "date": "2026-06-09",
-        "time": "10:40:21"
+        "time": "15:35:45"
       },
-      "has_signal": false,
-      "signals": [],
+      "has_signal": true,
+      "signals": [
+        {
+          "strategy": "跳空高开",
+          "type": "primary",
+          "confidence": "高",
+          "description": "跳空高开0.8%~5.0%，收阳线，放量(vol_ratio>1.2)"
+        }
+      ],
       "indicators": {
-        "vol_ratio": 4.82,
-        "rsi14": 24.76,
-        "rsi6": 33.18,
-        "macd": -1.752,
-        "amplitude": 3.52,
-        "bb_pct": 0.11,
+        "vol_ratio": 4.8,
+        "rsi14": 29.12,
+        "rsi6": 46.54,
+        "macd": -1.625,
+        "amplitude": 6.45,
+        "bb_pct": 0.189,
         "up_days": 1,
         "down_days": 0
       }
