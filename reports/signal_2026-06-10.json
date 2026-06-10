@@ -1,6 +1,6 @@
 {
   "type": "daily",
-  "scan_time": "2026-06-10 06:35:40",
+  "scan_time": "2026-06-10 06:51:30",
   "date": "2026-06-10",
   "data_source": "tushare",
   "signals": [
@@ -35,7 +35,7 @@
         "match": "match",
         "note": "盘中预警与盘后确认一致",
         "realtime_has_signal": true,
-        "realtime_time": "2026-06-10 06:35:35",
+        "realtime_time": "2026-06-10 06:51:25",
         "realtime_signals": [
           {
             "strategy": "放量突破",
@@ -46,11 +46,11 @@
         ],
         "realtime_indicators": {
           "vol_ratio": 4.89,
-          "rsi14": 42.86,
-          "rsi6": 58.97,
-          "macd": -0.078,
+          "rsi14": 42.95,
+          "rsi6": 59.18,
+          "macd": -0.077,
           "amplitude": 5.12,
-          "bb_pct": 0.45,
+          "bb_pct": 0.453,
           "up_days": 2,
           "down_days": 0
         }
@@ -79,15 +79,15 @@
         "match": "match",
         "note": "盘中盘后均无信号",
         "realtime_has_signal": false,
-        "realtime_time": "2026-06-10 06:35:35",
+        "realtime_time": "2026-06-10 06:51:25",
         "realtime_signals": [],
         "realtime_indicators": {
           "vol_ratio": 4.85,
-          "rsi14": 29.8,
-          "rsi6": 65.63,
-          "macd": -1.778,
+          "rsi14": 29.92,
+          "rsi6": 65.83,
+          "macd": -1.777,
           "amplitude": 5.55,
-          "bb_pct": 0.31,
+          "bb_pct": 0.311,
           "up_days": 2,
           "down_days": 0
         }
@@ -116,15 +116,15 @@
         "match": "match",
         "note": "盘中盘后均无信号",
         "realtime_has_signal": false,
-        "realtime_time": "2026-06-10 06:35:35",
+        "realtime_time": "2026-06-10 06:51:25",
         "realtime_signals": [],
         "realtime_indicators": {
           "vol_ratio": 4.74,
-          "rsi14": 32.83,
-          "rsi6": 38.26,
-          "macd": -1.786,
+          "rsi14": 33.03,
+          "rsi6": 38.91,
+          "macd": -1.774,
           "amplitude": 3.88,
-          "bb_pct": 0.151,
+          "bb_pct": 0.159,
           "up_days": 0,
           "down_days": 1
         }
