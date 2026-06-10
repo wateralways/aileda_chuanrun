@@ -1,0 +1,97 @@
+{
+  "type": "realtime",
+  "date": "2026-06-10",
+  "scan_time": "2026-06-10 06:35:35",
+  "data_source": "sina_realtime + tushare_history",
+  "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "realtime": {
+        "open": 20.11,
+        "high": 20.95,
+        "low": 19.93,
+        "current": 20.62,
+        "volume": 75034685,
+        "estimated_volume": 82388942,
+        "pct_chg": 3.46,
+        "date": "2026-06-10",
+        "time": "14:35:33"
+      },
+      "has_signal": true,
+      "signals": [
+        {
+          "strategy": "放量突破",
+          "type": "primary",
+          "confidence": "高",
+          "description": "成交量放大1.5倍以上，价格突破前高，收阳线"
+        }
+      ],
+      "indicators": {
+        "vol_ratio": 4.89,
+        "rsi14": 42.86,
+        "rsi6": 58.97,
+        "macd": -0.078,
+        "amplitude": 5.12,
+        "bb_pct": 0.45,
+        "up_days": 2,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "realtime": {
+        "open": 29.5,
+        "high": 30.45,
+        "low": 28.85,
+        "current": 30.33,
+        "volume": 7760966,
+        "estimated_volume": 8521629,
+        "pct_chg": 2.36,
+        "date": "2026-06-10",
+        "time": "14:35:33"
+      },
+      "has_signal": false,
+      "signals": [],
+      "indicators": {
+        "vol_ratio": 4.85,
+        "rsi14": 29.8,
+        "rsi6": 65.63,
+        "macd": -1.778,
+        "amplitude": 5.55,
+        "bb_pct": 0.31,
+        "up_days": 2,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "realtime": {
+        "open": 35.74,
+        "high": 35.9,
+        "low": 34.56,
+        "current": 34.79,
+        "volume": 17449115,
+        "estimated_volume": 19159327,
+        "pct_chg": -3.6,
+        "date": "2026-06-10",
+        "time": "14:35:33"
+      },
+      "has_signal": false,
+      "signals": [],
+      "indicators": {
+        "vol_ratio": 4.74,
+        "rsi14": 32.83,
+        "rsi6": 38.26,
+        "macd": -1.786,
+        "amplitude": 3.88,
+        "bb_pct": 0.151,
+        "up_days": 0,
+        "down_days": 1
+      }
+    }
+  ]
+}
