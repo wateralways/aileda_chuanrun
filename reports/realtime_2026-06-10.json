@@ -1,7 +1,7 @@
 {
   "type": "realtime",
   "date": "2026-06-10",
-  "scan_time": "2026-06-10 06:51:25",
+  "scan_time": "2026-06-10 10:43:48",
   "data_source": "sina_realtime + tushare_history",
   "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
   "signals": [
@@ -12,12 +12,12 @@
         "open": 20.11,
         "high": 20.95,
         "low": 19.93,
-        "current": 20.64,
-        "volume": 78973440,
-        "estimated_volume": 81581263,
-        "pct_chg": 3.56,
+        "current": 20.6,
+        "volume": 82913140,
+        "estimated_volume": 82913140,
+        "pct_chg": 3.36,
         "date": "2026-06-10",
-        "time": "14:51:24"
+        "time": "15:00:00"
       },
       "has_signal": true,
       "signals": [
@@ -30,11 +30,11 @@
       ],
       "indicators": {
         "vol_ratio": 4.89,
-        "rsi14": 42.95,
-        "rsi6": 59.18,
-        "macd": -0.077,
+        "rsi14": 42.77,
+        "rsi6": 58.76,
+        "macd": -0.08,
         "amplitude": 5.12,
-        "bb_pct": 0.453,
+        "bb_pct": 0.448,
         "up_days": 2,
         "down_days": 0
       }
@@ -46,22 +46,22 @@
         "open": 29.5,
         "high": 30.45,
         "low": 28.85,
-        "current": 30.35,
-        "volume": 8361866,
-        "estimated_volume": 8637987,
-        "pct_chg": 2.43,
+        "current": 30.36,
+        "volume": 8638966,
+        "estimated_volume": 8638966,
+        "pct_chg": 2.46,
         "date": "2026-06-10",
-        "time": "14:51:24"
+        "time": "15:35:30"
       },
       "has_signal": false,
       "signals": [],
       "indicators": {
         "vol_ratio": 4.85,
-        "rsi14": 29.92,
-        "rsi6": 65.83,
-        "macd": -1.777,
+        "rsi14": 29.97,
+        "rsi6": 65.92,
+        "macd": -1.776,
         "amplitude": 5.55,
-        "bb_pct": 0.311,
+        "bb_pct": 0.312,
         "up_days": 2,
         "down_days": 0
       }
@@ -73,22 +73,22 @@
         "open": 35.74,
         "high": 35.9,
         "low": 34.56,
-        "current": 34.94,
-        "volume": 18535885,
-        "estimated_volume": 19147968,
-        "pct_chg": -3.19,
+        "current": 34.81,
+        "volume": 19236986,
+        "estimated_volume": 19236986,
+        "pct_chg": -3.55,
         "date": "2026-06-10",
-        "time": "14:51:24"
+        "time": "15:35:45"
       },
       "has_signal": false,
       "signals": [],
       "indicators": {
         "vol_ratio": 4.74,
-        "rsi14": 33.03,
-        "rsi6": 38.91,
-        "macd": -1.774,
+        "rsi14": 32.85,
+        "rsi6": 38.35,
+        "macd": -1.784,
         "amplitude": 3.88,
-        "bb_pct": 0.159,
+        "bb_pct": 0.152,
         "up_days": 0,
         "down_days": 1
       }
