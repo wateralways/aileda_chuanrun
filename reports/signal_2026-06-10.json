@@ -1,133 +1,75 @@
 {
   "type": "daily",
-  "scan_time": "2026-06-10 06:51:30",
+  "scan_time": "2026-06-10 14:20:44",
   "date": "2026-06-10",
   "data_source": "tushare",
   "signals": [
     {
       "name": "川润股份",
       "code": "002272.SZ",
-      "latest_date": "20260609",
-      "latest_close": 19.93,
-      "latest_pct_chg": 8.7882,
+      "latest_date": "20260610",
+      "latest_close": 20.6,
+      "latest_pct_chg": 3.3618,
       "signals": [
         {
-          "strategy": "晨星形态",
-          "type": "secondary",
-          "confidence": "中",
-          "description": "下跌末端出现晨星反转K线组合"
+          "strategy": "放量突破",
+          "type": "primary",
+          "confidence": "高",
+          "description": "成交量放大1.5倍以上，价格突破前高，收阳线"
         }
       ],
       "has_signal": true,
       "indicators": {
-        "vol_ratio": 1.34,
-        "rsi14": 32.85,
-        "rsi6": 53.35,
-        "macd": -0.128,
-        "amplitude": 7.03,
-        "bb_pct": 0.364,
-        "price_position": 0.272,
-        "up_days": 1,
+        "vol_ratio": 1.54,
+        "rsi14": 42.77,
+        "rsi6": 58.76,
+        "macd": -0.08,
+        "amplitude": 5.12,
+        "bb_pct": 0.448,
+        "price_position": 0.369,
+        "up_days": 2,
         "down_days": 0
       },
-      "buy_price": 19.93,
-      "realtime_comparison": {
-        "match": "match",
-        "note": "盘中预警与盘后确认一致",
-        "realtime_has_signal": true,
-        "realtime_time": "2026-06-10 06:51:25",
-        "realtime_signals": [
-          {
-            "strategy": "放量突破",
-            "type": "primary",
-            "confidence": "高",
-            "description": "成交量放大1.5倍以上，价格突破前高，收阳线"
-          }
-        ],
-        "realtime_indicators": {
-          "vol_ratio": 4.89,
-          "rsi14": 42.95,
-          "rsi6": 59.18,
-          "macd": -0.077,
-          "amplitude": 5.12,
-          "bb_pct": 0.453,
-          "up_days": 2,
-          "down_days": 0
-        }
-      }
+      "buy_price": 20.6
     },
     {
       "name": "爱乐达",
       "code": "300696.SZ",
-      "latest_date": "20260609",
-      "latest_close": 29.7,
-      "latest_pct_chg": 2.0268,
+      "latest_date": "20260610",
+      "latest_close": 30.36,
+      "latest_pct_chg": 2.4637,
       "signals": [],
       "has_signal": false,
       "indicators": {
-        "vol_ratio": 0.73,
-        "rsi14": 21.72,
-        "rsi6": 41.67,
-        "macd": -1.839,
-        "amplitude": 4.03,
-        "bb_pct": 0.258,
-        "price_position": 0.061,
-        "up_days": 1,
+        "vol_ratio": 1.23,
+        "rsi14": 29.97,
+        "rsi6": 65.92,
+        "macd": -1.776,
+        "amplitude": 5.55,
+        "bb_pct": 0.312,
+        "price_position": 0.108,
+        "up_days": 2,
         "down_days": 0
-      },
-      "realtime_comparison": {
-        "match": "match",
-        "note": "盘中盘后均无信号",
-        "realtime_has_signal": false,
-        "realtime_time": "2026-06-10 06:51:25",
-        "realtime_signals": [],
-        "realtime_indicators": {
-          "vol_ratio": 4.85,
-          "rsi14": 29.92,
-          "rsi6": 65.83,
-          "macd": -1.777,
-          "amplitude": 5.55,
-          "bb_pct": 0.311,
-          "up_days": 2,
-          "down_days": 0
-        }
       }
     },
     {
       "name": "高澜股份",
       "code": "300499.SZ",
-      "latest_date": "20260609",
-      "latest_close": 36.09,
-      "latest_pct_chg": 6.1471,
+      "latest_date": "20260610",
+      "latest_close": 34.81,
+      "latest_pct_chg": -3.5467,
       "signals": [],
       "has_signal": false,
       "indicators": {
-        "vol_ratio": 0.96,
-        "rsi14": 29.12,
-        "rsi6": 46.54,
-        "macd": -1.625,
-        "amplitude": 6.45,
-        "bb_pct": 0.189,
-        "price_position": 0.175,
-        "up_days": 1,
-        "down_days": 0
-      },
-      "realtime_comparison": {
-        "match": "match",
-        "note": "盘中盘后均无信号",
-        "realtime_has_signal": false,
-        "realtime_time": "2026-06-10 06:51:25",
-        "realtime_signals": [],
-        "realtime_indicators": {
-          "vol_ratio": 4.74,
-          "rsi14": 33.03,
-          "rsi6": 38.91,
-          "macd": -1.774,
-          "amplitude": 3.88,
-          "bb_pct": 0.159,
-          "up_days": 0,
-          "down_days": 1
-        }
+        "vol_ratio": 0.78,
+        "rsi14": 32.85,
+        "rsi6": 38.35,
+        "macd": -1.784,
+        "amplitude": 3.88,
+        "bb_pct": 0.152,
+        "price_position": 0.086,
+        "up_days": 0,
+        "down_days": 1
       }
     }
   ]
