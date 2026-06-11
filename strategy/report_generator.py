@@ -596,7 +596,12 @@ def generate_report(json_path=None):
     
     # === 历史记录 ===
     history_rows = ""
-    files = sorted(glob.glob('reports/signal_*.json'), reverse=True)[:30]
+    # 兼容在 strategy/ 子目录运行的情况，同时搜索当前目录和父目录的 reports
+    report_dirs = ['reports', '../reports'] if os.path.basename(os.getcwd()) == 'strategy' else ['reports']
+    all_files = []
+    for d in report_dirs:
+        all_files.extend(glob.glob(f'{d}/signal_*.json'))
+    files = sorted(set(all_files), reverse=True)[:30]
     for f in files:
         try:
             with open(f, 'r', encoding='utf-8') as fp:
@@ -654,7 +659,12 @@ def generate_stats_and_strategy_page():
     """生成 stats.json 和动态 strategy.html"""
     # 读取所有历史信号
     stock_stats = {}
-    files = sorted(glob.glob('reports/signal_*.json'))
+    # 兼容在 strategy/ 子目录运行的情况，同时搜索当前目录和父目录的 reports
+    report_dirs = ['reports', '../reports'] if os.path.basename(os.getcwd()) == 'strategy' else ['reports']
+    all_files = []
+    for d in report_dirs:
+        all_files.extend(glob.glob(f'{d}/signal_*.json'))
+    files = sorted(set(all_files))
     
     for f in files:
         try:

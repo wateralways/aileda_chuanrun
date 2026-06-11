@@ -54,7 +54,12 @@ def calculate_return(df, signal_date, buy_price):
 
 def update_signal_returns(name, code, df):
     """更新该股票所有历史信号的8天后收益"""
-    files = sorted(glob.glob('reports/signal_*.json'))
+    # 兼容在 strategy/ 子目录运行的情况，同时搜索当前目录和父目录的 reports
+    report_dirs = ['reports', '../reports'] if os.path.basename(os.getcwd()) == 'strategy' else ['reports']
+    all_files = []
+    for d in report_dirs:
+        all_files.extend(glob.glob(f'{d}/signal_*.json'))
+    files = sorted(set(all_files))
     for f in files:
         try:
             with open(f, 'r', encoding='utf-8') as fp:
