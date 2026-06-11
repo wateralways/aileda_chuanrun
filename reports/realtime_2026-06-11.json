@@ -1,7 +1,7 @@
 {
   "type": "realtime",
   "date": "2026-06-11",
-  "scan_time": "2026-06-11 01:38:43",
+  "scan_time": "2026-06-11 06:12:00",
   "data_source": "sina_realtime + tushare_history",
   "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
   "signals": [
@@ -10,26 +10,26 @@
       "code": "002272.SZ",
       "realtime": {
         "open": 20.01,
-        "high": 20.55,
+        "high": 21.22,
         "low": 19.88,
-        "current": 20.02,
-        "volume": 9500355,
-        "estimated_volume": 171116898,
-        "pct_chg": -2.82,
+        "current": 20.71,
+        "volume": 52527035,
+        "estimated_volume": 63497466,
+        "pct_chg": 0.53,
         "date": "2026-06-11",
-        "time": "09:38:42"
+        "time": "14:12:00"
       },
       "has_signal": false,
       "signals": [],
       "indicators": {
-        "vol_ratio": 4.93,
-        "rsi14": 28.96,
-        "rsi6": 52.17,
-        "macd": -0.088,
-        "amplitude": 3.37,
-        "bb_pct": 0.366,
-        "up_days": 0,
-        "down_days": 1
+        "vol_ratio": 4.83,
+        "rsi14": 31.27,
+        "rsi6": 61.28,
+        "macd": -0.032,
+        "amplitude": 6.74,
+        "bb_pct": 0.451,
+        "up_days": 3,
+        "down_days": 0
       }
     },
     {
@@ -37,24 +37,24 @@
       "code": "300696.SZ",
       "realtime": {
         "open": 30.0,
-        "high": 33.4,
+        "high": 33.63,
         "low": 29.99,
-        "current": 33.12,
-        "volume": 3522630,
-        "estimated_volume": 63448315,
-        "pct_chg": 9.09,
+        "current": 31.63,
+        "volume": 13725944,
+        "estimated_volume": 16666461,
+        "pct_chg": 4.18,
         "date": "2026-06-11",
-        "time": "09:38:42"
+        "time": "14:11:57"
       },
       "has_signal": false,
       "signals": [],
       "indicators": {
-        "vol_ratio": 4.98,
-        "rsi14": 44.03,
-        "rsi6": 79.04,
-        "macd": -1.486,
-        "amplitude": 11.37,
-        "bb_pct": 0.528,
+        "vol_ratio": 4.92,
+        "rsi14": 37.52,
+        "rsi6": 71.82,
+        "macd": -1.605,
+        "amplitude": 12.14,
+        "bb_pct": 0.417,
         "up_days": 3,
         "down_days": 0
       }
@@ -64,24 +64,24 @@
       "code": "300499.SZ",
       "realtime": {
         "open": 34.71,
-        "high": 34.92,
+        "high": 34.98,
         "low": 33.75,
-        "current": 34.19,
-        "volume": 1871000,
-        "estimated_volume": 33699763,
-        "pct_chg": -1.78,
+        "current": 34.09,
+        "volume": 13485084,
+        "estimated_volume": 16374002,
+        "pct_chg": -2.07,
         "date": "2026-06-11",
-        "time": "09:38:42"
+        "time": "14:11:57"
       },
       "has_signal": false,
       "signals": [],
       "indicators": {
-        "vol_ratio": 4.86,
-        "rsi14": 25.55,
-        "rsi6": 35.19,
-        "macd": -1.939,
-        "amplitude": 3.47,
-        "bb_pct": 0.158,
+        "vol_ratio": 4.73,
+        "rsi14": 25.44,
+        "rsi6": 34.83,
+        "macd": -1.947,
+        "amplitude": 3.64,
+        "bb_pct": 0.153,
         "up_days": 0,
         "down_days": 2
       }
