@@ -1,6 +1,6 @@
 {
   "type": "daily",
-  "scan_time": "2026-06-12 01:48:58",
+  "scan_time": "2026-06-12 05:44:32",
   "date": "2026-06-12",
   "data_source": "tushare",
   "signals": [
@@ -27,7 +27,7 @@
         "match": "false_alarm",
         "note": "盘中有预警，盘后确认无信号（尾盘回落）",
         "realtime_has_signal": true,
-        "realtime_time": "2026-06-12 01:48:53",
+        "realtime_time": "2026-06-12 05:44:27",
         "realtime_signals": [
           {
             "strategy": "放量突破",
@@ -37,12 +37,12 @@
           }
         ],
         "realtime_indicators": {
-          "vol_ratio": 4.91,
-          "rsi14": 37.14,
-          "rsi6": 67.04,
-          "macd": 0.062,
-          "amplitude": 4.08,
-          "bb_pct": 0.518,
+          "vol_ratio": 4.82,
+          "rsi14": 38.63,
+          "rsi6": 68.83,
+          "macd": 0.083,
+          "amplitude": 5.85,
+          "bb_pct": 0.552,
           "up_days": 4,
           "down_days": 0
         }
@@ -71,15 +71,15 @@
         "match": "match",
         "note": "盘中盘后均无信号",
         "realtime_has_signal": false,
-        "realtime_time": "2026-06-12 01:48:53",
+        "realtime_time": "2026-06-12 05:44:27",
         "realtime_signals": [],
         "realtime_indicators": {
-          "vol_ratio": 4.95,
-          "rsi14": 48.91,
-          "rsi6": 77.45,
-          "macd": -1.306,
+          "vol_ratio": 4.88,
+          "rsi14": 45.49,
+          "rsi6": 73.36,
+          "macd": -1.372,
           "amplitude": 6.28,
-          "bb_pct": 0.58,
+          "bb_pct": 0.509,
           "up_days": 4,
           "down_days": 0
         }
@@ -105,25 +105,18 @@
         "down_days": 2
       },
       "realtime_comparison": {
-        "match": "false_alarm",
-        "note": "盘中有预警，盘后确认无信号（尾盘回落）",
-        "realtime_has_signal": true,
-        "realtime_time": "2026-06-12 01:48:53",
-        "realtime_signals": [
-          {
-            "strategy": "跳空高开",
-            "type": "primary",
-            "confidence": "高",
-            "description": "跳空高开0.8%~5.0%，收阳线，放量(vol_ratio>1.2)"
-          }
-        ],
+        "match": "match",
+        "note": "盘中盘后均无信号",
+        "realtime_has_signal": false,
+        "realtime_time": "2026-06-12 05:44:27",
+        "realtime_signals": [],
         "realtime_indicators": {
-          "vol_ratio": 4.88,
-          "rsi14": 25.16,
-          "rsi6": 32.96,
-          "macd": -1.941,
-          "amplitude": 2.23,
-          "bb_pct": 0.242,
+          "vol_ratio": 4.77,
+          "rsi14": 23.86,
+          "rsi6": 29.95,
+          "macd": -1.972,
+          "amplitude": 2.82,
+          "bb_pct": 0.224,
           "up_days": 1,
           "down_days": 0
         }
