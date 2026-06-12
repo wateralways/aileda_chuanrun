@@ -1,7 +1,7 @@
 {
   "type": "realtime",
   "date": "2026-06-12",
-  "scan_time": "2026-06-12 01:48:53",
+  "scan_time": "2026-06-12 05:44:27",
   "data_source": "sina_realtime + tushare_history",
   "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
   "signals": [
@@ -10,14 +10,14 @@
       "code": "002272.SZ",
       "realtime": {
         "open": 20.99,
-        "high": 21.7,
+        "high": 22.07,
         "low": 20.85,
-        "current": 21.35,
-        "volume": 15457802,
-        "estimated_volume": 139748020,
-        "pct_chg": 2.59,
+        "current": 21.61,
+        "volume": 48514674,
+        "estimated_volume": 67055653,
+        "pct_chg": 3.84,
         "date": "2026-06-12",
-        "time": "09:48:51"
+        "time": "13:44:24"
       },
       "has_signal": true,
       "signals": [
@@ -29,12 +29,12 @@
         }
       ],
       "indicators": {
-        "vol_ratio": 4.91,
-        "rsi14": 37.14,
-        "rsi6": 67.04,
-        "macd": 0.062,
-        "amplitude": 4.08,
-        "bb_pct": 0.518,
+        "vol_ratio": 4.82,
+        "rsi14": 38.63,
+        "rsi6": 68.83,
+        "macd": 0.083,
+        "amplitude": 5.85,
+        "bb_pct": 0.552,
         "up_days": 4,
         "down_days": 0
       }
@@ -46,22 +46,22 @@
         "open": 32.0,
         "high": 33.5,
         "low": 31.52,
-        "current": 33.3,
-        "volume": 3916844,
-        "estimated_volume": 35410674,
-        "pct_chg": 4.55,
+        "current": 32.47,
+        "volume": 11453974,
+        "estimated_volume": 15831369,
+        "pct_chg": 1.95,
         "date": "2026-06-12",
-        "time": "09:48:51"
+        "time": "13:44:24"
       },
       "has_signal": false,
       "signals": [],
       "indicators": {
-        "vol_ratio": 4.95,
-        "rsi14": 48.91,
-        "rsi6": 77.45,
-        "macd": -1.306,
+        "vol_ratio": 4.88,
+        "rsi14": 45.49,
+        "rsi6": 73.36,
+        "macd": -1.372,
         "amplitude": 6.28,
-        "bb_pct": 0.58,
+        "bb_pct": 0.509,
         "up_days": 4,
         "down_days": 0
       }
@@ -72,30 +72,23 @@
       "realtime": {
         "open": 35.16,
         "high": 35.68,
-        "low": 34.9,
-        "current": 35.23,
-        "volume": 3705308,
-        "estimated_volume": 33498259,
-        "pct_chg": 2.41,
+        "low": 34.7,
+        "current": 34.85,
+        "volume": 12879802,
+        "estimated_volume": 17802109,
+        "pct_chg": 1.31,
         "date": "2026-06-12",
-        "time": "09:48:51"
+        "time": "13:44:24"
       },
-      "has_signal": true,
-      "signals": [
-        {
-          "strategy": "跳空高开",
-          "type": "primary",
-          "confidence": "高",
-          "description": "跳空高开0.8%~5.0%，收阳线，放量(vol_ratio>1.2)"
-        }
-      ],
+      "has_signal": false,
+      "signals": [],
       "indicators": {
-        "vol_ratio": 4.88,
-        "rsi14": 25.16,
-        "rsi6": 32.96,
-        "macd": -1.941,
-        "amplitude": 2.23,
-        "bb_pct": 0.242,
+        "vol_ratio": 4.77,
+        "rsi14": 23.86,
+        "rsi6": 29.95,
+        "macd": -1.972,
+        "amplitude": 2.82,
+        "bb_pct": 0.224,
         "up_days": 1,
         "down_days": 0
       }
