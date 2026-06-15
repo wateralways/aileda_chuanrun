@@ -1,126 +1,76 @@
 {
   "type": "daily",
-  "scan_time": "2026-06-15 06:41:44",
+  "scan_time": "2026-06-15 16:14:08",
   "date": "2026-06-15",
   "data_source": "tushare",
   "signals": [
     {
       "name": "川润股份",
       "code": "002272.SZ",
-      "latest_date": "20260612",
-      "latest_close": 20.94,
-      "latest_pct_chg": 0.6247,
+      "latest_date": "20260615",
+      "latest_close": 21.08,
+      "latest_pct_chg": 0.6686,
       "signals": [],
       "has_signal": false,
       "indicators": {
-        "vol_ratio": 1.02,
-        "rsi14": 34.63,
-        "rsi6": 63.75,
-        "macd": 0.029,
-        "amplitude": 5.85,
-        "bb_pct": 0.464,
-        "price_position": 0.418,
-        "up_days": 4,
+        "vol_ratio": 0.8,
+        "rsi14": 44.26,
+        "rsi6": 80.23,
+        "macd": 0.083,
+        "amplitude": 5.16,
+        "bb_pct": 0.48,
+        "price_position": 0.438,
+        "up_days": 5,
         "down_days": 0
-      },
-      "realtime_comparison": {
-        "match": "match",
-        "note": "盘中盘后均无信号",
-        "realtime_has_signal": false,
-        "realtime_time": "2026-06-15 06:41:40",
-        "realtime_signals": [],
-        "realtime_indicators": {
-          "vol_ratio": 4.74,
-          "rsi14": 44.19,
-          "rsi6": 80.17,
-          "macd": 0.082,
-          "amplitude": 5.16,
-          "bb_pct": 0.479,
-          "up_days": 5,
-          "down_days": 0
-        }
       }
     },
     {
       "name": "爱乐达",
       "code": "300696.SZ",
-      "latest_date": "20260612",
-      "latest_close": 32.47,
-      "latest_pct_chg": 1.9466,
+      "latest_date": "20260615",
+      "latest_close": 32.55,
+      "latest_pct_chg": 0.2464,
       "signals": [],
       "has_signal": false,
       "indicators": {
-        "vol_ratio": 1.38,
-        "rsi14": 45.49,
-        "rsi6": 73.36,
-        "macd": -1.372,
-        "amplitude": 6.28,
-        "bb_pct": 0.509,
-        "price_position": 0.342,
-        "up_days": 4,
+        "vol_ratio": 0.97,
+        "rsi14": 50.22,
+        "rsi6": 75.44,
+        "macd": -1.182,
+        "amplitude": 3.39,
+        "bb_pct": 0.545,
+        "price_position": 0.389,
+        "up_days": 5,
         "down_days": 0
-      },
-      "realtime_comparison": {
-        "match": "match",
-        "note": "盘中盘后均无信号",
-        "realtime_has_signal": false,
-        "realtime_time": "2026-06-15 06:41:40",
-        "realtime_signals": [],
-        "realtime_indicators": {
-          "vol_ratio": 4.78,
-          "rsi14": 48.71,
-          "rsi6": 70.74,
-          "macd": -1.21,
-          "amplitude": 2.98,
-          "bb_pct": 0.512,
-          "up_days": 0,
-          "down_days": 1
-        }
       }
     },
     {
       "name": "高澜股份",
       "code": "300499.SZ",
-      "latest_date": "20260612",
-      "latest_close": 34.16,
-      "latest_pct_chg": -0.6977,
-      "signals": [],
-      "has_signal": false,
-      "indicators": {
-        "vol_ratio": 0.83,
-        "rsi14": 22.02,
-        "rsi6": 25.27,
-        "macd": -2.027,
-        "amplitude": 4.73,
-        "bb_pct": 0.19,
-        "price_position": 0.041,
-        "up_days": 0,
-        "down_days": 3
-      },
-      "realtime_comparison": {
-        "match": "false_alarm",
-        "note": "盘中有预警，盘后确认无信号（尾盘回落）",
-        "realtime_has_signal": true,
-        "realtime_time": "2026-06-15 06:41:40",
-        "realtime_signals": [
-          {
-            "strategy": "跳空高开",
-            "type": "primary",
-            "confidence": "高",
-            "description": "跳空高开0.8%~5.0%，收阳线，放量(vol_ratio>1.2)"
-          }
-        ],
-        "realtime_indicators": {
-          "vol_ratio": 4.86,
-          "rsi14": 36.69,
-          "rsi6": 54.98,
-          "macd": -1.799,
-          "amplitude": 9.61,
-          "bb_pct": 0.403,
-          "up_days": 1,
-          "down_days": 0
+      "latest_date": "20260615",
+      "latest_close": 37.71,
+      "latest_pct_chg": 10.3923,
+      "signals": [
+        {
+          "strategy": "跳空高开",
+          "type": "primary",
+          "confidence": "高",
+          "description": "跳空高开0.8%~5.0%，收阳线，放量(vol_ratio>1.2)"
         }
-      }
+      ],
+      "has_signal": true,
+      "indicators": {
+        "vol_ratio": 1.31,
+        "rsi14": 36.55,
+        "rsi6": 54.76,
+        "macd": -1.803,
+        "amplitude": 9.61,
+        "bb_pct": 0.4,
+        "price_position": 0.287,
+        "up_days": 1,
+        "down_days": 0
+      },
+      "buy_price": 37.71
     }
   ]
 }
