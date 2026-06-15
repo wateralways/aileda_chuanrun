@@ -1,6 +1,6 @@
 {
   "type": "daily",
-  "scan_time": "2026-06-15 03:51:03",
+  "scan_time": "2026-06-15 06:41:44",
   "date": "2026-06-15",
   "data_source": "tushare",
   "signals": [
@@ -27,15 +27,15 @@
         "match": "match",
         "note": "盘中盘后均无信号",
         "realtime_has_signal": false,
-        "realtime_time": "2026-06-15 03:50:57",
+        "realtime_time": "2026-06-15 06:41:40",
         "realtime_signals": [],
         "realtime_indicators": {
-          "vol_ratio": 4.8,
-          "rsi14": 44.06,
-          "rsi6": 80.06,
-          "macd": 0.08,
+          "vol_ratio": 4.74,
+          "rsi14": 44.19,
+          "rsi6": 80.17,
+          "macd": 0.082,
           "amplitude": 5.16,
-          "bb_pct": 0.476,
+          "bb_pct": 0.479,
           "up_days": 5,
           "down_days": 0
         }
@@ -64,15 +64,15 @@
         "match": "match",
         "note": "盘中盘后均无信号",
         "realtime_has_signal": false,
-        "realtime_time": "2026-06-15 03:50:57",
+        "realtime_time": "2026-06-15 06:41:40",
         "realtime_signals": [],
         "realtime_indicators": {
-          "vol_ratio": 4.82,
-          "rsi14": 48.37,
-          "rsi6": 69.57,
-          "macd": -1.216,
+          "vol_ratio": 4.78,
+          "rsi14": 48.71,
+          "rsi6": 70.74,
+          "macd": -1.21,
           "amplitude": 2.98,
-          "bb_pct": 0.504,
+          "bb_pct": 0.512,
           "up_days": 0,
           "down_days": 1
         }
@@ -101,7 +101,7 @@
         "match": "false_alarm",
         "note": "盘中有预警，盘后确认无信号（尾盘回落）",
         "realtime_has_signal": true,
-        "realtime_time": "2026-06-15 03:50:57",
+        "realtime_time": "2026-06-15 06:41:40",
         "realtime_signals": [
           {
             "strategy": "跳空高开",
@@ -112,11 +112,11 @@
         ],
         "realtime_indicators": {
           "vol_ratio": 4.86,
-          "rsi14": 32.65,
-          "rsi6": 48.11,
-          "macd": -1.908,
-          "amplitude": 5.34,
-          "bb_pct": 0.332,
+          "rsi14": 36.69,
+          "rsi6": 54.98,
+          "macd": -1.799,
+          "amplitude": 9.61,
+          "bb_pct": 0.403,
           "up_days": 1,
           "down_days": 0
         }
