@@ -1,133 +1,67 @@
 {
   "type": "daily",
-  "scan_time": "2026-06-16 06:33:58",
+  "scan_time": "2026-06-16 15:51:01",
   "date": "2026-06-16",
   "data_source": "tushare",
   "signals": [
     {
       "name": "川润股份",
       "code": "002272.SZ",
-      "latest_date": "20260615",
-      "latest_close": 21.08,
-      "latest_pct_chg": 0.6686,
+      "latest_date": "20260616",
+      "latest_close": 21.17,
+      "latest_pct_chg": 0.4269,
       "signals": [],
       "has_signal": false,
       "indicators": {
-        "vol_ratio": 0.8,
-        "rsi14": 44.26,
-        "rsi6": 80.23,
-        "macd": 0.083,
-        "amplitude": 5.16,
-        "bb_pct": 0.48,
-        "price_position": 0.438,
-        "up_days": 5,
+        "vol_ratio": 0.81,
+        "rsi14": 50.94,
+        "rsi6": 100.0,
+        "macd": 0.13,
+        "amplitude": 3.82,
+        "bb_pct": 0.503,
+        "price_position": 0.452,
+        "up_days": 6,
         "down_days": 0
-      },
-      "realtime_comparison": {
-        "match": "false_alarm",
-        "note": "盘中有预警，盘后确认无信号（尾盘回落）",
-        "realtime_has_signal": true,
-        "realtime_time": "2026-06-16 06:33:54",
-        "realtime_signals": [
-          {
-            "strategy": "晨星形态",
-            "type": "secondary",
-            "confidence": "中",
-            "description": "下跌末端出现晨星反转K线组合"
-          }
-        ],
-        "realtime_indicators": {
-          "vol_ratio": 4.75,
-          "rsi14": 50.87,
-          "rsi6": 100.0,
-          "macd": 0.13,
-          "amplitude": 3.82,
-          "bb_pct": 0.502,
-          "up_days": 6,
-          "down_days": 0
-        }
       }
     },
     {
       "name": "爱乐达",
       "code": "300696.SZ",
-      "latest_date": "20260615",
-      "latest_close": 32.55,
-      "latest_pct_chg": 0.2464,
+      "latest_date": "20260616",
+      "latest_close": 33.11,
+      "latest_pct_chg": 1.7204,
       "signals": [],
       "has_signal": false,
       "indicators": {
-        "vol_ratio": 0.97,
-        "rsi14": 50.22,
-        "rsi6": 75.44,
-        "macd": -1.182,
-        "amplitude": 3.39,
-        "bb_pct": 0.545,
-        "price_position": 0.389,
-        "up_days": 5,
+        "vol_ratio": 0.79,
+        "rsi14": 56.16,
+        "rsi6": 100.0,
+        "macd": -0.974,
+        "amplitude": 3.59,
+        "bb_pct": 0.641,
+        "price_position": 0.451,
+        "up_days": 6,
         "down_days": 0
-      },
-      "realtime_comparison": {
-        "match": "match",
-        "note": "盘中盘后均无信号",
-        "realtime_has_signal": false,
-        "realtime_time": "2026-06-16 06:33:54",
-        "realtime_signals": [],
-        "realtime_indicators": {
-          "vol_ratio": 4.74,
-          "rsi14": 55.92,
-          "rsi6": 100.0,
-          "macd": -0.979,
-          "amplitude": 3.59,
-          "bb_pct": 0.635,
-          "up_days": 6,
-          "down_days": 0
-        }
       }
     },
     {
       "name": "高澜股份",
       "code": "300499.SZ",
-      "latest_date": "20260615",
-      "latest_close": 37.71,
-      "latest_pct_chg": 10.3923,
-      "signals": [
-        {
-          "strategy": "跳空高开",
-          "type": "primary",
-          "confidence": "高",
-          "description": "跳空高开0.8%~5.0%，收阳线，放量(vol_ratio>1.2)"
-        }
-      ],
-      "has_signal": true,
+      "latest_date": "20260616",
+      "latest_close": 38.73,
+      "latest_pct_chg": 2.7049,
+      "signals": [],
+      "has_signal": false,
       "indicators": {
-        "vol_ratio": 1.31,
-        "rsi14": 36.55,
-        "rsi6": 54.76,
-        "macd": -1.803,
-        "amplitude": 9.61,
-        "bb_pct": 0.4,
-        "price_position": 0.287,
-        "up_days": 1,
+        "vol_ratio": 1.23,
+        "rsi14": 44.76,
+        "rsi6": 77.53,
+        "macd": -1.525,
+        "amplitude": 4.14,
+        "bb_pct": 0.476,
+        "price_position": 0.357,
+        "up_days": 2,
         "down_days": 0
-      },
-      "buy_price": 37.71,
-      "realtime_comparison": {
-        "match": "missed",
-        "note": "盘中未预警，盘后确认有信号（尾盘异动）",
-        "realtime_has_signal": false,
-        "realtime_time": "2026-06-16 06:33:54",
-        "realtime_signals": [],
-        "realtime_indicators": {
-          "vol_ratio": 4.85,
-          "rsi14": 44.71,
-          "rsi6": 77.48,
-          "macd": -1.527,
-          "amplitude": 4.14,
-          "bb_pct": 0.475,
-          "up_days": 2,
-          "down_days": 0
-        }
       }
     }
   ]
