@@ -1,0 +1,109 @@
+{
+  "type": "realtime",
+  "date": "2026-06-16",
+  "scan_time": "2026-06-16 03:32:44",
+  "data_source": "sina_realtime + tushare_history",
+  "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "realtime": {
+        "open": 20.91,
+        "high": 21.49,
+        "low": 20.7,
+        "current": 21.33,
+        "volume": 32775651,
+        "estimated_volume": 59078141,
+        "pct_chg": 1.19,
+        "date": "2026-06-16",
+        "time": "11:30:00"
+      },
+      "has_signal": true,
+      "signals": [
+        {
+          "strategy": "放量突破",
+          "type": "primary",
+          "confidence": "高",
+          "description": "成交量放大1.5倍以上，价格突破前高，收阳线"
+        },
+        {
+          "strategy": "晨星形态",
+          "type": "secondary",
+          "confidence": "中",
+          "description": "下跌末端出现晨星反转K线组合"
+        },
+        {
+          "strategy": "阳线吞没",
+          "type": "secondary",
+          "confidence": "中",
+          "description": "阳线实体完全覆盖前日阴线实体"
+        }
+      ],
+      "indicators": {
+        "vol_ratio": 4.79,
+        "rsi14": 51.97,
+        "rsi6": 100.0,
+        "macd": 0.143,
+        "amplitude": 3.82,
+        "bb_pct": 0.524,
+        "up_days": 6,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "realtime": {
+        "open": 32.6,
+        "high": 33.35,
+        "low": 32.33,
+        "current": 33.23,
+        "volume": 5724769,
+        "estimated_volume": 10318901,
+        "pct_chg": 2.09,
+        "date": "2026-06-16",
+        "time": "11:30:00"
+      },
+      "has_signal": false,
+      "signals": [],
+      "indicators": {
+        "vol_ratio": 4.77,
+        "rsi14": 56.63,
+        "rsi6": 100.0,
+        "macd": -0.965,
+        "amplitude": 3.15,
+        "bb_pct": 0.654,
+        "up_days": 6,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "realtime": {
+        "open": 37.86,
+        "high": 38.96,
+        "low": 37.41,
+        "current": 38.79,
+        "volume": 16471860,
+        "estimated_volume": 29690542,
+        "pct_chg": 2.86,
+        "date": "2026-06-16",
+        "time": "11:30:00"
+      },
+      "has_signal": false,
+      "signals": [],
+      "indicators": {
+        "vol_ratio": 4.87,
+        "rsi14": 44.92,
+        "rsi6": 77.69,
+        "macd": -1.52,
+        "amplitude": 4.14,
+        "bb_pct": 0.479,
+        "up_days": 2,
+        "down_days": 0
+      }
+    }
+  ]
+}
