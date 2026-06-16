@@ -1,6 +1,6 @@
 {
   "type": "daily",
-  "scan_time": "2026-06-16 03:32:49",
+  "scan_time": "2026-06-16 06:33:58",
   "date": "2026-06-16",
   "data_source": "tushare",
   "signals": [
@@ -27,34 +27,22 @@
         "match": "false_alarm",
         "note": "盘中有预警，盘后确认无信号（尾盘回落）",
         "realtime_has_signal": true,
-        "realtime_time": "2026-06-16 03:32:44",
+        "realtime_time": "2026-06-16 06:33:54",
         "realtime_signals": [
-          {
-            "strategy": "放量突破",
-            "type": "primary",
-            "confidence": "高",
-            "description": "成交量放大1.5倍以上，价格突破前高，收阳线"
-          },
           {
             "strategy": "晨星形态",
             "type": "secondary",
             "confidence": "中",
             "description": "下跌末端出现晨星反转K线组合"
-          },
-          {
-            "strategy": "阳线吞没",
-            "type": "secondary",
-            "confidence": "中",
-            "description": "阳线实体完全覆盖前日阴线实体"
           }
         ],
         "realtime_indicators": {
-          "vol_ratio": 4.79,
-          "rsi14": 51.97,
+          "vol_ratio": 4.75,
+          "rsi14": 50.87,
           "rsi6": 100.0,
-          "macd": 0.143,
+          "macd": 0.13,
           "amplitude": 3.82,
-          "bb_pct": 0.524,
+          "bb_pct": 0.502,
           "up_days": 6,
           "down_days": 0
         }
@@ -83,15 +71,15 @@
         "match": "match",
         "note": "盘中盘后均无信号",
         "realtime_has_signal": false,
-        "realtime_time": "2026-06-16 03:32:44",
+        "realtime_time": "2026-06-16 06:33:54",
         "realtime_signals": [],
         "realtime_indicators": {
-          "vol_ratio": 4.77,
-          "rsi14": 56.63,
+          "vol_ratio": 4.74,
+          "rsi14": 55.92,
           "rsi6": 100.0,
-          "macd": -0.965,
-          "amplitude": 3.15,
-          "bb_pct": 0.654,
+          "macd": -0.979,
+          "amplitude": 3.59,
+          "bb_pct": 0.635,
           "up_days": 6,
           "down_days": 0
         }
@@ -128,15 +116,15 @@
         "match": "missed",
         "note": "盘中未预警，盘后确认有信号（尾盘异动）",
         "realtime_has_signal": false,
-        "realtime_time": "2026-06-16 03:32:44",
+        "realtime_time": "2026-06-16 06:33:54",
         "realtime_signals": [],
         "realtime_indicators": {
-          "vol_ratio": 4.87,
-          "rsi14": 44.92,
-          "rsi6": 77.69,
-          "macd": -1.52,
+          "vol_ratio": 4.85,
+          "rsi14": 44.71,
+          "rsi6": 77.48,
+          "macd": -1.527,
           "amplitude": 4.14,
-          "bb_pct": 0.479,
+          "bb_pct": 0.475,
           "up_days": 2,
           "down_days": 0
         }
