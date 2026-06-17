@@ -1,0 +1,90 @@
+{
+  "type": "realtime",
+  "date": "2026-06-17",
+  "scan_time": "2026-06-17 11:23:19",
+  "data_source": "sina_realtime + tushare_history",
+  "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "realtime": {
+        "open": 20.5,
+        "high": 21.23,
+        "low": 20.5,
+        "current": 21.09,
+        "volume": 37554262,
+        "estimated_volume": 37554262,
+        "pct_chg": -0.38,
+        "date": "2026-06-17",
+        "time": "15:00:00"
+      },
+      "has_signal": false,
+      "signals": [],
+      "indicators": {
+        "vol_ratio": 4.72,
+        "rsi14": 45.15,
+        "rsi6": 93.94,
+        "macd": 0.16,
+        "amplitude": 3.56,
+        "bb_pct": 0.522,
+        "up_days": 0,
+        "down_days": 1
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "realtime": {
+        "open": 32.72,
+        "high": 33.81,
+        "low": 32.68,
+        "current": 33.47,
+        "volume": 8365602,
+        "estimated_volume": 8365602,
+        "pct_chg": 1.09,
+        "date": "2026-06-17",
+        "time": "15:35:30"
+      },
+      "has_signal": false,
+      "signals": [],
+      "indicators": {
+        "vol_ratio": 4.71,
+        "rsi14": 52.7,
+        "rsi6": 100.0,
+        "macd": -0.772,
+        "amplitude": 3.46,
+        "bb_pct": 0.744,
+        "up_days": 7,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "realtime": {
+        "open": 38.36,
+        "high": 39.03,
+        "low": 37.89,
+        "current": 38.58,
+        "volume": 22122819,
+        "estimated_volume": 22122819,
+        "pct_chg": -0.39,
+        "date": "2026-06-17",
+        "time": "15:35:45"
+      },
+      "has_signal": false,
+      "signals": [],
+      "indicators": {
+        "vol_ratio": 4.81,
+        "rsi14": 41.41,
+        "rsi6": 68.72,
+        "macd": -1.302,
+        "amplitude": 3.01,
+        "bb_pct": 0.493,
+        "up_days": 0,
+        "down_days": 1
+      }
+    }
+  ]
+}
