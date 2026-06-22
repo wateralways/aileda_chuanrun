@@ -1,0 +1,76 @@
+{
+  "type": "daily",
+  "scan_time": "2026-06-22 15:49:23",
+  "date": "2026-06-22",
+  "data_source": "tushare",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "latest_date": "20260622",
+      "latest_close": 22.61,
+      "latest_pct_chg": 6.6509,
+      "signals": [
+        {
+          "strategy": "放量突破",
+          "type": "primary",
+          "confidence": "高",
+          "description": "成交量放大1.5倍以上，价格突破前高，收阳线"
+        }
+      ],
+      "has_signal": true,
+      "indicators": {
+        "vol_ratio": 1.75,
+        "rsi14": 73.21,
+        "rsi6": 95.92,
+        "macd": 0.324,
+        "amplitude": 9.59,
+        "bb_pct": 0.855,
+        "price_position": 0.66,
+        "up_days": 2,
+        "down_days": 0
+      },
+      "buy_price": 22.61
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "latest_date": "20260622",
+      "latest_close": 32.81,
+      "latest_pct_chg": -2.5253,
+      "signals": [],
+      "has_signal": false,
+      "indicators": {
+        "vol_ratio": 0.88,
+        "rsi14": 63.67,
+        "rsi6": 68.05,
+        "macd": -0.508,
+        "amplitude": 4.79,
+        "bb_pct": 0.707,
+        "price_position": 0.6,
+        "up_days": 0,
+        "down_days": 1
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "latest_date": "20260622",
+      "latest_close": 38.73,
+      "latest_pct_chg": -0.3345,
+      "signals": [],
+      "has_signal": false,
+      "indicators": {
+        "vol_ratio": 1.2,
+        "rsi14": 56.96,
+        "rsi6": 90.32,
+        "macd": -0.923,
+        "amplitude": 6.26,
+        "bb_pct": 0.546,
+        "price_position": 0.37,
+        "up_days": 0,
+        "down_days": 1
+      }
+    }
+  ]
+}

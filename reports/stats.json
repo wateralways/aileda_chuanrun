@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-06-19 21:59:43",
+  "update_time": "2026-06-22 23:49:25",
   "stocks": {
     "爱乐达": {
       "total_trades": 2,
@@ -12,14 +12,14 @@
       "max_loss": 9.17
     },
     "川润股份": {
-      "total_trades": 2,
-      "completed_trades": 0,
-      "win_trades": 0,
-      "win_rate": null,
-      "total_return": 0,
-      "avg_return": null,
-      "max_profit": null,
-      "max_loss": null
+      "total_trades": 3,
+      "completed_trades": 1,
+      "win_trades": 1,
+      "win_rate": 100.0,
+      "total_return": 13.45,
+      "avg_return": 13.45,
+      "max_profit": 13.45,
+      "max_loss": 13.45
     },
     "高澜股份": {
       "total_trades": 1,
