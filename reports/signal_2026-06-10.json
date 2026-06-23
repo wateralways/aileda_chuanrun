@@ -30,7 +30,10 @@
         "up_days": 2,
         "down_days": 0
       },
-      "buy_price": 20.6
+      "buy_price": 20.6,
+      "sell_date": "20260623",
+      "sell_price": 23.06,
+      "return_pct": 11.94
     },
     {
       "name": "爱乐达",

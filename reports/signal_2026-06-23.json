@@ -1,0 +1,68 @@
+{
+  "type": "daily",
+  "scan_time": "2026-06-23 13:42:37",
+  "date": "2026-06-23",
+  "data_source": "tushare",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "latest_date": "20260623",
+      "latest_close": 23.06,
+      "latest_pct_chg": 1.9903,
+      "signals": [],
+      "has_signal": false,
+      "indicators": {
+        "vol_ratio": 1.43,
+        "rsi14": 74.15,
+        "rsi6": 96.49,
+        "macd": 0.461,
+        "amplitude": 5.87,
+        "bb_pct": 1.003,
+        "price_position": 0.838,
+        "up_days": 3,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "latest_date": "20260623",
+      "latest_close": 32.86,
+      "latest_pct_chg": 0.1524,
+      "signals": [],
+      "has_signal": false,
+      "indicators": {
+        "vol_ratio": 0.79,
+        "rsi14": 73.39,
+        "rsi6": 59.33,
+        "macd": -0.434,
+        "amplitude": 3.78,
+        "bb_pct": 0.727,
+        "price_position": 0.703,
+        "up_days": 1,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "latest_date": "20260623",
+      "latest_close": 40.94,
+      "latest_pct_chg": 5.7062,
+      "signals": [],
+      "has_signal": false,
+      "indicators": {
+        "vol_ratio": 1.85,
+        "rsi14": 61.91,
+        "rsi6": 96.19,
+        "macd": -0.604,
+        "amplitude": 14.89,
+        "bb_pct": 0.79,
+        "price_position": 0.572,
+        "up_days": 1,
+        "down_days": 0
+      }
+    }
+  ]
+}
