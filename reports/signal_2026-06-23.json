@@ -1,6 +1,6 @@
 {
   "type": "daily",
-  "scan_time": "2026-06-23 13:42:37",
+  "scan_time": "2026-06-23 15:32:10",
   "date": "2026-06-23",
   "data_source": "tushare",
   "signals": [
@@ -22,6 +22,23 @@
         "price_position": 0.838,
         "up_days": 3,
         "down_days": 0
+      },
+      "realtime_comparison": {
+        "match": "match",
+        "note": "盘中盘后均无信号",
+        "realtime_has_signal": false,
+        "realtime_time": "2026-06-23 15:32:02",
+        "realtime_signals": [],
+        "realtime_indicators": {
+          "vol_ratio": 4.88,
+          "rsi14": 74.15,
+          "rsi6": 96.49,
+          "macd": 0.461,
+          "amplitude": 5.87,
+          "bb_pct": 1.003,
+          "up_days": 3,
+          "down_days": 0
+        }
       }
     },
     {
@@ -42,6 +59,23 @@
         "price_position": 0.703,
         "up_days": 1,
         "down_days": 0
+      },
+      "realtime_comparison": {
+        "match": "match",
+        "note": "盘中盘后均无信号",
+        "realtime_has_signal": false,
+        "realtime_time": "2026-06-23 15:32:02",
+        "realtime_signals": [],
+        "realtime_indicators": {
+          "vol_ratio": 4.75,
+          "rsi14": 73.39,
+          "rsi6": 59.33,
+          "macd": -0.434,
+          "amplitude": 3.78,
+          "bb_pct": 0.727,
+          "up_days": 1,
+          "down_days": 0
+        }
       }
     },
     {
@@ -62,6 +96,23 @@
         "price_position": 0.572,
         "up_days": 1,
         "down_days": 0
+      },
+      "realtime_comparison": {
+        "match": "match",
+        "note": "盘中盘后均无信号",
+        "realtime_has_signal": false,
+        "realtime_time": "2026-06-23 15:32:02",
+        "realtime_signals": [],
+        "realtime_indicators": {
+          "vol_ratio": 4.92,
+          "rsi14": 61.91,
+          "rsi6": 96.19,
+          "macd": -0.604,
+          "amplitude": 14.89,
+          "bb_pct": 0.79,
+          "up_days": 1,
+          "down_days": 0
+        }
       }
     }
   ]
