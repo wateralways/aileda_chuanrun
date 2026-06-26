@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-06-25 21:14:13",
+  "update_time": "2026-06-26 21:08:09",
   "stocks": {
     "爱乐达": {
       "total_trades": 2,
@@ -23,13 +23,13 @@
     },
     "高澜股份": {
       "total_trades": 1,
-      "completed_trades": 0,
-      "win_trades": 0,
-      "win_rate": null,
-      "total_return": 0,
-      "avg_return": null,
-      "max_profit": null,
-      "max_loss": null
+      "completed_trades": 1,
+      "win_trades": 1,
+      "win_rate": 100.0,
+      "total_return": 6.5,
+      "avg_return": 6.5,
+      "max_profit": 6.5,
+      "max_loss": 6.5
     }
   }
 }

@@ -70,7 +70,10 @@
         "up_days": 1,
         "down_days": 0
       },
-      "buy_price": 37.71
+      "buy_price": 37.71,
+      "sell_date": "20260626",
+      "sell_price": 40.16,
+      "return_pct": 6.5
     }
   ]
 }
