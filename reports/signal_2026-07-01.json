@@ -1,0 +1,132 @@
+{
+  "type": "daily",
+  "scan_time": "2026-07-01 01:58:23",
+  "date": "2026-07-01",
+  "data_source": "tushare",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "latest_date": "20260630",
+      "latest_close": 24.53,
+      "latest_pct_chg": 3.8527,
+      "signals": [],
+      "has_signal": false,
+      "indicators": {
+        "vol_ratio": 1.09,
+        "rsi14": 89.25,
+        "rsi6": 81.79,
+        "macd": 0.895,
+        "amplitude": 7.78,
+        "bb_pct": 0.969,
+        "price_position": 0.96,
+        "up_days": 2,
+        "down_days": 0
+      },
+      "realtime_comparison": {
+        "match": "match",
+        "note": "盘中盘后均无信号",
+        "realtime_has_signal": false,
+        "realtime_time": "2026-07-01 01:58:19",
+        "realtime_signals": [],
+        "realtime_indicators": {
+          "vol_ratio": 4.94,
+          "rsi14": 74.75,
+          "rsi6": 58.05,
+          "macd": 0.907,
+          "amplitude": 11.55,
+          "bb_pct": 0.801,
+          "up_days": 0,
+          "down_days": 1
+        }
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "latest_date": "20260630",
+      "latest_close": 26.03,
+      "latest_pct_chg": -0.1151,
+      "signals": [],
+      "has_signal": false,
+      "indicators": {
+        "vol_ratio": 1.15,
+        "rsi14": 34.3,
+        "rsi6": 0.73,
+        "macd": -1.404,
+        "amplitude": 5.14,
+        "bb_pct": -0.039,
+        "price_position": 0.083,
+        "up_days": 0,
+        "down_days": 5
+      },
+      "realtime_comparison": {
+        "match": "false_alarm",
+        "note": "盘中有预警，盘后确认无信号（尾盘回落）",
+        "realtime_has_signal": true,
+        "realtime_time": "2026-07-01 01:58:19",
+        "realtime_signals": [
+          {
+            "strategy": "连阴首阳",
+            "type": "primary",
+            "confidence": "高",
+            "description": "连续阴线后出现首根阳线，RSI<60"
+          },
+          {
+            "strategy": "放量见底",
+            "type": "high_confidence",
+            "confidence": "极高",
+            "description": "成交量创10日新高，价格止跌，前期跌幅>5%"
+          }
+        ],
+        "realtime_indicators": {
+          "vol_ratio": 4.86,
+          "rsi14": 32.04,
+          "rsi6": 3.8,
+          "macd": -1.608,
+          "amplitude": 4.3,
+          "bb_pct": 0.048,
+          "up_days": 1,
+          "down_days": 0
+        }
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "latest_date": "20260630",
+      "latest_close": 38.7,
+      "latest_pct_chg": 4.2846,
+      "signals": [],
+      "has_signal": false,
+      "indicators": {
+        "vol_ratio": 0.64,
+        "rsi14": 57.04,
+        "rsi6": 49.87,
+        "macd": -0.104,
+        "amplitude": 7.03,
+        "bb_pct": 0.583,
+        "price_position": 0.398,
+        "up_days": 1,
+        "down_days": 0
+      },
+      "realtime_comparison": {
+        "match": "match",
+        "note": "盘中盘后均无信号",
+        "realtime_has_signal": false,
+        "realtime_time": "2026-07-01 01:58:19",
+        "realtime_signals": [],
+        "realtime_indicators": {
+          "vol_ratio": 4.86,
+          "rsi14": 60.06,
+          "rsi6": 36.52,
+          "macd": -0.161,
+          "amplitude": 4.2,
+          "bb_pct": 0.541,
+          "up_days": 0,
+          "down_days": 1
+        }
+      }
+    }
+  ]
+}
