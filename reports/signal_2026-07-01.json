@@ -1,6 +1,6 @@
 {
   "type": "daily",
-  "scan_time": "2026-07-01 08:22:12",
+  "scan_time": "2026-07-01 08:43:10",
   "date": "2026-07-01",
   "data_source": "tushare",
   "signals": [
@@ -22,6 +22,23 @@
         "price_position": 0.725,
         "up_days": 0,
         "down_days": 1
+      },
+      "realtime_comparison": {
+        "match": "match",
+        "note": "盘中盘后均无信号",
+        "realtime_has_signal": false,
+        "realtime_time": "2026-07-01 08:43:05",
+        "realtime_signals": [],
+        "realtime_indicators": {
+          "vol_ratio": 4.85,
+          "rsi14": 77.16,
+          "rsi6": 61.4,
+          "macd": 0.922,
+          "amplitude": 11.55,
+          "bb_pct": 0.825,
+          "up_days": 0,
+          "down_days": 1
+        }
       }
     },
     {
@@ -50,7 +67,37 @@
         "up_days": 1,
         "down_days": 0
       },
-      "buy_price": 26.21
+      "buy_price": 26.21,
+      "realtime_comparison": {
+        "match": "match",
+        "note": "盘中预警与盘后确认一致",
+        "realtime_has_signal": true,
+        "realtime_time": "2026-07-01 08:43:05",
+        "realtime_signals": [
+          {
+            "strategy": "连阴首阳",
+            "type": "primary",
+            "confidence": "高",
+            "description": "连续阴线后出现首根阳线，RSI<60"
+          },
+          {
+            "strategy": "放量见底",
+            "type": "high_confidence",
+            "confidence": "极高",
+            "description": "成交量创10日新高，价格止跌，前期跌幅>5%"
+          }
+        ],
+        "realtime_indicators": {
+          "vol_ratio": 4.76,
+          "rsi14": 31.49,
+          "rsi6": 2.57,
+          "macd": -1.615,
+          "amplitude": 4.96,
+          "bb_pct": 0.041,
+          "up_days": 1,
+          "down_days": 0
+        }
+      }
     },
     {
       "name": "高澜股份",
@@ -70,6 +117,23 @@
         "price_position": 0.286,
         "up_days": 0,
         "down_days": 1
+      },
+      "realtime_comparison": {
+        "match": "match",
+        "note": "盘中盘后均无信号",
+        "realtime_has_signal": false,
+        "realtime_time": "2026-07-01 08:43:05",
+        "realtime_signals": [],
+        "realtime_indicators": {
+          "vol_ratio": 4.75,
+          "rsi14": 56.52,
+          "rsi6": 32.77,
+          "macd": -0.249,
+          "amplitude": 7.15,
+          "bb_pct": 0.438,
+          "up_days": 0,
+          "down_days": 1
+        }
       }
     }
   ]

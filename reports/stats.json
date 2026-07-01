@@ -1,8 +1,8 @@
 {
-  "update_time": "2026-07-01 16:22:18",
+  "update_time": "2026-07-01 16:43:12",
   "stocks": {
     "爱乐达": {
-      "total_trades": 3,
+      "total_trades": 4,
       "completed_trades": 2,
       "win_trades": 2,
       "win_rate": 100.0,
