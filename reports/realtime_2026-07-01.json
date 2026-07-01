@@ -1,7 +1,7 @@
 {
   "type": "realtime",
   "date": "2026-07-01",
-  "scan_time": "2026-07-01 08:43:05",
+  "scan_time": "2026-07-01 10:31:58",
   "data_source": "sina_realtime + tushare_history",
   "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
   "signals": [
