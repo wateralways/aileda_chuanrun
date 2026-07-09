@@ -1,0 +1,90 @@
+{
+  "type": "realtime",
+  "date": "2026-07-09",
+  "scan_time": "2026-07-09 01:13:31",
+  "data_source": "sina_realtime + tushare_history",
+  "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "realtime": {
+        "open": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "current": 0.0,
+        "volume": 0,
+        "estimated_volume": 0,
+        "pct_chg": -100.0,
+        "date": "2026-07-09",
+        "time": "09:12:54"
+      },
+      "has_signal": false,
+      "signals": [],
+      "indicators": {
+        "vol_ratio": 0.0,
+        "rsi14": 13.77,
+        "rsi6": 0.62,
+        "macd": -1.293,
+        "amplitude": null,
+        "bb_pct": -0.536,
+        "up_days": 0,
+        "down_days": 5
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "realtime": {
+        "open": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "current": 0.0,
+        "volume": 0,
+        "estimated_volume": 0,
+        "pct_chg": -100.0,
+        "date": "2026-07-09",
+        "time": "09:13:12"
+      },
+      "has_signal": false,
+      "signals": [],
+      "indicators": {
+        "vol_ratio": 0.0,
+        "rsi14": 5.87,
+        "rsi6": 6.65,
+        "macd": -4.355,
+        "amplitude": null,
+        "bb_pct": -0.425,
+        "up_days": 0,
+        "down_days": 4
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "realtime": {
+        "open": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "current": 0.0,
+        "volume": 0,
+        "estimated_volume": 0,
+        "pct_chg": -100.0,
+        "date": "2026-07-09",
+        "time": "09:13:03"
+      },
+      "has_signal": false,
+      "signals": [],
+      "indicators": {
+        "vol_ratio": 0.0,
+        "rsi14": 16.84,
+        "rsi6": 9.11,
+        "macd": -3.397,
+        "amplitude": null,
+        "bb_pct": -0.527,
+        "up_days": 0,
+        "down_days": 3
+      }
+    }
+  ]
+}
