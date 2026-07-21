@@ -258,6 +258,85 @@
         .indicators-row .indicator-value.red { color: #ff5050; }
         .indicators-row .indicator-value.yellow { color: #ffaa00; }
         
+        /* 工行跷跷板过滤器卡片 */
+        .icbc-card {
+            margin: 12px 16px;
+            padding: 12px 16px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .icbc-card.up {
+            border-color: rgba(255,80,80,0.3);
+            background: linear-gradient(135deg, rgba(255,80,80,0.08) 0%, rgba(255,80,80,0.02) 100%);
+        }
+        .icbc-card.down {
+            border-color: rgba(0,212,170,0.3);
+            background: linear-gradient(135deg, rgba(0,212,170,0.08) 0%, rgba(0,212,170,0.02) 100%);
+        }
+        .icbc-card.neutral {
+            border-color: rgba(255,255,255,0.08);
+        }
+        .icbc-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .icbc-icon { font-size: 1.2em; }
+        .icbc-title {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: #fff;
+        }
+        .icbc-title.up { color: #ff6b6b; }
+        .icbc-title.down { color: #00d4aa; }
+        .icbc-body {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            font-size: 0.78em;
+            color: #aaa;
+        }
+        .icbc-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .icbc-item .label { color: #888; }
+        .icbc-item .value { font-weight: 600; color: #ddd; }
+        .icbc-rec {
+            margin-top: 6px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 0.78em;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        .icbc-rec.up {
+            background: rgba(255,80,80,0.1);
+            color: #ff6b6b;
+            border-left: 3px solid #ff6b6b;
+        }
+        .icbc-rec.down {
+            background: rgba(0,212,170,0.1);
+            color: #00d4aa;
+            border-left: 3px solid #00d4aa;
+        }
+        .icbc-rec.neutral {
+            background: rgba(255,255,255,0.03);
+            color: #888;
+            border-left: 3px solid #555;
+        }
+        .icbc-note {
+            font-size: 0.72em;
+            color: #ffaa00;
+            margin-top: 4px;
+            padding: 4px 0;
+        }
+        
         /* 操作提示 */
         .action-tip {
             margin-top: 12px;
@@ -313,7 +392,7 @@
     <!-- 顶部栏 -->
     <div class="topbar">
         <div class="topbar-title">📊 短线策略日报</div>
-        <div class="topbar-date">2026-07-21 11:24:06 | 持股8天策略</div>
+        <div class="topbar-date">2026-07-21 17:05:08 | 持股8天策略</div>
     </div>
     
     <!-- 横向总览 -->
@@ -330,42 +409,42 @@
                 </div>
             </div>
             <div class="chip-right">
-                <div class="chip-price">¥15.87<span style="font-size:0.55em;color:#888;margin-left:4px;">实时</span></div>
-                <div class="chip-pct" style="color:#ff5050">-0.13%</div>
+                <div class="chip-price">¥16.35<span style="font-size:0.55em;color:#888;margin-left:4px;">实时</span></div>
+                <div class="chip-pct" style="color:#00d4aa">+2.89%</div>
             </div>
         </div>
         
 
-        <div class="overview-chip wait">
+        <div class="overview-chip buy">
             <div class="dot"></div>
             <div class="chip-left">
                 <span class="chip-emoji">🔶</span>
                 <div>
                     <div class="chip-stock">爱乐达</div>
-                    <div class="chip-status">⏳ 观望</div>
-                    <div style="font-size:0.65em;color:#ffaa00;margin-top:2px;">⚠️ 尾盘回落</div>
+                    <div class="chip-status">🔥 买入信号</div>
+                    <div style="font-size:0.65em;color:#00d4aa;margin-top:2px;">✅ 盘中一致</div>
                 </div>
             </div>
             <div class="chip-right">
-                <div class="chip-price">¥19.66<span style="font-size:0.55em;color:#888;margin-left:4px;">实时</span></div>
-                <div class="chip-pct" style="color:#ff5050">+8.62%</div>
+                <div class="chip-price">¥20.14<span style="font-size:0.55em;color:#888;margin-left:4px;">实时</span></div>
+                <div class="chip-pct" style="color:#00d4aa">+11.27%</div>
             </div>
         </div>
         
 
-        <div class="overview-chip wait">
+        <div class="overview-chip buy">
             <div class="dot"></div>
             <div class="chip-left">
                 <span class="chip-emoji">🔹</span>
                 <div>
                     <div class="chip-stock">高澜股份</div>
-                    <div class="chip-status">⏳ 观望</div>
-                    <div style="font-size:0.65em;color:#ffaa00;margin-top:2px;">⚠️ 尾盘回落</div>
+                    <div class="chip-status">🔥 买入信号</div>
+                    <div style="font-size:0.65em;color:#00d4aa;margin-top:2px;">✅ 盘中一致</div>
                 </div>
             </div>
             <div class="chip-right">
-                <div class="chip-price">¥26.57<span style="font-size:0.55em;color:#888;margin-left:4px;">实时</span></div>
-                <div class="chip-pct" style="color:#ff5050">+1.57%</div>
+                <div class="chip-price">¥27.73<span style="font-size:0.55em;color:#888;margin-left:4px;">实时</span></div>
+                <div class="chip-pct" style="color:#00d4aa">+6.00%</div>
             </div>
         </div>
         
@@ -376,10 +455,12 @@
         <div class="summary-card">
             <div class="summary-row">
                 <span class="summary-label">今日可买入</span>
-                <span class="summary-value wait">0 只</span>
+                <span class="summary-value buy">2 只</span>
             </div>
-            <div class="summary-detail">今日3只股票均无买入信号，继续观望，等待机会。</div>
-            <div class="summary-detail" style="margin-top:8px;font-size:0.75em;color:#888;">⚡ 盘中预警 11:24:01 | 1/3 只状态一致</div>
+            <div class="summary-detail">
+                {buy_list}
+            </div>
+            <div class="summary-detail" style="margin-top:8px;font-size:0.75em;color:#888;">⚡ 盘中预警 17:05:02 | 3/3 只状态一致</div>
         </div>
         
     
@@ -395,8 +476,8 @@
                     </div>
                 </div>
                 <div class="stock-price">
-                    <div class="stock-price-value">¥15.87 <span style="font-size:0.6em;color:#888">(实时)</span></div>
-                    <div class="stock-price-change down">-0.13%</div>
+                    <div class="stock-price-value">¥16.35 <span style="font-size:0.6em;color:#888">(实时)</span></div>
+                    <div class="stock-price-change up">+2.89%</div>
                 </div>
             </div>
             <div class="stock-body">
@@ -410,23 +491,23 @@
                 <div class="indicators-row">
                     <div class="indicator">
                         <div class="indicator-label">量比</div>
-                        <div class="indicator-value yellow">1.21</div>
+                        <div class="indicator-value red">1.58</div>
                     </div>
                     <div class="indicator">
                         <div class="indicator-label">RSI(14)</div>
-                        <div class="indicator-value green">17.0</div>
+                        <div class="indicator-value green">20.9</div>
                     </div>
                     <div class="indicator">
                         <div class="indicator-label">MACD</div>
-                        <div class="indicator-value">-0.86</div>
+                        <div class="indicator-value">-1.10</div>
                     </div>
                     <div class="indicator">
                         <div class="indicator-label">振幅</div>
-                        <div class="indicator-value">10.8%</div>
+                        <div class="indicator-value">14.8%</div>
                     </div>
                     <div class="indicator">
                         <div class="indicator-label">连涨/跌</div>
-                        <div class="indicator-value">0/3</div>
+                        <div class="indicator-value">1/0</div>
                     </div>
                 </div>
                 
@@ -434,7 +515,7 @@
         </div>
         
 
-        <div class="stock-section ">
+        <div class="stock-section buy-active">
             <div class="stock-header">
                 <div class="stock-header-left">
                     <span class="stock-emoji">🔶</span>
@@ -444,46 +525,58 @@
                     </div>
                 </div>
                 <div class="stock-price">
-                    <div class="stock-price-value">¥19.66 <span style="font-size:0.6em;color:#888">(实时)</span></div>
-                    <div class="stock-price-change up">+8.62%</div>
+                    <div class="stock-price-value">¥20.14 <span style="font-size:0.6em;color:#888">(实时)</span></div>
+                    <div class="stock-price-change up">+11.27%</div>
                 </div>
             </div>
             <div class="stock-body">
                 
-            <div class="signal-area wait">
-                <div style="font-size:1.1em; margin-bottom:4px;">⏳ 暂无买入信号</div>
-                <div>今日未触发策略条件</div>
-                <div style="font-size:0.75em;color:#ffaa00;margin:4px 0;">⚠️ 盘中有预警，盘后确认无信号（尾盘回落）</div>
-            </div>
-            
+                <div class="signal-area buy">
+                    <div class="signal-tag">🔥 连阴首阳 <span class="signal-confidence">高置信</span></div>
+                    <div class="signal-desc">连续阴线后出现首根阳线，RSI<60</div>
+                    <div class="icbc-note">工行震荡(+0.8%)，正常操作</div>
+                </div>
+                
+                <div class="signal-area buy">
+                    <div class="signal-tag">🔥 放量见底 <span class="signal-confidence">极高置信</span></div>
+                    <div class="signal-desc">成交量创10日新高，价格止跌，前期跌幅>5%</div>
+                    <div class="icbc-note">工行震荡(+0.8%)，正常操作</div>
+                </div>
+                
                 <div class="indicators-row">
                     <div class="indicator">
                         <div class="indicator-label">量比</div>
-                        <div class="indicator-value yellow">1.37</div>
+                        <div class="indicator-value red">1.55</div>
                     </div>
                     <div class="indicator">
                         <div class="indicator-label">RSI(14)</div>
-                        <div class="indicator-value green">25.2</div>
+                        <div class="indicator-value yellow">33.0</div>
                     </div>
                     <div class="indicator">
                         <div class="indicator-label">MACD</div>
-                        <div class="indicator-value">-3.02</div>
+                        <div class="indicator-value">-2.98</div>
                     </div>
                     <div class="indicator">
                         <div class="indicator-label">振幅</div>
-                        <div class="indicator-value">14.8%</div>
+                        <div class="indicator-value">15.3%</div>
                     </div>
                     <div class="indicator">
                         <div class="indicator-label">连涨/跌</div>
-                        <div class="indicator-value">0/4</div>
+                        <div class="indicator-value">1/0</div>
                     </div>
                 </div>
                 
+            <div class="action-tip">
+                <b>🎯 操作建议：</b>今日收盘前确认信号，可择机买入。买入后严格持有8个交易日。
+                
+                <div style="font-size:0.75em;color:#00d4aa;margin:4px 0;">✅ 盘中预警与盘后确认一致</div>
+            </div>
+            
             </div>
         </div>
         
 
-        <div class="stock-section ">
+        <div class="stock-section buy-active">
             <div class="stock-header">
                 <div class="stock-header-left">
                     <span class="stock-emoji">🔹</span>
@@ -493,41 +586,47 @@
                     </div>
                 </div>
                 <div class="stock-price">
-                    <div class="stock-price-value">¥26.57 <span style="font-size:0.6em;color:#888">(实时)</span></div>
-                    <div class="stock-price-change up">+1.57%</div>
+                    <div class="stock-price-value">¥27.73 <span style="font-size:0.6em;color:#888">(实时)</span></div>
+                    <div class="stock-price-change up">+6.00%</div>
                 </div>
             </div>
             <div class="stock-body">
                 
-            <div class="signal-area wait">
-                <div style="font-size:1.1em; margin-bottom:4px;">⏳ 暂无买入信号</div>
-                <div>今日未触发策略条件</div>
-                <div style="font-size:0.75em;color:#ffaa00;margin:4px 0;">⚠️ 盘中有预警，盘后确认无信号（尾盘回落）</div>
-            </div>
-            
+                <div class="signal-area buy">
+                    <div class="signal-tag">🔥 跳空高开 <span class="signal-confidence">高置信</span></div>
+                    <div class="signal-desc">跳空高开0.8%~5.0%，收阳线，放量(vol_ratio>1.2)</div>
+                    <div class="icbc-note">工行震荡(+0.8%)，正常操作</div>
+                </div>
+                
                 <div class="indicators-row">
                     <div class="indicator">
                         <div class="indicator-label">量比</div>
-                        <div class="indicator-value yellow">1.09</div>
+                        <div class="indicator-value yellow">1.20</div>
                     </div>
                     <div class="indicator">
                         <div class="indicator-label">RSI(14)</div>
-                        <div class="indicator-value green">25.0</div>
+                        <div class="indicator-value yellow">31.1</div>
                     </div>
                     <div class="indicator">
                         <div class="indicator-label">MACD</div>
-                        <div class="indicator-value">-2.32</div>
+                        <div class="indicator-value">-2.62</div>
                     </div>
                     <div class="indicator">
                         <div class="indicator-label">振幅</div>
-                        <div class="indicator-value">17.5%</div>
+                        <div class="indicator-value">19.7%</div>
                     </div>
                     <div class="indicator">
                         <div class="indicator-label">连涨/跌</div>
-                        <div class="indicator-value">0/4</div>
+                        <div class="indicator-value">1/0</div>
                     </div>
                 </div>
                 
+            <div class="action-tip">
+                <b>🎯 操作建议：</b>今日收盘前确认信号，可择机买入。买入后严格持有8个交易日。
+                
+                <div style="font-size:0.75em;color:#00d4aa;margin:4px 0;">✅ 盘中预警与盘后确认一致</div>
+            </div>
+            
             </div>
         </div>
         
@@ -537,7 +636,8 @@
         <div class="history-title">📈 近30天信号记录</div>
         <table class="history-table">
             <tr><th>日期</th><th>川润</th><th>爱乐达</th><th>高澜</th></tr>
-            <tr><td>2026-07-21</td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td></tr>
+            <tr><td>2026-07-21</td><td><span class='sig-no'>-</span></td><td><span class='sig-yes'>连阴首阳</span></td><td><span class='sig-yes'>跳空高开</span></td></tr>
+<tr><td>2026-07-21</td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td></tr>
 <tr><td>2026-07-20</td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td></tr>
 <tr><td>2026-07-17</td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td></tr>
 <tr><td>2026-07-16</td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td></tr>
@@ -566,10 +666,29 @@
 <tr><td>2026-06-15</td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td><td><span class='sig-yes'>跳空高开</span></td></tr>
 <tr><td>2026-06-12</td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td></tr>
 <tr><td>2026-06-11</td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td></tr>
-<tr><td>2026-06-10</td><td><span class='sig-yes'>放量突破</span></td><td><span class='sig-no'>-</span></td><td><span class='sig-no'>-</span></td></tr>
 
         </table></div>
     </div>
+    
+    <!-- 工行跷跷板过滤器 -->
+    
+        <div class="icbc-card neutral">
+            <div class="icbc-header">
+                <span class="icbc-icon">⚪</span>
+                <span class="icbc-title neutral">工商银行跷跷板过滤器</span>
+            </div>
+            <div class="icbc-body">
+                <div class="icbc-item"><span class="label">收盘</span><span class="value">¥7.56</span></div>
+                <div class="icbc-item"><span class="label">5日涨跌</span><span class="value" style="color:#ff6b6b">+0.80%</span></div>
+                <div class="icbc-item"><span class="label">判断</span><span class="value">工行震荡期</span></div>
+            </div>
+            <div class="icbc-rec neutral">➖ 正常模式：工行波动不大，按原策略操作</div>
+            <div class="icbc-note">
+                💡 工行上行(5日涨&gt;2%)时科技股承压，信号置信度下调一级；
+                工行下行(5日跌&gt;2%)时利好科技股，信号置信度上调一级。
+            </div>
+        </div>
+        
     
     <div class="footer">
         <p><a href="/aileda_chuanrun/docs/strategy.html">📖 策略详细说明</a> | <a href="https://github.com/wateralways/aileda_chuanrun">📁 GitHub</a></p>

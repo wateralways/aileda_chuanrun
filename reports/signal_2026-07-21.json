@@ -1,111 +1,127 @@
 {
   "type": "daily",
-  "scan_time": "2026-07-21 03:24:06",
+  "scan_time": "2026-07-21 09:05:08",
   "date": "2026-07-21",
   "data_source": "tushare",
   "signals": [
     {
       "name": "川润股份",
       "code": "002272.SZ",
-      "latest_date": "20260720",
-      "latest_close": 15.89,
-      "latest_pct_chg": -9.9717,
+      "latest_date": "20260721",
+      "latest_close": 16.35,
+      "latest_pct_chg": 2.8949,
       "signals": [],
       "has_signal": false,
       "icbc_filter": {
-        "status": "up",
-        "roc_5d": 2.79,
-        "close": 7.74,
-        "date": "20260720",
-        "trend": "工行上行期",
-        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "status": "neutral",
+        "roc_5d": 0.8,
+        "close": 7.56,
+        "date": "20260721",
+        "trend": "工行震荡期",
+        "recommendation": "➖ 正常模式：工行波动不大，按原策略操作",
         "confidence_adjustment": 0
       },
       "indicators": {
-        "vol_ratio": 1.21,
-        "rsi14": 17.02,
-        "rsi6": 1.72,
-        "macd": -0.858,
-        "amplitude": 10.76,
-        "bb_pct": -0.182,
-        "price_position": 0.0,
-        "up_days": 0,
-        "down_days": 3
+        "vol_ratio": 1.58,
+        "rsi14": 20.95,
+        "rsi6": 9.65,
+        "macd": -1.103,
+        "amplitude": 14.83,
+        "bb_pct": -0.021,
+        "price_position": 0.175,
+        "up_days": 1,
+        "down_days": 0
       },
       "realtime_comparison": {
         "match": "match",
         "note": "盘中盘后均无信号",
         "realtime_has_signal": false,
-        "realtime_time": "2026-07-21 03:24:01",
+        "realtime_time": "2026-07-21 09:05:02",
         "realtime_signals": [],
         "realtime_indicators": {
-          "vol_ratio": 1.91,
-          "rsi14": 17.98,
-          "rsi6": 2.42,
-          "macd": -1.141,
-          "amplitude": 11.26,
-          "bb_pct": -0.054,
-          "up_days": 0,
-          "down_days": 4
+          "vol_ratio": 1.58,
+          "rsi14": 20.95,
+          "rsi6": 9.65,
+          "macd": -1.103,
+          "amplitude": 14.83,
+          "bb_pct": -0.021,
+          "up_days": 1,
+          "down_days": 0
         }
       }
     },
     {
       "name": "爱乐达",
       "code": "300696.SZ",
-      "latest_date": "20260720",
-      "latest_close": 18.1,
-      "latest_pct_chg": -9.0452,
-      "signals": [],
-      "has_signal": false,
+      "latest_date": "20260721",
+      "latest_close": 20.14,
+      "latest_pct_chg": 11.2707,
+      "signals": [
+        {
+          "strategy": "连阴首阳",
+          "type": "primary",
+          "confidence": "高",
+          "description": "连续阴线后出现首根阳线，RSI<60",
+          "icbc_note": "工行震荡(+0.8%)，正常操作"
+        },
+        {
+          "strategy": "放量见底",
+          "type": "high_confidence",
+          "confidence": "极高",
+          "description": "成交量创10日新高，价格止跌，前期跌幅>5%",
+          "icbc_note": "工行震荡(+0.8%)，正常操作"
+        }
+      ],
+      "has_signal": true,
       "icbc_filter": {
-        "status": "up",
-        "roc_5d": 2.79,
-        "close": 7.74,
-        "date": "20260720",
-        "trend": "工行上行期",
-        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "status": "neutral",
+        "roc_5d": 0.8,
+        "close": 7.56,
+        "date": "20260721",
+        "trend": "工行震荡期",
+        "recommendation": "➖ 正常模式：工行波动不大，按原策略操作",
         "confidence_adjustment": 0
       },
       "indicators": {
-        "vol_ratio": 1.37,
-        "rsi14": 25.23,
-        "rsi6": 12.31,
-        "macd": -3.018,
-        "amplitude": 14.81,
-        "bb_pct": 0.065,
-        "price_position": 0.026,
-        "up_days": 0,
-        "down_days": 4
+        "vol_ratio": 1.55,
+        "rsi14": 33.02,
+        "rsi6": 37.95,
+        "macd": -2.982,
+        "amplitude": 15.31,
+        "bb_pct": 0.21,
+        "price_position": 0.17,
+        "up_days": 1,
+        "down_days": 0
       },
+      "buy_price": 20.14,
       "realtime_comparison": {
-        "match": "false_alarm",
-        "note": "盘中有预警，盘后确认无信号（尾盘回落）",
+        "match": "match",
+        "note": "盘中预警与盘后确认一致",
         "realtime_has_signal": true,
-        "realtime_time": "2026-07-21 03:24:01",
+        "realtime_time": "2026-07-21 09:05:02",
         "realtime_signals": [
           {
             "strategy": "连阴首阳",
             "type": "primary",
-            "confidence": "中",
+            "confidence": "高",
             "description": "连续阴线后出现首根阳线，RSI<60",
-            "icbc_note": "工行大涨+2.8%，逃科技模式，置信度下调"
+            "icbc_note": "工行震荡(+0.8%)，正常操作"
           },
           {
             "strategy": "放量见底",
             "type": "high_confidence",
-            "confidence": "高",
+            "confidence": "极高",
             "description": "成交量创10日新高，价格止跌，前期跌幅>5%",
-            "icbc_note": "工行大涨+2.8%，逃科技模式，置信度下调"
+            "icbc_note": "工行震荡(+0.8%)，正常操作"
           }
         ],
         "realtime_indicators": {
-          "vol_ratio": 1.85,
-          "rsi14": 31.17,
-          "rsi6": 33.84,
-          "macd": -3.02,
-          "amplitude": 13.25,
-          "bb_pct": 0.182,
+          "vol_ratio": 1.55,
+          "rsi14": 33.02,
+          "rsi6": 37.95,
+          "macd": -2.982,
+          "amplitude": 15.31,
+          "bb_pct": 0.21,
           "up_days": 1,
           "down_days": 0
         }
@@ -114,52 +130,61 @@
     {
       "name": "高澜股份",
       "code": "300499.SZ",
-      "latest_date": "20260720",
-      "latest_close": 26.16,
-      "latest_pct_chg": -8.6273,
-      "signals": [],
-      "has_signal": false,
+      "latest_date": "20260721",
+      "latest_close": 27.73,
+      "latest_pct_chg": 6.0015,
+      "signals": [
+        {
+          "strategy": "跳空高开",
+          "type": "primary",
+          "confidence": "高",
+          "description": "跳空高开0.8%~5.0%，收阳线，放量(vol_ratio>1.2)",
+          "icbc_note": "工行震荡(+0.8%)，正常操作"
+        }
+      ],
+      "has_signal": true,
       "icbc_filter": {
-        "status": "up",
-        "roc_5d": 2.79,
-        "close": 7.74,
-        "date": "20260720",
-        "trend": "工行上行期",
-        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "status": "neutral",
+        "roc_5d": 0.8,
+        "close": 7.56,
+        "date": "20260721",
+        "trend": "工行震荡期",
+        "recommendation": "➖ 正常模式：工行波动不大，按原策略操作",
         "confidence_adjustment": 0
       },
       "indicators": {
-        "vol_ratio": 1.09,
-        "rsi14": 24.96,
-        "rsi6": 5.19,
-        "macd": -2.317,
-        "amplitude": 17.52,
-        "bb_pct": -0.136,
-        "price_position": 0.036,
-        "up_days": 0,
-        "down_days": 4
+        "vol_ratio": 1.2,
+        "rsi14": 31.08,
+        "rsi6": 19.69,
+        "macd": -2.625,
+        "amplitude": 19.74,
+        "bb_pct": 0.035,
+        "price_position": 0.206,
+        "up_days": 1,
+        "down_days": 0
       },
+      "buy_price": 27.73,
       "realtime_comparison": {
-        "match": "false_alarm",
-        "note": "盘中有预警，盘后确认无信号（尾盘回落）",
+        "match": "match",
+        "note": "盘中预警与盘后确认一致",
         "realtime_has_signal": true,
-        "realtime_time": "2026-07-21 03:24:01",
+        "realtime_time": "2026-07-21 09:05:02",
         "realtime_signals": [
           {
             "strategy": "跳空高开",
             "type": "primary",
-            "confidence": "中",
+            "confidence": "高",
             "description": "跳空高开0.8%~5.0%，收阳线，放量(vol_ratio>1.2)",
-            "icbc_note": "工行大涨+2.8%，逃科技模式，置信度下调"
+            "icbc_note": "工行震荡(+0.8%)，正常操作"
           }
         ],
         "realtime_indicators": {
-          "vol_ratio": 1.4,
-          "rsi14": 27.75,
-          "rsi6": 10.79,
-          "macd": -2.718,
-          "amplitude": 15.78,
-          "bb_pct": -0.012,
+          "vol_ratio": 1.2,
+          "rsi14": 31.08,
+          "rsi6": 19.69,
+          "macd": -2.625,
+          "amplitude": 19.74,
+          "bb_pct": 0.035,
           "up_days": 1,
           "down_days": 0
         }
