@@ -11,7 +11,8 @@ import json
 import os
 import glob
 from datetime import datetime, timezone
-from signals import scan_signals
+from signals import scan_signals, enhance_with_icbc_filter
+from icbc_filter import get_icbc_filter
 
 # Tushare Token（优先从环境变量读取）
 TUSHARE_TOKEN = os.environ.get('TUSHARE_TOKEN', '701a94c30c5d1c7af41602c8ebd47b1ca7a2c49bfdd5419379f40c8d')
@@ -168,6 +169,24 @@ def main():
         print(f"===== 每日策略扫描 {results['scan_time']} =====")
         print("(未找到盘中预警数据)\n")
     
+    # ---- 获取工行跷跷板过滤器数据 ----
+    print("获取工行跷跷板过滤器数据...")
+    icbc_filter = get_icbc_filter()
+    if icbc_filter.get('data_available'):
+        status_emoji = {
+            'up': '🔴',
+            'down': '🟢',
+            'neutral': '⚪'
+        }.get(icbc_filter['status'], '⚪')
+        print(f"  {status_emoji} 工行({icbc_filter['date']}) 收盘{icbc_filter['close']}  "
+              f"5日涨跌{icbc_filter['roc_5d']:+.2f}%  "
+              f"→ {icbc_filter['trend']}")
+        print(f"  {icbc_filter['recommendation']}")
+    else:
+        print(f"  ⚠️ 工行数据不可用，跳过过滤器")
+        icbc_filter = None
+    print()
+    
     for name, code in stocks.items():
         print(f"扫描 {name} ({code})...")
         df = get_daily_data(code)
@@ -180,6 +199,10 @@ def main():
         
         signals, latest_row = scan_signals(df, name)
         
+        # ---- 应用工行跷跷板过滤器 ----
+        signals, latest_row, icbc_info = enhance_with_icbc_filter(
+            (signals, latest_row), icbc_filter)
+        
         stock_result = {
             'name': name,
             'code': code,
@@ -188,6 +211,7 @@ def main():
             'latest_pct_chg': float(latest['pct_chg']),
             'signals': signals,
             'has_signal': len(signals) > 0,
+            'icbc_filter': icbc_info,  # 工行过滤器信息
             'indicators': {
                 'vol_ratio': round(float(latest_row['vol_ratio']), 2) if not pd.isna(latest_row['vol_ratio']) else None,
                 'rsi14': round(float(latest_row['rsi14']), 2) if not pd.isna(latest_row['rsi14']) else None,
@@ -207,7 +231,10 @@ def main():
             print(f"  [!] 触发信号: {len(signals)}个")
             for s in signals:
                 tag = "[主]" if s['type'] == 'primary' else "[极]" if s['type'] == 'high_confidence' else "[辅]"
+                note = s.get('icbc_note', '')
                 print(f"    {tag} [{s['strategy']}] 置信度:{s['confidence']} - {s['description']}")
+                if note:
+                    print(f"       {note}")
         else:
             print(f"  [OK] 无信号")
         

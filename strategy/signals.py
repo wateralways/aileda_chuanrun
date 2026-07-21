@@ -2,9 +2,22 @@
 # -*- coding: utf-8 -*-
 """
 策略信号定义 - 川润股份 & 爱乐达 & 高澜股份 专用策略
+
+工行跷跷板过滤器集成说明：
+    scan_signals() 仍然保持原有接口不变。
+    新增 enhance_with_icbc_filter() 函数，可叠加工行过滤器。
+    在 daily_scan.py 和 realtime_scan.py 中调用方式：
+        signals, latest_row = scan_signals(df, stock_name)
+        signals, latest_row, icbc_info = enhance_with_icbc_filter(
+            (signals, latest_row), icbc_filter_result)
 """
 import pandas as pd
 import numpy as np
+
+# ===== 工行跷跷板过滤器常量 =====
+ICBC_FILTER_UP = 'up'           # 工行上行 → 逃科技
+ICBC_FILTER_DOWN = 'down'       # 工行下行 → 抄科技
+ICBC_FILTER_NEUTRAL = 'neutral' # 震荡 → 正常
 
 def calc_indicators(df):
     """计算技术指标"""
@@ -161,6 +174,66 @@ def gaolan_gap_up(df, i, min_gap=0.8, max_gap=5.0):
             df.iloc[i]['vol_ratio'] > 1.2)
 
 # ================== 信号扫描入口 ==================
+
+def enhance_with_icbc_filter(signals_result, icbc_filter):
+    """将工行过滤器信息整合到扫描结果中
+    
+    Args:
+        signals_result: scan_signals()返回的(signals, latest_row)元组
+        icbc_filter: get_icbc_filter()返回的字典
+    
+    Returns:
+        (signals, latest_row, icbc_info) 元组
+    """
+    signals, latest_row = signals_result
+    
+    if not icbc_filter or not icbc_filter.get('data_available'):
+        icbc_info = {
+            'status': 'neutral',
+            'roc_5d': 0,
+            'trend': '数据不可用',
+            'recommendation': '正常操作',
+            'confidence_adjustment': 0,
+        }
+        return signals, latest_row, icbc_info
+    
+    status = icbc_filter['status']
+    roc = icbc_filter['roc_5d']
+    
+    # 构建ICBC信息
+    icbc_info = {
+        'status': status,
+        'roc_5d': roc,
+        'close': icbc_filter.get('close', 0),
+        'date': icbc_filter.get('date', ''),
+        'trend': icbc_filter.get('trend', ''),
+        'recommendation': icbc_filter.get('recommendation', ''),
+        'confidence_adjustment': 0,  # -1=降级, 0=不变, +1=升级
+    }
+    
+    # 根据ICBC状态调整信号置信度
+    if status == ICBC_FILTER_UP and signals:
+        icbc_info['confidence_adjustment'] = -1
+        for s in signals:
+            conf_map = {'极高': '高', '高': '中', '中': '低'}
+            original = s.get('confidence', '中')
+            s['confidence'] = conf_map.get(original, original)
+            s['icbc_note'] = f'工行大涨{roc:+.1f}%，逃科技模式，置信度下调'
+    
+    elif status == ICBC_FILTER_DOWN and signals:
+        icbc_info['confidence_adjustment'] = 1
+        for s in signals:
+            conf_map = {'中': '高', '高': '极高'}
+            original = s.get('confidence', '中')
+            s['confidence'] = conf_map.get(original, original)
+            s['icbc_note'] = f'工行大跌{roc:+.1f}%，抄科技模式，置信度上调'
+    
+    elif signals:
+        for s in signals:
+            s['icbc_note'] = f'工行震荡({roc:+.1f}%)，正常操作'
+    
+    return signals, latest_row, icbc_info
+
 
 def scan_signals(df, stock_name):
     """扫描今日是否触发买入信号"""

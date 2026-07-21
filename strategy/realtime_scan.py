@@ -21,7 +21,8 @@ import json
 import os
 import tushare as ts
 from datetime import datetime, timezone
-from signals import scan_signals, calc_indicators
+from signals import scan_signals, calc_indicators, enhance_with_icbc_filter
+from icbc_filter import get_icbc_filter
 
 TUSHARE_TOKEN = os.environ.get('TUSHARE_TOKEN', '701a94c30c5d1c7af41602c8ebd47b1ca7a2c49bfdd5419379f40c8d')
 
@@ -168,13 +169,14 @@ def merge_realtime_data(df_history, rt):
         'pre_close': rt['prev_close'],
         'change': rt['current'] - rt['prev_close'],
         'pct_chg': (rt['current'] - rt['prev_close']) / rt['prev_close'] * 100,
-        'vol': estimated_vol,
+        # 新浪财经成交量单位是'股'，Tushare日线vol单位是'手'，需要转换
+        'vol': int(estimated_vol / 100),
         'amount': rt['amount'],
     }
     
     # 追加到历史数据
     new_df = pd.concat([df_history, pd.DataFrame([today_row])], ignore_index=True)
-    return new_df
+    return new_df, estimated_vol
 
 
 def generate_realtime_html(data):
@@ -361,6 +363,20 @@ def main():
     
     print(f"===== 盘中实时扫描 {results['scan_time']} =====\n")
     
+    # ---- 获取工行跷跷板过滤器数据 ----
+    print("获取工行跷跷板过滤器数据...")
+    icbc_filter = get_icbc_filter()
+    if icbc_filter.get('data_available'):
+        status_emoji = {'up': '🔴', 'down': '🟢', 'neutral': '⚪'}.get(icbc_filter['status'], '⚪')
+        print(f"  {status_emoji} 工行({icbc_filter['date']}) 收盘{icbc_filter['close']}  "
+              f"5日涨跌{icbc_filter['roc_5d']:+.2f}%  "
+              f"→ {icbc_filter['trend']}")
+        print(f"  {icbc_filter['recommendation']}")
+    else:
+        print(f"  ⚠️ 工行数据不可用，跳过过滤器")
+        icbc_filter = None
+    print()
+    
     # 获取新浪财经实时数据
     sina_codes = [tushare_to_sina_code(c) for c in STOCKS.values()]
     realtime_data = get_sina_realtime(sina_codes)
@@ -389,13 +405,17 @@ def main():
             continue
         
         # 合并实时数据
-        df_merged = merge_realtime_data(df, rt)
+        df_merged, estimated_vol_shares = merge_realtime_data(df, rt)
         
         # 计算指标
         df_merged = calc_indicators(df_merged)
         
         # 扫描信号
         signals, latest_row = scan_signals(df_merged, name)
+        
+        # ---- 应用工行跷跷板过滤器 ----
+        signals, latest_row, icbc_info = enhance_with_icbc_filter(
+            (signals, latest_row), icbc_filter)
         
         stock_result = {
             'name': name,
@@ -406,13 +426,14 @@ def main():
                 'low': rt['low'],
                 'current': rt['current'],
                 'volume': rt['volume'],
-                'estimated_volume': int(df_merged.iloc[-1]['vol']),
+                'estimated_volume': int(estimated_vol_shares),
                 'pct_chg': round((rt['current'] - rt['prev_close']) / rt['prev_close'] * 100, 2),
                 'date': rt['date'],
                 'time': rt['time'],
             },
             'has_signal': len(signals) > 0,
             'signals': signals,
+            'icbc_filter': icbc_info,  # 工行过滤器信息
             'indicators': {
                 'vol_ratio': round(float(latest_row['vol_ratio']), 2) if not pd.isna(latest_row['vol_ratio']) else None,
                 'rsi14': round(float(latest_row['rsi14']), 2) if not pd.isna(latest_row['rsi14']) else None,
@@ -431,7 +452,10 @@ def main():
             print(f"  [!] 盘中预警: {len(signals)}个")
             for s in signals:
                 tag = "[主]" if s['type'] == 'primary' else "[极]" if s['type'] == 'high_confidence' else "[辅]"
+                note = s.get('icbc_note', '')
                 print(f"    {tag} [{s['strategy']}] 置信度:{s['confidence']} - {s['description']}")
+                if note:
+                    print(f"       {note}")
         else:
             print(f"  [OK] 无信号")
     
