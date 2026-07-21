@@ -1,8 +1,8 @@
 {
-  "update_time": "2026-07-21 17:05:10",
+  "update_time": "2026-07-21 20:21:38",
   "stocks": {
     "爱乐达": {
-      "total_trades": 7,
+      "total_trades": 8,
       "completed_trades": 5,
       "win_trades": 2,
       "win_rate": 40.0,
@@ -22,7 +22,7 @@
       "max_loss": 5.97
     },
     "高澜股份": {
-      "total_trades": 2,
+      "total_trades": 3,
       "completed_trades": 1,
       "win_trades": 1,
       "win_rate": 100.0,

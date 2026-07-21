@@ -1,6 +1,6 @@
 {
   "type": "daily",
-  "scan_time": "2026-07-21 09:05:08",
+  "scan_time": "2026-07-21 12:21:35",
   "date": "2026-07-21",
   "data_source": "tushare",
   "signals": [
@@ -31,23 +31,6 @@
         "price_position": 0.175,
         "up_days": 1,
         "down_days": 0
-      },
-      "realtime_comparison": {
-        "match": "match",
-        "note": "盘中盘后均无信号",
-        "realtime_has_signal": false,
-        "realtime_time": "2026-07-21 09:05:02",
-        "realtime_signals": [],
-        "realtime_indicators": {
-          "vol_ratio": 1.58,
-          "rsi14": 20.95,
-          "rsi6": 9.65,
-          "macd": -1.103,
-          "amplitude": 14.83,
-          "bb_pct": -0.021,
-          "up_days": 1,
-          "down_days": 0
-        }
       }
     },
     {
@@ -93,39 +76,7 @@
         "up_days": 1,
         "down_days": 0
       },
-      "buy_price": 20.14,
-      "realtime_comparison": {
-        "match": "match",
-        "note": "盘中预警与盘后确认一致",
-        "realtime_has_signal": true,
-        "realtime_time": "2026-07-21 09:05:02",
-        "realtime_signals": [
-          {
-            "strategy": "连阴首阳",
-            "type": "primary",
-            "confidence": "高",
-            "description": "连续阴线后出现首根阳线，RSI<60",
-            "icbc_note": "工行震荡(+0.8%)，正常操作"
-          },
-          {
-            "strategy": "放量见底",
-            "type": "high_confidence",
-            "confidence": "极高",
-            "description": "成交量创10日新高，价格止跌，前期跌幅>5%",
-            "icbc_note": "工行震荡(+0.8%)，正常操作"
-          }
-        ],
-        "realtime_indicators": {
-          "vol_ratio": 1.55,
-          "rsi14": 33.02,
-          "rsi6": 37.95,
-          "macd": -2.982,
-          "amplitude": 15.31,
-          "bb_pct": 0.21,
-          "up_days": 1,
-          "down_days": 0
-        }
-      }
+      "buy_price": 20.14
     },
     {
       "name": "高澜股份",
@@ -163,32 +114,7 @@
         "up_days": 1,
         "down_days": 0
       },
-      "buy_price": 27.73,
-      "realtime_comparison": {
-        "match": "match",
-        "note": "盘中预警与盘后确认一致",
-        "realtime_has_signal": true,
-        "realtime_time": "2026-07-21 09:05:02",
-        "realtime_signals": [
-          {
-            "strategy": "跳空高开",
-            "type": "primary",
-            "confidence": "高",
-            "description": "跳空高开0.8%~5.0%，收阳线，放量(vol_ratio>1.2)",
-            "icbc_note": "工行震荡(+0.8%)，正常操作"
-          }
-        ],
-        "realtime_indicators": {
-          "vol_ratio": 1.2,
-          "rsi14": 31.08,
-          "rsi6": 19.69,
-          "macd": -2.625,
-          "amplitude": 19.74,
-          "bb_pct": 0.035,
-          "up_days": 1,
-          "down_days": 0
-        }
-      }
+      "buy_price": 27.73
     }
   ]
 }
