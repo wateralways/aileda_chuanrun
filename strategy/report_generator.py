@@ -269,6 +269,85 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
         .indicators-row .indicator-value.red { color: #ff5050; }
         .indicators-row .indicator-value.yellow { color: #ffaa00; }
         
+        /* 工行跷跷板过滤器卡片 */
+        .icbc-card {
+            margin: 12px 16px;
+            padding: 12px 16px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .icbc-card.up {
+            border-color: rgba(255,80,80,0.3);
+            background: linear-gradient(135deg, rgba(255,80,80,0.08) 0%, rgba(255,80,80,0.02) 100%);
+        }
+        .icbc-card.down {
+            border-color: rgba(0,212,170,0.3);
+            background: linear-gradient(135deg, rgba(0,212,170,0.08) 0%, rgba(0,212,170,0.02) 100%);
+        }
+        .icbc-card.neutral {
+            border-color: rgba(255,255,255,0.08);
+        }
+        .icbc-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .icbc-icon { font-size: 1.2em; }
+        .icbc-title {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: #fff;
+        }
+        .icbc-title.up { color: #ff6b6b; }
+        .icbc-title.down { color: #00d4aa; }
+        .icbc-body {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            font-size: 0.78em;
+            color: #aaa;
+        }
+        .icbc-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .icbc-item .label { color: #888; }
+        .icbc-item .value { font-weight: 600; color: #ddd; }
+        .icbc-rec {
+            margin-top: 6px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 0.78em;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        .icbc-rec.up {
+            background: rgba(255,80,80,0.1);
+            color: #ff6b6b;
+            border-left: 3px solid #ff6b6b;
+        }
+        .icbc-rec.down {
+            background: rgba(0,212,170,0.1);
+            color: #00d4aa;
+            border-left: 3px solid #00d4aa;
+        }
+        .icbc-rec.neutral {
+            background: rgba(255,255,255,0.03);
+            color: #888;
+            border-left: 3px solid #555;
+        }
+        .icbc-note {
+            font-size: 0.72em;
+            color: #ffaa00;
+            margin-top: 4px;
+            padding: 4px 0;
+        }
+        
         /* 操作提示 */
         .action-tip {
             margin-top: 12px;
@@ -346,6 +425,9 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
             {{history_rows}}
         </table></div>
     </div>
+    
+    <!-- 工行跷跷板过滤器 -->
+    {{icbc_section}}
     
     <div class="footer">
         <p><a href="/aileda_chuanrun/docs/strategy.html">📖 策略详细说明</a> | <a href="https://github.com/wateralways/aileda_chuanrun">📁 GitHub</a></p>
@@ -480,6 +562,44 @@ def generate_report(json_path=None):
         </div>
         '''
     
+    # === 工行跷跷板过滤器 ===
+    icbc_section = ''
+    # 从第一只股票中提取工行过滤器信息（所有股票共享同一个）
+    if data['signals']:
+        icbc_filter = data['signals'][0].get('icbc_filter', {})
+        if icbc_filter and icbc_filter.get('status'):
+            status = icbc_filter['status']
+            roc = icbc_filter.get('roc_5d', 0)
+            trend = icbc_filter.get('trend', '')
+            recommendation = icbc_filter.get('recommendation', '')
+            
+            status_map = {
+                'up': ('🔴', '逃科技模式 — 谨慎', 'up'),
+                'down': ('🟢', '抄科技模式 — 积极', 'down'),
+                'neutral': ('⚪', '正常模式', 'neutral'),
+            }
+            icon, title, css_class = status_map.get(status, ('⚪', '未知', 'neutral'))
+            rec_class = css_class
+            
+            icbc_section = f'''
+        <div class="icbc-card {css_class}">
+            <div class="icbc-header">
+                <span class="icbc-icon">{icon}</span>
+                <span class="icbc-title {css_class}">工商银行跷跷板过滤器</span>
+            </div>
+            <div class="icbc-body">
+                <div class="icbc-item"><span class="label">收盘</span><span class="value">¥{icbc_filter.get('close', '-'):.2f}</span></div>
+                <div class="icbc-item"><span class="label">5日涨跌</span><span class="value" style="color:{"#ff6b6b" if roc>0 else "#00d4aa"}">{roc:+.2f}%</span></div>
+                <div class="icbc-item"><span class="label">判断</span><span class="value">{trend}</span></div>
+            </div>
+            <div class="icbc-rec {rec_class}">{recommendation}</div>
+            <div class="icbc-note">
+                💡 工行上行(5日涨&gt;2%)时科技股承压，信号置信度下调一级；
+                工行下行(5日跌&gt;2%)时利好科技股，信号置信度上调一级。
+            </div>
+        </div>
+        '''
+    
     # === 生成股票详细区域 ===
     stock_sections = []
     for stock in data['signals']:
@@ -517,15 +637,28 @@ def generate_report(json_path=None):
             signals_html = ""
             for sig in stock['signals']:
                 conf_tag = f'<span class="signal-confidence">{sig["confidence"]}置信</span>'
+                icbc_note = sig.get('icbc_note', '')
+                icbc_note_html = f'<div class="icbc-note">{icbc_note}</div>' if icbc_note else ''
                 signals_html += f'''
                 <div class="signal-area buy">
                     <div class="signal-tag">🔥 {sig['strategy']} {conf_tag}</div>
                     <div class="signal-desc">{sig['description']}</div>
+                    {icbc_note_html}
                 </div>
                 '''
+            
+            # 如果ICBC上行，在操作建议中增加提示
+            icbc_filter_stock = stock.get('icbc_filter', {})
+            icbc_warning = ''
+            if icbc_filter_stock.get('status') == 'up':
+                icbc_warning = f'<div style="font-size:0.75em;color:#ff6b6b;margin-top:4px;">⚠️ 当前工行上行期({icbc_filter_stock.get("roc_5d",0):+.1f}%)，逃科技模式，建议控制仓位</div>'
+            elif icbc_filter_stock.get('status') == 'down':
+                icbc_warning = f'<div style="font-size:0.75em;color:#00d4aa;margin-top:4px;">✅ 当前工行下行期({icbc_filter_stock.get("roc_5d",0):+.1f}%)，抄科技模式，可积极参与</div>'
+            
             action_tip = f'''
             <div class="action-tip">
                 <b>🎯 操作建议：</b>今日收盘前确认信号，可择机买入。买入后严格持有8个交易日。
+                {icbc_warning}
                 {rt_compare_html}
             </div>
             '''
@@ -637,6 +770,7 @@ def generate_report(json_path=None):
     html = html.replace('{{overview_chips}}', '\n'.join(overview_chips))
     html = html.replace('{{summary_card}}', summary_html)
     html = html.replace('{{stock_sections}}', '\n'.join(stock_sections))
+    html = html.replace('{{icbc_section}}', icbc_section)
     html = html.replace('{{history_rows}}', history_rows)
     
     output_path = f"reports/report_{date}.html"
