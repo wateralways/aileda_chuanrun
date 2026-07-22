@@ -1,0 +1,95 @@
+{
+  "type": "daily",
+  "scan_time": "2026-07-22 12:23:16",
+  "date": "2026-07-22",
+  "data_source": "tushare",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "latest_date": "20260722",
+      "latest_close": 16.2,
+      "latest_pct_chg": -0.9174,
+      "signals": [],
+      "has_signal": false,
+      "icbc_filter": {
+        "status": "neutral",
+        "roc_5d": 1.2,
+        "close": 7.6,
+        "date": "20260722",
+        "trend": "工行震荡期",
+        "recommendation": "➖ 正常模式：工行波动不大，按原策略操作",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 1.01,
+        "rsi14": 19.78,
+        "rsi6": 11.47,
+        "macd": -1.294,
+        "amplitude": 8.88,
+        "bb_pct": 0.043,
+        "price_position": 0.163,
+        "up_days": 0,
+        "down_days": 1
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "latest_date": "20260722",
+      "latest_close": 19.34,
+      "latest_pct_chg": -3.9722,
+      "signals": [],
+      "has_signal": false,
+      "icbc_filter": {
+        "status": "neutral",
+        "roc_5d": 1.2,
+        "close": 7.6,
+        "date": "20260722",
+        "trend": "工行震荡期",
+        "recommendation": "➖ 正常模式：工行波动不大，按原策略操作",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 0.8,
+        "rsi14": 33.77,
+        "rsi6": 26.74,
+        "macd": -2.983,
+        "amplitude": 5.3,
+        "bb_pct": 0.168,
+        "price_position": 0.122,
+        "up_days": 0,
+        "down_days": 1
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "latest_date": "20260722",
+      "latest_close": 28.17,
+      "latest_pct_chg": 1.5867,
+      "signals": [],
+      "has_signal": false,
+      "icbc_filter": {
+        "status": "neutral",
+        "roc_5d": 1.2,
+        "close": 7.6,
+        "date": "20260722",
+        "trend": "工行震荡期",
+        "recommendation": "➖ 正常模式：工行波动不大，按原策略操作",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 1.11,
+        "rsi14": 33.71,
+        "rsi6": 17.71,
+        "macd": -2.802,
+        "amplitude": 10.33,
+        "bb_pct": 0.106,
+        "price_position": 0.226,
+        "up_days": 2,
+        "down_days": 0
+      }
+    }
+  ]
+}
