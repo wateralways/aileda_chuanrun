@@ -1,0 +1,104 @@
+{
+  "type": "daily",
+  "scan_time": "2026-07-23 12:21:00",
+  "date": "2026-07-23",
+  "data_source": "tushare",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "latest_date": "20260723",
+      "latest_close": 15.79,
+      "latest_pct_chg": -2.5309,
+      "signals": [],
+      "has_signal": false,
+      "icbc_filter": {
+        "status": "up",
+        "roc_5d": 3.92,
+        "close": 7.68,
+        "date": "20260723",
+        "trend": "工行上行期",
+        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 0.83,
+        "rsi14": 20.24,
+        "rsi6": 8.36,
+        "macd": -1.462,
+        "amplitude": 7.9,
+        "bb_pct": 0.073,
+        "price_position": 0.127,
+        "up_days": 0,
+        "down_days": 2
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "latest_date": "20260723",
+      "latest_close": 19.54,
+      "latest_pct_chg": 1.0341,
+      "signals": [
+        {
+          "strategy": "连阴首阳",
+          "type": "primary",
+          "confidence": "中",
+          "description": "连续阴线后出现首根阳线，RSI<60",
+          "icbc_note": "工行大涨+3.9%，逃科技模式，置信度下调"
+        }
+      ],
+      "has_signal": true,
+      "icbc_filter": {
+        "status": "up",
+        "roc_5d": 3.92,
+        "close": 7.68,
+        "date": "20260723",
+        "trend": "工行上行期",
+        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "confidence_adjustment": -1
+      },
+      "indicators": {
+        "vol_ratio": 0.56,
+        "rsi14": 26.12,
+        "rsi6": 33.23,
+        "macd": -2.934,
+        "amplitude": 3.01,
+        "bb_pct": 0.197,
+        "price_position": 0.147,
+        "up_days": 1,
+        "down_days": 0
+      },
+      "buy_price": 19.54
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "latest_date": "20260723",
+      "latest_close": 27.8,
+      "latest_pct_chg": -1.3135,
+      "signals": [],
+      "has_signal": false,
+      "icbc_filter": {
+        "status": "up",
+        "roc_5d": 3.92,
+        "close": 7.68,
+        "date": "20260723",
+        "trend": "工行上行期",
+        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 0.78,
+        "rsi14": 31.98,
+        "rsi6": 21.31,
+        "macd": -2.937,
+        "amplitude": 7.42,
+        "bb_pct": 0.124,
+        "price_position": 0.227,
+        "up_days": 0,
+        "down_days": 1
+      }
+    }
+  ]
+}
