@@ -157,8 +157,29 @@ def main():
         'scan_time': datetime.now(timezone.utc).replace(tzinfo=None).strftime('%Y-%m-%d %H:%M:%S'),
         'date': today_str,
         'data_source': 'tushare',
-        'signals': []
+        'signals': [],
+        'seesaw': None  # 跷跷板策略结果
     }
+    
+    # ===== 跷跷板策略扫描（工行 vs 科创50）=====
+    print("
+===== 跷跷板策略扫描 =====")
+    try:
+        from seesaw_kc50 import calc_score
+        seesaw_result = calc_score()
+        results['seesaw'] = {
+            'score': seesaw_result['score'],
+            'signal': seesaw_result['signal'],
+            'signal_detail': seesaw_result['signal_detail'],
+            'detail': seesaw_result['detail'],
+            'data': seesaw_result['data'],
+        }
+        print(f"  工行见顶概率: {seesaw_result['score']}/100")
+        print(f"  信号: [{seesaw_result['signal']}] {seesaw_result['signal_detail']}")
+    except ImportError:
+        print("  [跳过] seesaw_kc50.py 未安装")
+    except Exception as e:
+        print(f"  [错误] {e}")
     
     # 加载盘中预警数据
     realtime_data = load_realtime_data(today_str)

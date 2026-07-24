@@ -770,7 +770,60 @@ def generate_report(json_path=None):
     html = html.replace('{{overview_chips}}', '\n'.join(overview_chips))
     html = html.replace('{{summary_card}}', summary_html)
     html = html.replace('{{stock_sections}}', '\n'.join(stock_sections))
-    html = html.replace('{{icbc_section}}', icbc_section)
+        # === 跷跷板策略评分（工行 vs 科创50）===
+    seesaw_html = ''
+    seesaw_data = data.get('seesaw')
+    if seesaw_data:
+        score = seesaw_data['score']
+        signal = seesaw_data['signal']
+        detail_map = {'买入':'买入科创50','准备':'准备买入','观望':'等待时机','不动':'不操作'}
+        signal_text = detail_map.get(signal, signal)
+        
+        # 进度条颜色
+        bar_color = '#00d4aa'
+        if score >= 70: bar_color = '#ff6b6b'
+        elif score >= 50: bar_color = '#ffa726'
+        elif score >= 30: bar_color = '#ffd740'
+        
+        pct = min(score, 100)
+        d = seesaw_data.get('data', {})
+        
+        # 维度条形图
+        detail_bars = ''
+        for k, v in sorted(seesaw_data.get('detail', {}).items(), key=lambda x: -x[1]):
+            bar_w = min(v/20*100, 100)
+            detail_bars += f'''
+            <div style="display:flex;align-items:center;margin:4px 0;font-size:12px;">
+                <span style="width:65px;color:#888;">{k}</span>
+                <div style="flex:1;height:14px;background:#1a1a3e;border-radius:3px;margin:0 8px;">
+                    <div style="width:{bar_w}%;height:100%;background:{bar_color};border-radius:3px;opacity:0.7;"></div>
+                </div>
+                <span style="width:30px;text-align:right;color:#ddd;">{v}</span>
+            </div>'''
+        
+        seesaw_html = f'''
+        <div class="icbc-card" style="border-left-color:{bar_color};">
+            <div class="icbc-header">
+                <span style="font-size:1.2em;">🏦</span>
+                <span class="icbc-title" style="color:{bar_color};">工行见顶概率评分</span>
+            </div>
+            <div class="icbc-body">
+                <div style="text-align:center;padding:10px 0;">
+                    <span style="font-size:36px;font-weight:700;color:{bar_color};">{pct}</span>
+                    <span style="font-size:14px;color:#888;">/100</span>
+                    <div style="font-size:14px;margin-top:4px;color:{bar_color};">{signal} — {signal_text}</div>
+                </div>
+                <div style="height:6px;background:#1a1a3e;border-radius:3px;margin:8px 0;">
+                    <div style="width:{pct}%;height:100%;background:{bar_color};border-radius:3px;"></div>
+                </div>
+                {detail_bars}
+                <div style="margin-top:8px;font-size:11px;color:#666;border-top:1px solid #1a1a3e;padding-top:6px;">
+                    工行:{d.get('price','-')} | MA5:{d.get('ma5','-')} | MA10:{d.get('ma10','-')} | 月超额:{d.get('m_ret',0):+.1f}%
+                </div>
+            </div>
+        </div>'''
+    
+    html = html.replace('{{icbc_section}}', icbc_section + seesaw_html)
     html = html.replace('{{history_rows}}', history_rows)
     
     output_path = f"reports/report_{date}.html"
