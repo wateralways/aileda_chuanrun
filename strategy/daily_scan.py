@@ -162,8 +162,7 @@ def main():
     }
     
     # ===== 跷跷板策略扫描（工行 vs 科创50）=====
-    print("
-===== 跷跷板策略扫描 =====")
+    print("\n===== 跷跷板策略扫描 =====")
     try:
         from seesaw_kc50 import calc_score
         seesaw_result = calc_score()
