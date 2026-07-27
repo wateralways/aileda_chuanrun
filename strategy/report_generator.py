@@ -823,7 +823,42 @@ def generate_report(json_path=None):
             </div>
         </div>'''
     
-    html = html.replace('{{icbc_section}}', icbc_section + seesaw_html)
+        # === 资金流向监测 ===
+    fund_html = ''
+    fund_data = data.get('fund_flow')
+    if fund_data:
+        score = fund_data['score']
+        verdict = fund_data['verdict']
+        bar_color = '#e94560' if score >= 4 else ('#ffa726' if score >= 2 else '#00d4aa')
+        pct = min(score/7*100, 100)
+        
+        signals_html = ''
+        for s in fund_data.get('signals', []):
+            signals_html += f'<div style="font-size:11px;color:#888;margin:3px 0;">&#8226; {s}</div>'
+        
+        fund_html = f'''
+        <div class="icbc-card" style="border-left-color:{bar_color};margin-top:10px;">
+            <div class="icbc-header">
+                <span style="font-size:1.2em;">💰</span>
+                <span class="icbc-title" style="color:{bar_color};">资金流向监测</span>
+            </div>
+            <div class="icbc-body">
+                <div style="text-align:center;padding:10px 0;">
+                    <span style="font-size:36px;font-weight:700;color:{bar_color};">{score}</span>
+                    <span style="font-size:14px;color:#888;">/7</span>
+                    <div style="font-size:14px;margin-top:4px;color:{bar_color};">{verdict}</div>
+                </div>
+                <div style="height:6px;background:#1a1a3e;border-radius:3px;margin:8px 0;">
+                    <div style="width:{pct}%;height:100%;background:{bar_color};border-radius:3px;"></div>
+                </div>
+                <div style="font-size:11px;color:#666;border-top:1px solid #1a1a3e;padding-top:6px;">
+                    成交: {fund_data.get('amt',{}).get('today','-')}亿 | 20日均: {fund_data.get('amt',{}).get('ma20','-')}亿 | 偏离: {fund_data.get('amt',{}).get('dev',0):+.1f}%
+                </div>
+                {signals_html}
+            </div>
+        </div>'''
+    
+    html = html.replace('{{icbc_section}}', icbc_section + seesaw_html + fund_html)
     html = html.replace('{{history_rows}}', history_rows)
     
     output_path = f"reports/report_{date}.html"

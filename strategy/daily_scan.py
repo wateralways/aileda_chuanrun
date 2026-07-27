@@ -180,6 +180,29 @@ def main():
     except Exception as e:
         print(f"  [错误] {e}")
     
+    # ===== 资金流向监测（存量vs增量）=====
+    print("
+===== 资金流向监测 =====")
+    try:
+        from fund_flow import analyze as fund_analyze
+        fund_result = fund_analyze()
+        results['fund_flow'] = {
+            'score': fund_result['score'],
+            'verdict': fund_result['verdict'],
+            'amt': fund_result['amt'],
+            'seesaw': fund_result['seesaw'],
+            'divergence': fund_result['divergence'],
+            'tech_ratio': fund_result['tech_ratio'],
+            'signals': fund_result['signals'],
+        }
+        print(f"  评分: {fund_result['score']}/7 - {fund_result['verdict']}")
+        for s in fund_result['signals']:
+            print(f"    - {s}")
+    except ImportError:
+        print("  [跳过] fund_flow.py 未安装")
+    except Exception as e:
+        print(f"  [错误] {e}")
+    
     # 加载盘中预警数据
     realtime_data = load_realtime_data(today_str)
     if realtime_data:
