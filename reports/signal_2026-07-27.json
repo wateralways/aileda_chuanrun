@@ -1,0 +1,182 @@
+{
+  "type": "daily",
+  "scan_time": "2026-07-27 01:39:16",
+  "date": "2026-07-27",
+  "data_source": "tushare",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "latest_date": "20260724",
+      "latest_close": 15.12,
+      "latest_pct_chg": -4.2432,
+      "signals": [],
+      "has_signal": false,
+      "icbc_filter": {
+        "status": "up",
+        "roc_5d": 2.38,
+        "close": 7.75,
+        "date": "20260724",
+        "trend": "工行上行期",
+        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 0.54,
+        "rsi14": 19.87,
+        "rsi6": 8.5,
+        "macd": -1.631,
+        "amplitude": 5.39,
+        "bb_pct": 0.081,
+        "price_position": 0.07,
+        "up_days": 0,
+        "down_days": 3
+      },
+      "realtime_comparison": {
+        "match": "match",
+        "note": "盘中盘后均无信号",
+        "realtime_has_signal": false,
+        "realtime_time": "2026-07-27 01:39:10",
+        "realtime_signals": [],
+        "realtime_indicators": {
+          "vol_ratio": 1.17,
+          "rsi14": 20.22,
+          "rsi6": 12.6,
+          "macd": -1.76,
+          "amplitude": 3.62,
+          "bb_pct": 0.117,
+          "up_days": 0,
+          "down_days": 4
+        }
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "latest_date": "20260724",
+      "latest_close": 19.23,
+      "latest_pct_chg": -1.5865,
+      "signals": [],
+      "has_signal": false,
+      "icbc_filter": {
+        "status": "up",
+        "roc_5d": 2.38,
+        "close": 7.75,
+        "date": "20260724",
+        "trend": "工行上行期",
+        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 0.49,
+        "rsi14": 29.28,
+        "rsi6": 32.8,
+        "macd": -2.886,
+        "amplitude": 3.24,
+        "bb_pct": 0.183,
+        "price_position": 0.146,
+        "up_days": 0,
+        "down_days": 1
+      },
+      "realtime_comparison": {
+        "match": "false_alarm",
+        "note": "盘中有预警，盘后确认无信号（尾盘回落）",
+        "realtime_has_signal": true,
+        "realtime_time": "2026-07-27 01:39:10",
+        "realtime_signals": [
+          {
+            "strategy": "连阴首阳",
+            "type": "primary",
+            "confidence": "中",
+            "description": "连续阴线后出现首根阳线，RSI<60",
+            "icbc_note": "工行大涨+2.4%，逃科技模式，置信度下调"
+          }
+        ],
+        "realtime_indicators": {
+          "vol_ratio": 1.06,
+          "rsi14": 32.88,
+          "rsi6": 45.81,
+          "macd": -2.799,
+          "amplitude": 1.98,
+          "bb_pct": 0.231,
+          "up_days": 1,
+          "down_days": 0
+        }
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "latest_date": "20260724",
+      "latest_close": 27.01,
+      "latest_pct_chg": -2.8417,
+      "signals": [],
+      "has_signal": false,
+      "icbc_filter": {
+        "status": "up",
+        "roc_5d": 2.38,
+        "close": 7.75,
+        "date": "20260724",
+        "trend": "工行上行期",
+        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 0.52,
+        "rsi14": 19.11,
+        "rsi6": 19.92,
+        "macd": -3.073,
+        "amplitude": 4.29,
+        "bb_pct": 0.127,
+        "price_position": 0.188,
+        "up_days": 0,
+        "down_days": 2
+      },
+      "realtime_comparison": {
+        "match": "match",
+        "note": "盘中盘后均无信号",
+        "realtime_has_signal": false,
+        "realtime_time": "2026-07-27 01:39:10",
+        "realtime_signals": [],
+        "realtime_indicators": {
+          "vol_ratio": 0.93,
+          "rsi14": 20.95,
+          "rsi6": 35.87,
+          "macd": -3.143,
+          "amplitude": 3.58,
+          "bb_pct": 0.168,
+          "up_days": 1,
+          "down_days": 0
+        }
+      }
+    }
+  ],
+  "seesaw": {
+    "score": 48.6,
+    "signal": "观望",
+    "signal_detail": "仍在上升，等待更好时机",
+    "detail": {
+      "月超额": 13.0,
+      "波段涨幅": 14.4,
+      "距MA5": 0,
+      "成交额": 0,
+      "上影线": 1.9,
+      "大盘环境": 10,
+      "历史位置": 9.3
+    },
+    "data": {
+      "price": 7.75,
+      "date": "2026-07-24",
+      "m_ret": 9.77,
+      "gain_from_trough": 11.51,
+      "dist_ma5": 1.1,
+      "vol_ratio": 0.83,
+      "upper_shadow": 0.39,
+      "sh_m_ret": -7.25,
+      "ma5": 7.67,
+      "ma10": 7.58,
+      "ma20": 7.38,
+      "trough": 6.95
+    }
+  }
+}
