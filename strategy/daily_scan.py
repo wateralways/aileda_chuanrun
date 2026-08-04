@@ -181,8 +181,7 @@ def main():
         print(f"  [错误] {e}")
     
     # ===== 资金流向监测（存量vs增量）=====
-    print("
-===== 资金流向监测 =====")
+    print("\n===== 资金流向监测 =====")
     try:
         from fund_flow import analyze as fund_analyze
         fund_result = fund_analyze()
