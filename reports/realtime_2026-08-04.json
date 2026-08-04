@@ -1,7 +1,7 @@
 {
   "type": "realtime",
   "date": "2026-08-04",
-  "scan_time": "2026-08-04 01:42:22",
+  "scan_time": "2026-08-04 09:27:29",
   "data_source": "sina_realtime + tushare_history",
   "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
   "signals": [
@@ -10,33 +10,33 @@
       "code": "002272.SZ",
       "realtime": {
         "open": 13.42,
-        "high": 13.6,
+        "high": 13.98,
         "low": 13.2,
-        "current": 13.51,
-        "volume": 3793100,
-        "estimated_volume": 48402722,
-        "pct_chg": 2.12,
+        "current": 13.9,
+        "volume": 29478799,
+        "estimated_volume": 29478799,
+        "pct_chg": 5.06,
         "date": "2026-08-04",
-        "time": "09:42:21"
+        "time": "16:23:15"
       },
       "has_signal": false,
       "signals": [],
       "icbc_filter": {
-        "status": "up",
-        "roc_5d": 2.98,
-        "close": 7.96,
-        "date": "20260803",
-        "trend": "工行上行期",
-        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "status": "down",
+        "roc_5d": -3.89,
+        "close": 7.66,
+        "date": "20260804",
+        "trend": "工行下行期",
+        "recommendation": "✅ 抄科技模式：工行大跌，可积极寻找买入机会",
         "confidence_adjustment": 0
       },
       "indicators": {
-        "vol_ratio": 1.29,
-        "rsi14": 18.24,
-        "rsi6": 25.0,
-        "macd": -2.217,
-        "amplitude": 3.03,
-        "bb_pct": 0.241,
+        "vol_ratio": 0.88,
+        "rsi14": 21.09,
+        "rsi6": 31.43,
+        "macd": -2.186,
+        "amplitude": 5.91,
+        "bb_pct": 0.266,
         "up_days": 3,
         "down_days": 0
       }
@@ -46,35 +46,35 @@
       "code": "300696.SZ",
       "realtime": {
         "open": 19.69,
-        "high": 19.73,
+        "high": 20.18,
         "low": 19.42,
-        "current": 19.57,
-        "volume": 694700,
-        "estimated_volume": 8864878,
-        "pct_chg": -0.1,
+        "current": 19.99,
+        "volume": 7726700,
+        "estimated_volume": 7726700,
+        "pct_chg": 2.04,
         "date": "2026-08-04",
-        "time": "09:42:21"
+        "time": "16:23:15"
       },
       "has_signal": false,
       "signals": [],
       "icbc_filter": {
-        "status": "up",
-        "roc_5d": 2.98,
-        "close": 7.96,
-        "date": "20260803",
-        "trend": "工行上行期",
-        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "status": "down",
+        "roc_5d": -3.89,
+        "close": 7.66,
+        "date": "20260804",
+        "trend": "工行下行期",
+        "recommendation": "✅ 抄科技模式：工行大跌，可积极寻找买入机会",
         "confidence_adjustment": 0
       },
       "indicators": {
-        "vol_ratio": 1.38,
-        "rsi14": 38.59,
-        "rsi6": 43.87,
-        "macd": -2.132,
-        "amplitude": 1.6,
-        "bb_pct": 0.362,
-        "up_days": 0,
-        "down_days": 1
+        "vol_ratio": 1.25,
+        "rsi14": 41.08,
+        "rsi6": 53.2,
+        "macd": -2.099,
+        "amplitude": 3.91,
+        "bb_pct": 0.423,
+        "up_days": 3,
+        "down_days": 0
       }
     },
     {
@@ -82,41 +82,41 @@
       "code": "300499.SZ",
       "realtime": {
         "open": 25.63,
-        "high": 25.92,
+        "high": 27.25,
         "low": 25.41,
-        "current": 25.75,
-        "volume": 2792400,
-        "estimated_volume": 35633060,
-        "pct_chg": 2.18,
+        "current": 27.05,
+        "volume": 20785419,
+        "estimated_volume": 20785419,
+        "pct_chg": 7.34,
         "date": "2026-08-04",
-        "time": "09:42:21"
+        "time": "16:23:30"
       },
       "has_signal": true,
       "signals": [
         {
           "strategy": "跳空高开",
           "type": "primary",
-          "confidence": "中",
+          "confidence": "极高",
           "description": "跳空高开0.8%~5.0%，收阳线，放量(vol_ratio>1.2)",
-          "icbc_note": "工行大涨+3.0%，逃科技模式，置信度下调"
+          "icbc_note": "工行大跌-3.9%，抄科技模式，置信度上调"
         }
       ],
       "icbc_filter": {
-        "status": "up",
-        "roc_5d": 2.98,
-        "close": 7.96,
-        "date": "20260803",
-        "trend": "工行上行期",
-        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
-        "confidence_adjustment": -1
+        "status": "down",
+        "roc_5d": -3.89,
+        "close": 7.66,
+        "date": "20260804",
+        "trend": "工行下行期",
+        "recommendation": "✅ 抄科技模式：工行大跌，可积极寻找买入机会",
+        "confidence_adjustment": 1
       },
       "indicators": {
-        "vol_ratio": 1.79,
-        "rsi14": 28.44,
-        "rsi6": 31.86,
-        "macd": -3.268,
-        "amplitude": 2.01,
-        "bb_pct": 0.294,
+        "vol_ratio": 1.22,
+        "rsi14": 33.44,
+        "rsi6": 43.8,
+        "macd": -3.165,
+        "amplitude": 7.24,
+        "bb_pct": 0.355,
         "up_days": 3,
         "down_days": 0
       }
