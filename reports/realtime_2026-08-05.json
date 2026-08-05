@@ -1,0 +1,117 @@
+{
+  "type": "realtime",
+  "date": "2026-08-05",
+  "scan_time": "2026-08-05 09:23:00",
+  "data_source": "sina_realtime + tushare_history",
+  "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "realtime": {
+        "open": 13.9,
+        "high": 14.6,
+        "low": 13.9,
+        "current": 14.54,
+        "volume": 31392125,
+        "estimated_volume": 31392125,
+        "pct_chg": 4.6,
+        "date": "2026-08-05",
+        "time": "16:29:15"
+      },
+      "has_signal": false,
+      "signals": [],
+      "icbc_filter": {
+        "status": "down",
+        "roc_5d": -5.41,
+        "close": 7.52,
+        "date": "20260805",
+        "trend": "工行下行期",
+        "recommendation": "✅ 抄科技模式：工行大跌，可积极寻找买入机会",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 0.96,
+        "rsi14": 27.1,
+        "rsi6": 51.88,
+        "macd": -2.062,
+        "amplitude": 5.04,
+        "bb_pct": 0.332,
+        "up_days": 4,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "realtime": {
+        "open": 19.96,
+        "high": 20.52,
+        "low": 19.85,
+        "current": 20.28,
+        "volume": 5830236,
+        "estimated_volume": 5830236,
+        "pct_chg": 1.45,
+        "date": "2026-08-05",
+        "time": "16:29:15"
+      },
+      "has_signal": false,
+      "signals": [],
+      "icbc_filter": {
+        "status": "down",
+        "roc_5d": -5.41,
+        "close": 7.52,
+        "date": "20260805",
+        "trend": "工行下行期",
+        "recommendation": "✅ 抄科技模式：工行大跌，可积极寻找买入机会",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 0.91,
+        "rsi14": 43.64,
+        "rsi6": 70.43,
+        "macd": -1.918,
+        "amplitude": 3.38,
+        "bb_pct": 0.486,
+        "up_days": 4,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "realtime": {
+        "open": 26.7,
+        "high": 28.29,
+        "low": 26.69,
+        "current": 27.9,
+        "volume": 21639384,
+        "estimated_volume": 21639384,
+        "pct_chg": 3.14,
+        "date": "2026-08-05",
+        "time": "16:29:30"
+      },
+      "has_signal": false,
+      "signals": [],
+      "icbc_filter": {
+        "status": "down",
+        "roc_5d": -5.41,
+        "close": 7.52,
+        "date": "20260805",
+        "trend": "工行下行期",
+        "recommendation": "✅ 抄科技模式：工行大跌，可积极寻找买入机会",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 1.18,
+        "rsi14": 36.59,
+        "rsi6": 65.81,
+        "macd": -2.883,
+        "amplitude": 5.99,
+        "bb_pct": 0.417,
+        "up_days": 4,
+        "down_days": 0
+      }
+    }
+  ]
+}
