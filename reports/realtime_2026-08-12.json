@@ -1,0 +1,132 @@
+{
+  "type": "realtime",
+  "date": "2026-08-12",
+  "scan_time": "2026-08-12 08:02:54",
+  "data_source": "sina_realtime + tushare_history",
+  "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "realtime": {
+        "open": 14.66,
+        "high": 15.96,
+        "low": 14.49,
+        "current": 15.74,
+        "volume": 42161766,
+        "estimated_volume": 42161766,
+        "pct_chg": 7.22,
+        "date": "2026-08-12",
+        "time": "15:35:15"
+      },
+      "has_signal": true,
+      "signals": [
+        {
+          "strategy": "放量突破",
+          "type": "primary",
+          "confidence": "高",
+          "description": "成交量放大1.5倍以上，价格突破前高，收阳线",
+          "icbc_note": "工行震荡(+0.0%)，正常操作"
+        },
+        {
+          "strategy": "晨星形态",
+          "type": "secondary",
+          "confidence": "中",
+          "description": "下跌末端出现晨星反转K线组合",
+          "icbc_note": "工行震荡(+0.0%)，正常操作"
+        }
+      ],
+      "icbc_filter": {
+        "status": "neutral",
+        "roc_5d": 0.0,
+        "close": 7.52,
+        "date": "20260812",
+        "trend": "工行震荡期",
+        "recommendation": "➖ 正常模式：工行波动不大，按原策略操作",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 1.57,
+        "rsi14": 49.68,
+        "rsi6": 91.44,
+        "macd": -1.386,
+        "amplitude": 10.14,
+        "bb_pct": 0.597,
+        "up_days": 2,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "realtime": {
+        "open": 21.76,
+        "high": 22.99,
+        "low": 21.51,
+        "current": 22.85,
+        "volume": 14373975,
+        "estimated_volume": 14373975,
+        "pct_chg": 3.68,
+        "date": "2026-08-12",
+        "time": "15:35:00"
+      },
+      "has_signal": false,
+      "signals": [],
+      "icbc_filter": {
+        "status": "neutral",
+        "roc_5d": 0.0,
+        "close": 7.52,
+        "date": "20260812",
+        "trend": "工行震荡期",
+        "recommendation": "➖ 正常模式：工行波动不大，按原策略操作",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 1.54,
+        "rsi14": 76.4,
+        "rsi6": 100.0,
+        "macd": -0.868,
+        "amplitude": 6.88,
+        "bb_pct": 1.109,
+        "up_days": 9,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "realtime": {
+        "open": 28.39,
+        "high": 29.13,
+        "low": 28.01,
+        "current": 28.73,
+        "volume": 16724928,
+        "estimated_volume": 16724928,
+        "pct_chg": 1.56,
+        "date": "2026-08-12",
+        "time": "15:35:15"
+      },
+      "has_signal": false,
+      "signals": [],
+      "icbc_filter": {
+        "status": "neutral",
+        "roc_5d": 0.0,
+        "close": 7.52,
+        "date": "20260812",
+        "trend": "工行震荡期",
+        "recommendation": "➖ 正常模式：工行波动不大，按原策略操作",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 0.9,
+        "rsi14": 53.73,
+        "rsi6": 75.45,
+        "macd": -1.685,
+        "amplitude": 4.0,
+        "bb_pct": 0.66,
+        "up_days": 1,
+        "down_days": 0
+      }
+    }
+  ]
+}
