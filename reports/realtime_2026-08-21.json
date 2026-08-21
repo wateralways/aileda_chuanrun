@@ -1,0 +1,133 @@
+{
+  "type": "realtime",
+  "date": "2026-08-21",
+  "scan_time": "2026-08-21 07:27:12",
+  "data_source": "sina_realtime + tushare_history",
+  "note": "盘中数据不完整，量比/振幅为估算值，仅供参考",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "realtime": {
+        "open": 14.31,
+        "high": 15.77,
+        "low": 14.31,
+        "current": 15.59,
+        "volume": 51569107,
+        "estimated_volume": 51569107,
+        "pct_chg": 7.96,
+        "date": "2026-08-21",
+        "time": "15:27:00"
+      },
+      "has_signal": true,
+      "signals": [
+        {
+          "strategy": "阳线吞没",
+          "type": "secondary",
+          "confidence": "低",
+          "description": "阳线实体完全覆盖前日阴线实体",
+          "icbc_note": "工行大涨+2.4%，逃科技模式，置信度下调"
+        }
+      ],
+      "icbc_filter": {
+        "status": "up",
+        "roc_5d": 2.37,
+        "close": 7.78,
+        "date": "20260820",
+        "trend": "工行上行期",
+        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "confidence_adjustment": -1
+      },
+      "indicators": {
+        "vol_ratio": 1.29,
+        "rsi14": 64.57,
+        "rsi6": 56.6,
+        "macd": -0.73,
+        "amplitude": 10.2,
+        "bb_pct": 0.752,
+        "up_days": 1,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "realtime": {
+        "open": 20.0,
+        "high": 20.34,
+        "low": 19.7,
+        "current": 20.23,
+        "volume": 3817036,
+        "estimated_volume": 3817036,
+        "pct_chg": 0.95,
+        "date": "2026-08-21",
+        "time": "15:27:00"
+      },
+      "has_signal": true,
+      "signals": [
+        {
+          "strategy": "连阴首阳",
+          "type": "primary",
+          "confidence": "中",
+          "description": "连续阴线后出现首根阳线，RSI<60",
+          "icbc_note": "工行大涨+2.4%，逃科技模式，置信度下调"
+        }
+      ],
+      "icbc_filter": {
+        "status": "up",
+        "roc_5d": 2.37,
+        "close": 7.78,
+        "date": "20260820",
+        "trend": "工行上行期",
+        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "confidence_adjustment": -1
+      },
+      "indicators": {
+        "vol_ratio": 0.67,
+        "rsi14": 54.72,
+        "rsi6": 17.51,
+        "macd": -0.572,
+        "amplitude": 3.25,
+        "bb_pct": 0.423,
+        "up_days": 1,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "realtime": {
+        "open": 27.06,
+        "high": 28.93,
+        "low": 26.87,
+        "current": 28.26,
+        "volume": 16500555,
+        "estimated_volume": 16500555,
+        "pct_chg": 3.78,
+        "date": "2026-08-21",
+        "time": "15:26:15"
+      },
+      "has_signal": false,
+      "signals": [],
+      "icbc_filter": {
+        "status": "up",
+        "roc_5d": 2.37,
+        "close": 7.78,
+        "date": "20260820",
+        "trend": "工行上行期",
+        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 0.95,
+        "rsi14": 62.62,
+        "rsi6": 49.62,
+        "macd": -0.91,
+        "amplitude": 7.67,
+        "bb_pct": 0.596,
+        "up_days": 2,
+        "down_days": 0
+      }
+    }
+  ]
+}
