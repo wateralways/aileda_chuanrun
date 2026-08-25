@@ -1,0 +1,132 @@
+{
+  "type": "daily",
+  "scan_time": "2026-08-25 11:22:27",
+  "date": "2026-08-25",
+  "data_source": "tushare",
+  "signals": [
+    {
+      "name": "川润股份",
+      "code": "002272.SZ",
+      "latest_date": "20260825",
+      "latest_close": 16.09,
+      "latest_pct_chg": 4.4805,
+      "signals": [],
+      "has_signal": false,
+      "icbc_filter": {
+        "status": "up",
+        "roc_5d": 3.0,
+        "close": 7.9,
+        "date": "20260825",
+        "trend": "工行上行期",
+        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 1.08,
+        "rsi14": 60.1,
+        "rsi6": 54.87,
+        "macd": -0.537,
+        "amplitude": 10.48,
+        "bb_pct": 0.846,
+        "price_position": 0.91,
+        "up_days": 1,
+        "down_days": 0
+      }
+    },
+    {
+      "name": "爱乐达",
+      "code": "300696.SZ",
+      "latest_date": "20260825",
+      "latest_close": 20.27,
+      "latest_pct_chg": 0.8458,
+      "signals": [
+        {
+          "strategy": "连阴首阳",
+          "type": "primary",
+          "confidence": "中",
+          "description": "连续阴线后出现首根阳线，RSI<60",
+          "icbc_note": "工行大涨+3.0%，逃科技模式，置信度下调"
+        }
+      ],
+      "has_signal": true,
+      "icbc_filter": {
+        "status": "up",
+        "roc_5d": 3.0,
+        "close": 7.9,
+        "date": "20260825",
+        "trend": "工行上行期",
+        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "confidence_adjustment": -1
+      },
+      "indicators": {
+        "vol_ratio": 1.4,
+        "rsi14": 49.92,
+        "rsi6": 13.79,
+        "macd": -0.592,
+        "amplitude": 8.33,
+        "bb_pct": 0.416,
+        "price_position": 0.38,
+        "up_days": 1,
+        "down_days": 0
+      },
+      "buy_price": 20.27
+    },
+    {
+      "name": "高澜股份",
+      "code": "300499.SZ",
+      "latest_date": "20260825",
+      "latest_close": 30.8,
+      "latest_pct_chg": 6.3903,
+      "signals": [],
+      "has_signal": false,
+      "icbc_filter": {
+        "status": "up",
+        "roc_5d": 3.0,
+        "close": 7.9,
+        "date": "20260825",
+        "trend": "工行上行期",
+        "recommendation": "⚠️ 逃科技模式：工行大涨，谨慎开新仓，已有仓位考虑减仓",
+        "confidence_adjustment": 0
+      },
+      "indicators": {
+        "vol_ratio": 1.94,
+        "rsi14": 62.12,
+        "rsi6": 52.31,
+        "macd": -0.546,
+        "amplitude": 11.52,
+        "bb_pct": 0.897,
+        "price_position": 0.928,
+        "up_days": 4,
+        "down_days": 0
+      }
+    }
+  ],
+  "seesaw": {
+    "score": 26.1,
+    "signal": "不动",
+    "signal_detail": "强势上行，不操作",
+    "detail": {
+      "月超额": 0,
+      "波段涨幅": 15,
+      "距MA5": 0,
+      "成交额": 0,
+      "上影线": 3.2,
+      "大盘环境": 0,
+      "历史位置": 7.9
+    },
+    "data": {
+      "price": 7.9,
+      "date": "2026-08-25",
+      "m_ret": -0.75,
+      "gain_from_trough": 13.67,
+      "dist_ma5": 0.92,
+      "vol_ratio": 0.72,
+      "upper_shadow": 0.63,
+      "sh_m_ret": 2.09,
+      "ma5": 7.83,
+      "ma10": 7.7,
+      "ma20": 7.73,
+      "trough": 6.95
+    }
+  }
+}

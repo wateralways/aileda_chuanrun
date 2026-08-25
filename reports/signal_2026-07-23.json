@@ -69,7 +69,10 @@
         "up_days": 1,
         "down_days": 0
       },
-      "buy_price": 19.54
+      "buy_price": 19.54,
+      "sell_date": "20260804",
+      "sell_price": 19.99,
+      "return_pct": 2.3
     },
     {
       "name": "高澜股份",
